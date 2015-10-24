@@ -1,0 +1,33 @@
+## ################################
+## Java
+
+-main javahx.ThnxMain
+
+-cp src/main
+-cp lib/dotCore/src/main
+-java-lib lib/Java-WebSocket-1.2.1.jar
+
+-D display
+-D haxe3
+
+-java bin/java
+
+## ################################
+## JavaScript
+
+--next
+
+-main js.MainJS
+
+-cp src/main
+-cp lib/dotCore/src/main
+
+
+
+-debug
+## --no-traces
+
+-D display
+-D haxe3
+
+-js bin/js/jsout.js

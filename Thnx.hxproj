@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project version="2">
+  <!-- Output SWF options -->
+  <output>
+    <movie outputType="CustomBuild" />
+    <movie input="" />
+    <movie path="bin\js\jsout.js" />
+    <movie fps="40" />
+    <movie width="1024" />
+    <movie height="768" />
+    <movie version="0" />
+    <movie minorVersion="0" />
+    <movie platform="Java" />
+    <movie background="#323232" />
+  </output>
+  <!-- Other classes to be compiled into your SWF -->
+  <classpaths>
+    <class path="src\main" />
+    <class path="src\interactive" />
+    <class path="lib\dotCore\src\main" />
+    <class path="lib\dotCore\src" />
+  </classpaths>
+  <!-- Build options -->
+  <build>
+    <option directives="" />
+    <option flashStrict="False" />
+    <option noInlineOnDebug="False" />
+    <option mainClass="js.MainJS" />
+    <option enabledebug="False" />
+    <option additional="-java-lib lib/Java-WebSocket-1.2.1.jar" />
+  </build>
+  <!-- haxelib libraries -->
+  <haxelib>
+    <!-- example: <library name="..." /> -->
+  </haxelib>
+  <!-- Class files to compile (other referenced classes will automatically be included) -->
+  <compileTargets>
+    <compile path="src\interactive\Main.hx" />
+    <compile path="src\main\js\Main.hx" />
+    <compile path="src\main\js\MainJS.hx" />
+  </compileTargets>
+  <!-- Paths to exclude from the Project Explorer tree -->
+  <hiddenPaths>
+    <hidden path="obj" />
+  </hiddenPaths>
+  <!-- Executed before build -->
+  <preBuildCommand>haxe build.hxml</preBuildCommand>
+  <!-- Executed after build -->
+  <postBuildCommand alwaysRun="False" />
+  <!-- Other project options -->
+  <options>
+    <option showHiddenPaths="False" />
+    <option testMovie="OpenDocument" />
+    <option testMovieCommand="D:\Projects\Arbeit\Greentube\Hackathon\Thnx/bin/java/run.bat" />
+  </options>
+  <!-- Plugin storage -->
+  <storage />
+</project>
