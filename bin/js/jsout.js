@@ -542,7 +542,7 @@ js_Boot.__resolveNativeClass = function(name) {
 	return (Function("return typeof " + name + " != \"undefined\" ? " + name + " : null"))();
 };
 var js_MainJS = function() {
-	this.gameURL = "http://playcanvas.com/editor/scene/390184/launch";
+	this.gameURL = "http://apps.playcanvas.com.s3-website-eu-west-1.amazonaws.com/R4GZNWYr/";
 };
 js_MainJS.__name__ = ["js","MainJS"];
 js_MainJS.main = function() {
@@ -577,15 +577,15 @@ js_MainJS.prototype = {
 		haxe_Timer.delay($bind(this,this.connectAI),2000);
 	}
 	,onServerError: function(event) {
-		haxe_Log.trace("AI-Connection:error",{ fileName : "MainJS.hx", lineNumber : 131, className : "js.MainJS", methodName : "onServerError"});
+		haxe_Log.trace("AI-Connection:error",{ fileName : "MainJS.hx", lineNumber : 130, className : "js.MainJS", methodName : "onServerError"});
 		this.reconnectAI();
 	}
 	,onServerOpen: function(event) {
-		haxe_Log.trace("AI-Connection:successful",{ fileName : "MainJS.hx", lineNumber : 141, className : "js.MainJS", methodName : "onServerOpen"});
+		haxe_Log.trace("AI-Connection:successful",{ fileName : "MainJS.hx", lineNumber : 140, className : "js.MainJS", methodName : "onServerOpen"});
 		if(!this.isInitialized) this.openFrame(); else window.location.reload();
 	}
 	,onServerClose: function(event) {
-		haxe_Log.trace("AI-Connection:close",{ fileName : "MainJS.hx", lineNumber : 153, className : "js.MainJS", methodName : "onServerClose"});
+		haxe_Log.trace("AI-Connection:close",{ fileName : "MainJS.hx", lineNumber : 152, className : "js.MainJS", methodName : "onServerClose"});
 		if(this.serverAI != null && (this.serverAI.readyState == 2 || this.serverAI.readyState == 3)) this.reconnectAI();
 	}
 	,onServerMessage: function(event) {

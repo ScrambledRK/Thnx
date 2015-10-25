@@ -24,8 +24,7 @@ class MainJS
 	/**
 	 *
 	 */
-	private var gameURL:String = "http://playcanvas.com/editor/scene/390184/launch";
-	// level: https://playcanvas.com/api/files/assets/2761105/1/level.json
+	private var gameURL:String = "http://apps.playcanvas.com.s3-website-eu-west-1.amazonaws.com/R4GZNWYr/";
 
 	/**
 	 *
