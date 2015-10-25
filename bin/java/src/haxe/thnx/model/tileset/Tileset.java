@@ -17,12 +17,12 @@ public class Tileset extends haxe.lang.HxObject
 	}
 	
 	
-	public static void __hx_ctor_haxe_thnx_model_tileset_Tileset(haxe.thnx.model.tileset.Tileset __temp_me128, haxe.root.Array<haxe.thnx.model.tileset.Tile> tiles, int dimension)
+	public static void __hx_ctor_haxe_thnx_model_tileset_Tileset(haxe.thnx.model.tileset.Tileset __temp_me127, haxe.root.Array<haxe.thnx.model.tileset.Tile> tiles, int dimension)
 	{
 		//line 26 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\tileset\\Tileset.hx"
-		__temp_me128.tiles = tiles;
+		__temp_me127.tiles = tiles;
 		//line 27 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\tileset\\Tileset.hx"
-		__temp_me128.dimension = dimension;
+		__temp_me127.dimension = dimension;
 	}
 	
 	

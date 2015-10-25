@@ -21,10 +21,10 @@ public class TankNew extends haxe.thnx.socket.response.SocketResponse
 	}
 	
 	
-	public static void __hx_ctor_haxe_thnx_socket_response_TankNew(haxe.thnx.socket.response.TankNew __temp_me135)
+	public static void __hx_ctor_haxe_thnx_socket_response_TankNew(haxe.thnx.socket.response.TankNew __temp_me134)
 	{
 		//line 11 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\socket\\response\\TankResponse.hx"
-		haxe.thnx.socket.response.SocketResponse.__hx_ctor_haxe_thnx_socket_response_SocketResponse(__temp_me135, "tank.new");
+		haxe.thnx.socket.response.SocketResponse.__hx_ctor_haxe_thnx_socket_response_SocketResponse(__temp_me134, "tank.new");
 	}
 	
 	

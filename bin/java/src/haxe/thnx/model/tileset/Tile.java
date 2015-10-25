@@ -17,10 +17,10 @@ public class Tile extends haxe.lang.HxObject
 	}
 	
 	
-	public static void __hx_ctor_haxe_thnx_model_tileset_Tile(haxe.thnx.model.tileset.Tile __temp_me127, haxe.thnx.model.enums.TileType type)
+	public static void __hx_ctor_haxe_thnx_model_tileset_Tile(haxe.thnx.model.tileset.Tile __temp_me126, haxe.thnx.model.enums.TileType type)
 	{
 		//line 23 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\tileset\\Tile.hx"
-		__temp_me127.type = type;
+		__temp_me126.type = type;
 	}
 	
 	

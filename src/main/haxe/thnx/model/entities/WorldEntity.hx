@@ -1,8 +1,6 @@
 package haxe.thnx.model.entities;
 
 import haxe.at.dotpoint.math.Axis.AxisRelative;
-import haxe.at.dotpoint.math.vector.Vector2;
-import haxe.at.dotpoint.spatial.boundings.BoundingChangePolicy;
 import haxe.at.dotpoint.spatial.SpatialEntity;
 
 /**

@@ -39,7 +39,7 @@ public class Parser extends haxe.lang.HxObject
 	}
 	
 	
-	public static void __hx_ctor_haxe_xml_Parser(haxe.xml.Parser __temp_me141)
+	public static void __hx_ctor_haxe_xml_Parser(haxe.xml.Parser __temp_me140)
 	{
 	}
 	
@@ -49,11 +49,11 @@ public class Parser extends haxe.lang.HxObject
 	public static haxe.root.Xml parse(java.lang.String str, java.lang.Object strict)
 	{
 		//line 65 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-		boolean __temp_strict139 = ( (haxe.lang.Runtime.eq(strict, null)) ? (false) : (haxe.lang.Runtime.toBool(strict)) );
+		boolean __temp_strict138 = ( (haxe.lang.Runtime.eq(strict, null)) ? (false) : (haxe.lang.Runtime.toBool(strict)) );
 		//line 66 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 		haxe.root.Xml doc = haxe.root.Xml.createDocument();
 		//line 67 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-		haxe.xml.Parser.doParse(str, __temp_strict139, 0, doc);
+		haxe.xml.Parser.doParse(str, __temp_strict138, 0, doc);
 		//line 68 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 		return doc;
 	}
@@ -62,7 +62,7 @@ public class Parser extends haxe.lang.HxObject
 	public static int doParse(java.lang.String str, boolean strict, java.lang.Object p, haxe.root.Xml parent)
 	{
 		//line 72 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-		int __temp_p140 = ( (haxe.lang.Runtime.eq(p, null)) ? (0) : (((int) (haxe.lang.Runtime.toInt(p)) )) );
+		int __temp_p139 = ( (haxe.lang.Runtime.eq(p, null)) ? (0) : (((int) (haxe.lang.Runtime.toInt(p)) )) );
 		//line 73 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 		haxe.root.Xml xml = null;
 		//line 74 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
@@ -80,10 +80,10 @@ public class Parser extends haxe.lang.HxObject
 		//line 80 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 		int c = 0;
 		//line 80 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-		if (( __temp_p140 < str.length() )) 
+		if (( __temp_p139 < str.length() )) 
 		{
 			//line 80 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-			c = ((int) (str.charAt(__temp_p140)) );
+			c = ((int) (str.charAt(__temp_p139)) );
 		}
 		else
 		{
@@ -152,7 +152,7 @@ public class Parser extends haxe.lang.HxObject
 						default:
 						{
 							//line 112 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-							start = __temp_p140;
+							start = __temp_p139;
 							//line 113 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 							state = 13;
 							//line 114 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
@@ -172,7 +172,7 @@ public class Parser extends haxe.lang.HxObject
 					if (( c == 60 )) 
 					{
 						//line 119 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-						buf.addSub(str, start, ( __temp_p140 - start ));
+						buf.addSub(str, start, ( __temp_p139 - start ));
 						//line 120 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 						haxe.root.Xml child = haxe.root.Xml.createPCData(buf.toString());
 						//line 121 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
@@ -196,13 +196,13 @@ public class Parser extends haxe.lang.HxObject
 						if (( c == 38 )) 
 						{
 							//line 126 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-							buf.addSub(str, start, ( __temp_p140 - start ));
+							buf.addSub(str, start, ( __temp_p139 - start ));
 							//line 127 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 							state = 18;
 							//line 128 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 							escapeNext = 13;
 							//line 129 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-							start = ( __temp_p140 + 1 );
+							start = ( __temp_p139 + 1 );
 						}
 						
 					}
@@ -228,7 +228,7 @@ public class Parser extends haxe.lang.HxObject
 						//line 132 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 						{
 							//line 132 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-							int index = ( __temp_p140 + 1 );
+							int index = ( __temp_p139 + 1 );
 							//line 132 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 							__temp_stmt5 = ( (( index < str.length() )) ? (((int) (str.charAt(index)) )) : (-1) );
 						}
@@ -243,7 +243,7 @@ public class Parser extends haxe.lang.HxObject
 							//line 132 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 							{
 								//line 132 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-								int index1 = ( __temp_p140 + 2 );
+								int index1 = ( __temp_p139 + 2 );
 								//line 132 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 								__temp_stmt6 = ( (( index1 < str.length() )) ? (((int) (str.charAt(index1)) )) : (-1) );
 							}
@@ -260,7 +260,7 @@ public class Parser extends haxe.lang.HxObject
 					if (__temp_stmt1) 
 					{
 						//line 134 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-						haxe.root.Xml child1 = haxe.root.Xml.createCData(haxe.lang.StringExt.substr(str, start, ( __temp_p140 - start )));
+						haxe.root.Xml child1 = haxe.root.Xml.createCData(haxe.lang.StringExt.substr(str, start, ( __temp_p139 - start )));
 						//line 135 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 						{
 							//line 135 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
@@ -270,7 +270,7 @@ public class Parser extends haxe.lang.HxObject
 						}
 						
 						//line 136 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-						__temp_p140 += 2;
+						__temp_p139 += 2;
 						//line 137 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 						state = 1;
 					}
@@ -292,7 +292,7 @@ public class Parser extends haxe.lang.HxObject
 							//line 143 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 							{
 								//line 143 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-								int index2 = ( __temp_p140 + 1 );
+								int index2 = ( __temp_p139 + 1 );
 								//line 143 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 								__temp_stmt7 = ( (( index2 < str.length() )) ? (((int) (str.charAt(index2)) )) : (-1) );
 							}
@@ -301,20 +301,20 @@ public class Parser extends haxe.lang.HxObject
 							if (( __temp_stmt7 == 91 )) 
 							{
 								//line 145 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-								__temp_p140 += 2;
+								__temp_p139 += 2;
 								//line 146 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-								if ( ! (haxe.lang.Runtime.valEq(haxe.lang.StringExt.substr(str, __temp_p140, 6).toUpperCase(), "CDATA[")) ) 
+								if ( ! (haxe.lang.Runtime.valEq(haxe.lang.StringExt.substr(str, __temp_p139, 6).toUpperCase(), "CDATA[")) ) 
 								{
 									//line 147 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 									throw haxe.lang.HaxeException.wrap("Expected <![CDATA[");
 								}
 								
 								//line 148 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-								__temp_p140 += 5;
+								__temp_p139 += 5;
 								//line 149 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 								state = 17;
 								//line 150 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-								start = ( __temp_p140 + 1 );
+								start = ( __temp_p139 + 1 );
 							}
 							else
 							{
@@ -323,7 +323,7 @@ public class Parser extends haxe.lang.HxObject
 								//line 152 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 								{
 									//line 152 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-									int index3 = ( __temp_p140 + 1 );
+									int index3 = ( __temp_p139 + 1 );
 									//line 152 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 									__temp_stmt10 = ( (( index3 < str.length() )) ? (((int) (str.charAt(index3)) )) : (-1) );
 								}
@@ -340,7 +340,7 @@ public class Parser extends haxe.lang.HxObject
 									//line 152 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 									{
 										//line 152 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-										int index4 = ( __temp_p140 + 1 );
+										int index4 = ( __temp_p139 + 1 );
 										//line 152 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 										__temp_stmt12 = ( (( index4 < str.length() )) ? (((int) (str.charAt(index4)) )) : (-1) );
 									}
@@ -355,18 +355,18 @@ public class Parser extends haxe.lang.HxObject
 								if (__temp_stmt8) 
 								{
 									//line 154 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-									if ( ! (haxe.lang.Runtime.valEq(haxe.lang.StringExt.substr(str, ( __temp_p140 + 2 ), 6).toUpperCase(), "OCTYPE")) ) 
+									if ( ! (haxe.lang.Runtime.valEq(haxe.lang.StringExt.substr(str, ( __temp_p139 + 2 ), 6).toUpperCase(), "OCTYPE")) ) 
 									{
 										//line 155 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 										throw haxe.lang.HaxeException.wrap("Expected <!DOCTYPE");
 									}
 									
 									//line 156 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-									__temp_p140 += 8;
+									__temp_p139 += 8;
 									//line 157 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 									state = 16;
 									//line 158 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-									start = ( __temp_p140 + 1 );
+									start = ( __temp_p139 + 1 );
 								}
 								else
 								{
@@ -375,7 +375,7 @@ public class Parser extends haxe.lang.HxObject
 									//line 160 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 									{
 										//line 160 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-										int index5 = ( __temp_p140 + 1 );
+										int index5 = ( __temp_p139 + 1 );
 										//line 160 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 										__temp_stmt15 = ( (( index5 < str.length() )) ? (((int) (str.charAt(index5)) )) : (-1) );
 									}
@@ -392,7 +392,7 @@ public class Parser extends haxe.lang.HxObject
 										//line 160 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 										{
 											//line 160 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-											int index6 = ( __temp_p140 + 2 );
+											int index6 = ( __temp_p139 + 2 );
 											//line 160 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 											__temp_stmt17 = ( (( index6 < str.length() )) ? (((int) (str.charAt(index6)) )) : (-1) );
 										}
@@ -412,11 +412,11 @@ public class Parser extends haxe.lang.HxObject
 									else
 									{
 										//line 164 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-										__temp_p140 += 2;
+										__temp_p139 += 2;
 										//line 165 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 										state = 15;
 										//line 166 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-										start = ( __temp_p140 + 1 );
+										start = ( __temp_p139 + 1 );
 									}
 									
 								}
@@ -433,7 +433,7 @@ public class Parser extends haxe.lang.HxObject
 							//line 169 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 							state = 14;
 							//line 170 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-							start = __temp_p140;
+							start = __temp_p139;
 							//line 168 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 							break;
 						}
@@ -449,7 +449,7 @@ public class Parser extends haxe.lang.HxObject
 							}
 							
 							//line 174 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-							start = ( __temp_p140 + 1 );
+							start = ( __temp_p139 + 1 );
 							//line 175 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 							state = 0;
 							//line 176 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
@@ -464,7 +464,7 @@ public class Parser extends haxe.lang.HxObject
 							//line 178 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 							state = 3;
 							//line 179 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-							start = __temp_p140;
+							start = __temp_p139;
 							//line 180 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 							continue;
 						}
@@ -482,14 +482,14 @@ public class Parser extends haxe.lang.HxObject
 					if ( ! ((( ( ( ( ( ( ( ( c >= 97 ) && ( c <= 122 ) ) || ( ( c >= 65 ) && ( c <= 90 ) ) ) || ( ( c >= 48 ) && ( c <= 57 ) ) ) || ( c == 58 ) ) || ( c == 46 ) ) || ( c == 95 ) ) || ( c == 45 ) ))) ) 
 					{
 						//line 185 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-						if (( __temp_p140 == start )) 
+						if (( __temp_p139 == start )) 
 						{
 							//line 186 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 							throw haxe.lang.HaxeException.wrap("Expected node name");
 						}
 						
 						//line 187 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-						xml = haxe.root.Xml.createElement(haxe.lang.StringExt.substr(str, start, ( __temp_p140 - start )));
+						xml = haxe.root.Xml.createElement(haxe.lang.StringExt.substr(str, start, ( __temp_p139 - start )));
 						//line 188 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 						{
 							//line 188 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
@@ -539,7 +539,7 @@ public class Parser extends haxe.lang.HxObject
 							//line 201 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 							state = 5;
 							//line 202 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-							start = __temp_p140;
+							start = __temp_p139;
 							//line 203 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 							continue;
 						}
@@ -559,14 +559,14 @@ public class Parser extends haxe.lang.HxObject
 						//line 208 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 						java.lang.String tmp = null;
 						//line 209 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-						if (( start == __temp_p140 )) 
+						if (( start == __temp_p139 )) 
 						{
 							//line 210 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 							throw haxe.lang.HaxeException.wrap("Expected attribute name");
 						}
 						
 						//line 211 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-						tmp = haxe.lang.StringExt.substr(str, start, ( __temp_p140 - start ));
+						tmp = haxe.lang.StringExt.substr(str, start, ( __temp_p139 - start ));
 						//line 212 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 						aname = tmp;
 						//line 213 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
@@ -631,7 +631,7 @@ public class Parser extends haxe.lang.HxObject
 							//line 233 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 							state = 8;
 							//line 234 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-							start = ( __temp_p140 + 1 );
+							start = ( __temp_p139 + 1 );
 							//line 235 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 							attrValQuote = c;
 							//line 231 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
@@ -660,13 +660,13 @@ public class Parser extends haxe.lang.HxObject
 						case 38:
 						{
 							//line 242 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-							buf.addSub(str, start, ( __temp_p140 - start ));
+							buf.addSub(str, start, ( __temp_p139 - start ));
 							//line 243 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 							state = 18;
 							//line 244 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 							escapeNext = 8;
 							//line 245 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-							start = ( __temp_p140 + 1 );
+							start = ( __temp_p139 + 1 );
 							//line 241 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 							break;
 						}
@@ -686,7 +686,7 @@ public class Parser extends haxe.lang.HxObject
 								if (( c == attrValQuote )) 
 								{
 									//line 250 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-									buf.addSub(str, start, ( __temp_p140 - start ));
+									buf.addSub(str, start, ( __temp_p139 - start ));
 									//line 251 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 									java.lang.String val = buf.toString();
 									//line 252 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
@@ -720,7 +720,7 @@ public class Parser extends haxe.lang.HxObject
 								if (( c == attrValQuote )) 
 								{
 									//line 250 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-									buf.addSub(str, start, ( __temp_p140 - start ));
+									buf.addSub(str, start, ( __temp_p139 - start ));
 									//line 251 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 									java.lang.String val1 = buf.toString();
 									//line 252 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
@@ -746,7 +746,7 @@ public class Parser extends haxe.lang.HxObject
 							if (( c == attrValQuote )) 
 							{
 								//line 250 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-								buf.addSub(str, start, ( __temp_p140 - start ));
+								buf.addSub(str, start, ( __temp_p139 - start ));
 								//line 251 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 								java.lang.String val2 = buf.toString();
 								//line 252 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
@@ -773,9 +773,9 @@ public class Parser extends haxe.lang.HxObject
 				case 9:
 				{
 					//line 258 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-					__temp_p140 = haxe.xml.Parser.doParse(str, strict, __temp_p140, xml);
+					__temp_p139 = haxe.xml.Parser.doParse(str, strict, __temp_p139, xml);
 					//line 259 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-					start = __temp_p140;
+					start = __temp_p139;
 					//line 260 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 					state = 1;
 					//line 257 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
@@ -825,7 +825,7 @@ public class Parser extends haxe.lang.HxObject
 							}
 							
 							//line 275 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-							return __temp_p140;
+							return __temp_p139;
 						}
 						
 						
@@ -846,14 +846,14 @@ public class Parser extends haxe.lang.HxObject
 					if ( ! ((( ( ( ( ( ( ( ( c >= 97 ) && ( c <= 122 ) ) || ( ( c >= 65 ) && ( c <= 90 ) ) ) || ( ( c >= 48 ) && ( c <= 57 ) ) ) || ( c == 58 ) ) || ( c == 46 ) ) || ( c == 95 ) ) || ( c == 45 ) ))) ) 
 					{
 						//line 282 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-						if (( start == __temp_p140 )) 
+						if (( start == __temp_p139 )) 
 						{
 							//line 283 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 							throw haxe.lang.HaxeException.wrap("Expected node name");
 						}
 						
 						//line 285 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-						java.lang.String v = haxe.lang.StringExt.substr(str, start, ( __temp_p140 - start ));
+						java.lang.String v = haxe.lang.StringExt.substr(str, start, ( __temp_p139 - start ));
 						//line 286 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 						java.lang.String __temp_stmt18 = null;
 						//line 286 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
@@ -920,7 +920,7 @@ public class Parser extends haxe.lang.HxObject
 						//line 294 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 						{
 							//line 294 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-							int index7 = ( __temp_p140 + 1 );
+							int index7 = ( __temp_p139 + 1 );
 							//line 294 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 							__temp_stmt24 = ( (( index7 < str.length() )) ? (((int) (str.charAt(index7)) )) : (-1) );
 						}
@@ -935,7 +935,7 @@ public class Parser extends haxe.lang.HxObject
 							//line 294 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 							{
 								//line 294 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-								int index8 = ( __temp_p140 + 2 );
+								int index8 = ( __temp_p139 + 2 );
 								//line 294 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 								__temp_stmt25 = ( (( index8 < str.length() )) ? (((int) (str.charAt(index8)) )) : (-1) );
 							}
@@ -954,7 +954,7 @@ public class Parser extends haxe.lang.HxObject
 						//line 296 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 						{
 							//line 296 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-							haxe.root.Xml xml1 = haxe.root.Xml.createComment(haxe.lang.StringExt.substr(str, start, ( __temp_p140 - start )));
+							haxe.root.Xml xml1 = haxe.root.Xml.createComment(haxe.lang.StringExt.substr(str, start, ( __temp_p139 - start )));
 							//line 296 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 							parent.addChild(xml1);
 							//line 296 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
@@ -962,7 +962,7 @@ public class Parser extends haxe.lang.HxObject
 						}
 						
 						//line 297 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-						__temp_p140 += 2;
+						__temp_p139 += 2;
 						//line 298 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 						state = 1;
 					}
@@ -996,7 +996,7 @@ public class Parser extends haxe.lang.HxObject
 								//line 307 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 								{
 									//line 307 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-									haxe.root.Xml xml2 = haxe.root.Xml.createDocType(haxe.lang.StringExt.substr(str, start, ( __temp_p140 - start )));
+									haxe.root.Xml xml2 = haxe.root.Xml.createDocType(haxe.lang.StringExt.substr(str, start, ( __temp_p139 - start )));
 									//line 307 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 									parent.addChild(xml2);
 									//line 307 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
@@ -1030,7 +1030,7 @@ public class Parser extends haxe.lang.HxObject
 						//line 311 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 						{
 							//line 311 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-							int index9 = ( __temp_p140 + 1 );
+							int index9 = ( __temp_p139 + 1 );
 							//line 311 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 							__temp_stmt29 = ( (( index9 < str.length() )) ? (((int) (str.charAt(index9)) )) : (-1) );
 						}
@@ -1045,9 +1045,9 @@ public class Parser extends haxe.lang.HxObject
 					if (__temp_stmt26) 
 					{
 						//line 313 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-						__temp_p140++;
+						__temp_p139++;
 						//line 314 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-						java.lang.String str1 = haxe.lang.StringExt.substr(str, ( start + 1 ), ( ( __temp_p140 - start ) - 2 ));
+						java.lang.String str1 = haxe.lang.StringExt.substr(str, ( start + 1 ), ( ( __temp_p139 - start ) - 2 ));
 						//line 315 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 						{
 							//line 315 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
@@ -1073,7 +1073,7 @@ public class Parser extends haxe.lang.HxObject
 					if (( c == 59 )) 
 					{
 						//line 321 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-						java.lang.String s = haxe.lang.StringExt.substr(str, start, ( __temp_p140 - start ));
+						java.lang.String s = haxe.lang.StringExt.substr(str, start, ( __temp_p139 - start ));
 						//line 322 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 						if (( (( (( 0 < s.length() )) ? (((int) (s.charAt(0)) )) : (-1) )) == 35 )) 
 						{
@@ -1118,7 +1118,7 @@ public class Parser extends haxe.lang.HxObject
 						}
 						
 						//line 353 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-						start = ( __temp_p140 + 1 );
+						start = ( __temp_p139 + 1 );
 						//line 354 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 						state = escapeNext;
 					}
@@ -1137,11 +1137,11 @@ public class Parser extends haxe.lang.HxObject
 							//line 358 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 							buf.addChar(38);
 							//line 359 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-							buf.addSub(str, start, ( __temp_p140 - start ));
+							buf.addSub(str, start, ( __temp_p139 - start ));
 							//line 360 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-							__temp_p140--;
+							__temp_p139--;
 							//line 361 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-							start = ( __temp_p140 + 1 );
+							start = ( __temp_p139 + 1 );
 							//line 362 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 							state = escapeNext;
 						}
@@ -1158,7 +1158,7 @@ public class Parser extends haxe.lang.HxObject
 			//line 365 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 			{
 				//line 365 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-				int index10 =  ++ __temp_p140;
+				int index10 =  ++ __temp_p139;
 				//line 365 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 				if (( index10 < str.length() )) 
 				{
@@ -1179,7 +1179,7 @@ public class Parser extends haxe.lang.HxObject
 		if (( state == 1 )) 
 		{
 			//line 370 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-			start = __temp_p140;
+			start = __temp_p139;
 			//line 371 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 			state = 13;
 		}
@@ -1188,10 +1188,10 @@ public class Parser extends haxe.lang.HxObject
 		if (( state == 13 )) 
 		{
 			//line 376 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-			if (( ( __temp_p140 != start ) || ( nsubs == 0 ) )) 
+			if (( ( __temp_p139 != start ) || ( nsubs == 0 ) )) 
 			{
 				//line 377 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-				buf.addSub(str, start, ( __temp_p140 - start ));
+				buf.addSub(str, start, ( __temp_p139 - start ));
 				//line 378 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 				{
 					//line 378 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
@@ -1205,7 +1205,7 @@ public class Parser extends haxe.lang.HxObject
 			}
 			
 			//line 380 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-			return __temp_p140;
+			return __temp_p139;
 		}
 		
 		//line 383 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
@@ -1214,7 +1214,7 @@ public class Parser extends haxe.lang.HxObject
 			//line 384 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 			buf.addChar(38);
 			//line 385 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-			buf.addSub(str, start, ( __temp_p140 - start ));
+			buf.addSub(str, start, ( __temp_p139 - start ));
 			//line 386 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
 			{
 				//line 386 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
@@ -1226,7 +1226,7 @@ public class Parser extends haxe.lang.HxObject
 			}
 			
 			//line 387 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"
-			return __temp_p140;
+			return __temp_p139;
 		}
 		
 		//line 390 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\xml\\Parser.hx"

@@ -23,7 +23,7 @@ public class ResponseList extends haxe.lang.HxObject
 	}
 	
 	
-	public static void __hx_ctor_haxe_thnx_socket_ResponseList(haxe.thnx.socket.ResponseList __temp_me130)
+	public static void __hx_ctor_haxe_thnx_socket_ResponseList(haxe.thnx.socket.ResponseList __temp_me129)
 	{
 	}
 	

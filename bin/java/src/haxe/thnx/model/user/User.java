@@ -17,12 +17,12 @@ public class User extends haxe.lang.HxObject
 	}
 	
 	
-	public static void __hx_ctor_haxe_thnx_model_user_User(haxe.thnx.model.user.User __temp_me129, java.lang.String ID, java.lang.String name)
+	public static void __hx_ctor_haxe_thnx_model_user_User(haxe.thnx.model.user.User __temp_me128, java.lang.String ID, java.lang.String name)
 	{
 		//line 33 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\user\\User.hx"
-		__temp_me129.ID = ID;
+		__temp_me128.ID = ID;
 		//line 34 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\user\\User.hx"
-		__temp_me129.name = name;
+		__temp_me128.name = name;
 	}
 	
 	

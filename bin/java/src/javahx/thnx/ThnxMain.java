@@ -26,10 +26,10 @@ public class ThnxMain extends haxe.at.dotpoint.core.dispatcher.event.EventDispat
 	}
 	
 	
-	public static void __hx_ctor_javahx_thnx_ThnxMain(javahx.thnx.ThnxMain __temp_me148, haxe.at.dotpoint.core.dispatcher.event.IEventDispatcher proxy)
+	public static void __hx_ctor_javahx_thnx_ThnxMain(javahx.thnx.ThnxMain __temp_me147, haxe.at.dotpoint.core.dispatcher.event.IEventDispatcher proxy)
 	{
 		//line 75 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\ThnxMain.hx"
-		haxe.at.dotpoint.core.dispatcher.event.EventDispatcher.__hx_ctor_haxe_at_dotpoint_core_dispatcher_event_EventDispatcher(__temp_me148, proxy);
+		haxe.at.dotpoint.core.dispatcher.event.EventDispatcher.__hx_ctor_haxe_at_dotpoint_core_dispatcher_event_EventDispatcher(__temp_me147, proxy);
 	}
 	
 	

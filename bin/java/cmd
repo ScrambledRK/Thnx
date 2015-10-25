@@ -148,7 +148,6 @@ src/haxe/thnx/model/EntityFactory.java
 src/sys/at/dotpoint/loader/processor/loader/BitmapLoader.java
 src/haxe/xml/Parser.java
 src/haxe/thnx/model/entities/BulletEntity.java
-src/haxe/thnx/model/enums/Alliance.java
 src/haxe/at/dotpoint/loader/processor/IDataRequest.java
 src/haxe/at/dotpoint/math/vector/IQuaternion.java
 src/haxe/at/dotpoint/display/renderable/bitmap/BitmapData.java
@@ -169,7 +168,6 @@ src/haxe/lang/FieldLookup.java
 src/haxe/thnx/model/tileset/Tileset.java
 src/haxe/at/dotpoint/spatial/ISpatialEntity.java
 src/sys/io/File.java
-src/haxe/thnx/model/components/PowerupEffect.java
 src/haxe/at/dotpoint/math/vector/IMatrix33.java
 src/haxe/at/dotpoint/core/datastructure/graph/TreeNode.java
 src/haxe/at/dotpoint/math/vector/IMatrix44.java

@@ -798,8 +798,6 @@ M haxe.thnx.model.entities.BulletEntity
 C haxe.thnx.model.entities.BulletEntity
 M java.awt.Point
 M java.awt.event.InputMethodListener
-M haxe.thnx.model.enums.Alliance
-E haxe.thnx.model.enums.Alliance
 M java.util.concurrent.TimeUnit
 M haxe.at.dotpoint.loader.processor.IDataRequest
 C haxe.at.dotpoint.loader.processor.IDataRequest
@@ -919,8 +917,6 @@ M sys.io.File
 C sys.io.File
 M java.javax.swing.JPanel
 M javax.swing.plaf.RootPaneUI
-M haxe.thnx.model.components.PowerupEffect
-C haxe.thnx.model.components.PowerupEffect
 M java.lang.StringBuffer
 M java.util.Queue
 M haxe.at.dotpoint.math.vector.IMatrix33

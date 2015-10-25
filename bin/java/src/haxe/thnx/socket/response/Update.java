@@ -21,10 +21,10 @@ public class Update extends haxe.thnx.socket.response.SocketResponse
 	}
 	
 	
-	public static void __hx_ctor_haxe_thnx_socket_response_Update(haxe.thnx.socket.response.Update __temp_me138)
+	public static void __hx_ctor_haxe_thnx_socket_response_Update(haxe.thnx.socket.response.Update __temp_me137)
 	{
 		//line 28 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\socket\\response\\UpdateResponse.hx"
-		haxe.thnx.socket.response.SocketResponse.__hx_ctor_haxe_thnx_socket_response_SocketResponse(__temp_me138, "update");
+		haxe.thnx.socket.response.SocketResponse.__hx_ctor_haxe_thnx_socket_response_SocketResponse(__temp_me137, "update");
 	}
 	
 	

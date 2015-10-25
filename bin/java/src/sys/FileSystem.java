@@ -17,7 +17,7 @@ public class FileSystem extends haxe.lang.HxObject
 	}
 	
 	
-	public static void __hx_ctor_sys_FileSystem(sys.FileSystem __temp_me155)
+	public static void __hx_ctor_sys_FileSystem(sys.FileSystem __temp_me154)
 	{
 	}
 	

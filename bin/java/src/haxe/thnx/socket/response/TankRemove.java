@@ -21,10 +21,10 @@ public class TankRemove extends haxe.thnx.socket.response.SocketResponse
 	}
 	
 	
-	public static void __hx_ctor_haxe_thnx_socket_response_TankRemove(haxe.thnx.socket.response.TankRemove __temp_me136)
+	public static void __hx_ctor_haxe_thnx_socket_response_TankRemove(haxe.thnx.socket.response.TankRemove __temp_me135)
 	{
 		//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\socket\\response\\TankResponse.hx"
-		haxe.thnx.socket.response.SocketResponse.__hx_ctor_haxe_thnx_socket_response_SocketResponse(__temp_me136, "tank.delete");
+		haxe.thnx.socket.response.SocketResponse.__hx_ctor_haxe_thnx_socket_response_SocketResponse(__temp_me135, "tank.delete");
 	}
 	
 	

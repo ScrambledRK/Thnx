@@ -21,10 +21,10 @@ public class Init extends haxe.thnx.socket.response.SocketResponse
 	}
 	
 	
-	public static void __hx_ctor_haxe_thnx_socket_response_Init(haxe.thnx.socket.response.Init __temp_me137)
+	public static void __hx_ctor_haxe_thnx_socket_response_Init(haxe.thnx.socket.response.Init __temp_me136)
 	{
 		//line 12 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\socket\\response\\UpdateResponse.hx"
-		haxe.thnx.socket.response.SocketResponse.__hx_ctor_haxe_thnx_socket_response_SocketResponse(__temp_me137, "init");
+		haxe.thnx.socket.response.SocketResponse.__hx_ctor_haxe_thnx_socket_response_SocketResponse(__temp_me136, "init");
 	}
 	
 	

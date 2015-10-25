@@ -1,4 +1,5 @@
 package haxe.thnx.model.entities;
+
 import haxe.at.dotpoint.math.vector.Vector2;
 
 /**

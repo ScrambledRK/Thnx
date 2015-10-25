@@ -21,14 +21,14 @@ public class TankCannon extends haxe.at.dotpoint.core.entity.Component<haxe.thnx
 	}
 	
 	
-	public static void __hx_ctor_haxe_thnx_model_components_TankCannon(haxe.thnx.model.components.TankCannon __temp_me120)
+	public static void __hx_ctor_haxe_thnx_model_components_TankCannon(haxe.thnx.model.components.TankCannon __temp_me119)
 	{
 		//line 34 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\components\\TankCannon.hx"
-		haxe.at.dotpoint.core.entity.Component.__hx_ctor_haxe_at_dotpoint_core_entity_Component(__temp_me120);
+		haxe.at.dotpoint.core.entity.Component.__hx_ctor_haxe_at_dotpoint_core_entity_Component(__temp_me119);
 		//line 36 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\components\\TankCannon.hx"
-		__temp_me120.rotation = new haxe.at.dotpoint.math.vector.Quaternion(null, null, null, null);
+		__temp_me119.rotation = new haxe.at.dotpoint.math.vector.Quaternion(null, null, null, null);
 		//line 37 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\components\\TankCannon.hx"
-		__temp_me120.isShooting = false;
+		__temp_me119.isShooting = false;
 	}
 	
 	

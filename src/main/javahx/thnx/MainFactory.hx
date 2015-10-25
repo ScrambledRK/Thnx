@@ -1,10 +1,8 @@
 package javahx.thnx;
+
 import haxe.thnx.IMainFactory;
 import haxe.thnx.socket.IClientSocket;
-import haxe.thnx.socket.ResponseList;
 import haxe.thnx.view.IViewController;
-import javahx.thnx.socket.ClientSocket;
-import javahx.thnx.view.ViewController;
 
 /**
  * ...

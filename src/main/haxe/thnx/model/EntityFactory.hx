@@ -1,16 +1,11 @@
 package haxe.thnx.model;
-import haxe.at.dotpoint.math.Axis;
-import haxe.at.dotpoint.math.MathUtil;
-import haxe.at.dotpoint.math.vector.Quaternion;
+
 import haxe.at.dotpoint.spatial.boundings.BoundingChangePolicy;
 import haxe.thnx.model.entities.BulletEntity;
 import haxe.thnx.model.entities.PowerupEntity;
 import haxe.thnx.model.entities.TankEntity;
-import haxe.thnx.model.enums.Alliance;
 import haxe.thnx.model.enums.PowerupType;
 import haxe.thnx.model.enums.TeamColor;
-import haxe.thnx.model.user.User;
-import javahx.thnx.ThnxMain;
 
 /**
  * ...
