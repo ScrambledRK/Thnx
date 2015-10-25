@@ -1,2 +1,2 @@
-Main-Class: javahx.ThnxMain
+Main-Class: javahx.thnx.ThnxMain
 Class-Path: lib/Java-WebSocket-1.2.1.jar

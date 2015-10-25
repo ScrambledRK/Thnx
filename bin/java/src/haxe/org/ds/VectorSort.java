@@ -17,7 +17,7 @@ public class VectorSort extends haxe.lang.HxObject
 	}
 	
 	
-	public static void __hx_ctor_haxe_org_ds_VectorSort(haxe.org.ds.VectorSort __temp_me126)
+	public static void __hx_ctor_haxe_org_ds_VectorSort(haxe.org.ds.VectorSort __temp_me110)
 	{
 	}
 	

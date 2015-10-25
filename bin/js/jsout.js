@@ -541,15 +541,15 @@ js_Boot.__isNativeObj = function(o) {
 js_Boot.__resolveNativeClass = function(name) {
 	return (Function("return typeof " + name + " != \"undefined\" ? " + name + " : null"))();
 };
-var js_MainJS = function() {
+var js_thnx_MainJS = function() {
 	this.gameURL = "http://apps.playcanvas.com.s3-website-eu-west-1.amazonaws.com/R4GZNWYr/";
 };
-js_MainJS.__name__ = ["js","MainJS"];
-js_MainJS.main = function() {
-	js_MainJS.instance = new js_MainJS();
-	js_MainJS.instance.initialize();
+js_thnx_MainJS.__name__ = ["js","thnx","MainJS"];
+js_thnx_MainJS.main = function() {
+	js_thnx_MainJS.instance = new js_thnx_MainJS();
+	js_thnx_MainJS.instance.initialize();
 };
-js_MainJS.prototype = {
+js_thnx_MainJS.prototype = {
 	initialize: function() {
 		haxe_at_dotpoint_logger_Log.initialize();
 		this.connectAI();
@@ -577,15 +577,15 @@ js_MainJS.prototype = {
 		haxe_Timer.delay($bind(this,this.connectAI),2000);
 	}
 	,onServerError: function(event) {
-		haxe_Log.trace("AI-Connection:error",{ fileName : "MainJS.hx", lineNumber : 130, className : "js.MainJS", methodName : "onServerError"});
+		haxe_Log.trace("AI-Connection:error",{ fileName : "MainJS.hx", lineNumber : 130, className : "js.thnx.MainJS", methodName : "onServerError"});
 		this.reconnectAI();
 	}
 	,onServerOpen: function(event) {
-		haxe_Log.trace("AI-Connection:successful",{ fileName : "MainJS.hx", lineNumber : 140, className : "js.MainJS", methodName : "onServerOpen"});
+		haxe_Log.trace("AI-Connection:successful",{ fileName : "MainJS.hx", lineNumber : 140, className : "js.thnx.MainJS", methodName : "onServerOpen"});
 		if(!this.isInitialized) this.openFrame(); else window.location.reload();
 	}
 	,onServerClose: function(event) {
-		haxe_Log.trace("AI-Connection:close",{ fileName : "MainJS.hx", lineNumber : 152, className : "js.MainJS", methodName : "onServerClose"});
+		haxe_Log.trace("AI-Connection:close",{ fileName : "MainJS.hx", lineNumber : 152, className : "js.thnx.MainJS", methodName : "onServerClose"});
 		if(this.serverAI != null && (this.serverAI.readyState == 2 || this.serverAI.readyState == 3)) this.reconnectAI();
 	}
 	,onServerMessage: function(event) {
@@ -594,7 +594,7 @@ js_MainJS.prototype = {
 	,onGameMessage: function(message) {
 		if(message != null) this.serverAI.send(message.data);
 	}
-	,__class__: js_MainJS
+	,__class__: js_thnx_MainJS
 };
 var $_, $fid = 0;
 function $bind(o,m) { if( m == null ) return null; if( m.__id__ == null ) m.__id__ = $fid++; var f; if( o.hx__closures__ == null ) o.hx__closures__ = {}; else f = o.hx__closures__[m.__id__]; if( f == null ) { f = function(){ return f.method.apply(f.scope, arguments); }; f.scope = o; f.method = m; o.hx__closures__[m.__id__] = f; } return f; }
@@ -610,7 +610,7 @@ Bool.__ename__ = ["Bool"];
 var Class = { __name__ : ["Class"]};
 var Enum = { };
 js_Boot.__toStr = {}.toString;
-js_MainJS.main();
+js_thnx_MainJS.main();
 })(typeof console != "undefined" ? console : {log:function(){}});
 
 //# sourceMappingURL=jsout.js.map

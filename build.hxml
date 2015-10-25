@@ -1,7 +1,7 @@
 ## ################################
 ## Java
 
--main javahx.ThnxMain
+-main javahx.thnx.ThnxMain
 
 -cp src/main
 -cp lib/dotCore/src/main
@@ -17,7 +17,7 @@
 
 --next
 
--main js.MainJS
+-main js.thnx.MainJS
 
 -cp src/main
 -cp lib/dotCore/src/main

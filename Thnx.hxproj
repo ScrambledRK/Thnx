@@ -25,7 +25,7 @@
     <option directives="" />
     <option flashStrict="False" />
     <option noInlineOnDebug="False" />
-    <option mainClass="js.MainJS" />
+    <option mainClass="js.thnx.MainJS" />
     <option enabledebug="False" />
     <option additional="-java-lib lib/Java-WebSocket-1.2.1.jar" />
   </build>
@@ -37,7 +37,7 @@
   <compileTargets>
     <compile path="src\interactive\Main.hx" />
     <compile path="src\main\js\Main.hx" />
-    <compile path="src\main\js\MainJS.hx" />
+    <compile path="src\main\js\thnx\MainJS.hx" />
   </compileTargets>
   <!-- Paths to exclude from the Project Explorer tree -->
   <hiddenPaths>
