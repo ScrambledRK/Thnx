@@ -2,9 +2,6 @@ src/haxe/at/dotpoint/math/Axis.java
 src/haxe/at/dotpoint/math/AxisDirection.java
 src/haxe/at/dotpoint/math/AxisRelative.java
 src/haxe/at/dotpoint/math/AxisOrientation.java
-src/haxe/thnx/loader/WorldParser.java
-src/haxe/thnx/loader/WorldParser_sortRectangles_209__Fun.java
-src/haxe/thnx/loader/WorldParser_sortRectangles_218__Fun.java
 src/haxe/root/Std.java
 src/haxe/at/dotpoint/loader/format/IDataFormat.java
 src/haxe/thnx/socket/response/TankNew.java
@@ -34,6 +31,8 @@ src/haxe/lang/Closure.java
 src/haxe/at/dotpoint/core/StringTool.java
 src/haxe/root/StringTools.java
 src/haxe/at/dotpoint/math/geom/Space.java
+src/haxe/at/dotpoint/math/Trigonometry.java
+src/haxe/at/dotpoint/math/DistanceMethod.java
 src/haxe/root/Reflect.java
 src/haxe/at/dotpoint/spatial/boundings/AABB.java
 src/haxe/ds/_Vector/Vector_Impl_.java
@@ -42,6 +41,7 @@ src/haxe/at/dotpoint/math/vector/EulerRotation.java
 src/haxe/thnx/model/components/TankCannon.java
 src/haxe/at/dotpoint/spatial/boundings/Boundings.java
 src/haxe/at/dotpoint/math/lazy/LazyCube.java
+src/haxe/thnx/event/SocketEvent.java
 src/haxe/at/dotpoint/math/vector/Vector3.java
 src/javahx/thnx/socket/ClientSocket.java
 src/haxe/at/dotpoint/core/entity/IEntity.java
@@ -75,6 +75,7 @@ src/haxe/at/dotpoint/loader/processor/parser/XMLParser.java
 src/haxe/at/dotpoint/loader/processor/parser/NullParser.java
 src/haxe/at/dotpoint/math/color/ColorUtil.java
 src/haxe/at/dotpoint/loader/format/StringFormat.java
+src/haxe/thnx/loader/TilesetRequest.java
 src/haxe/thnx/model/tileset/Tile.java
 src/haxe/at/dotpoint/math/geom/Cube.java
 src/haxe/at/dotpoint/loader/processor/ABasicDataProcessor.java
@@ -91,7 +92,6 @@ src/haxe/at/dotpoint/loader/format/BitmapFormat.java
 src/haxe/at/dotpoint/logger/logger/BaseLogger.java
 src/haxe/io/Input.java
 src/haxe/root/Xml.java
-src/javahx/thnx/MainFactory.java
 src/haxe/at/dotpoint/core/entity/Entity.java
 src/haxe/at/dotpoint/loader/processor/parser/JSONParser.java
 src/haxe/thnx/model/enums/TeamColor.java
@@ -117,10 +117,10 @@ src/haxe/at/dotpoint/core/dispatcher/IDispatcher.java
 src/haxe/at/dotpoint/spatial/transform/ITransform.java
 src/haxe/at/dotpoint/loader/processor/IBasicDataProcessor.java
 src/haxe/at/dotpoint/loader/processor/IDataProcessor.java
-src/haxe/thnx/view/NullViewController.java
 src/haxe/at/dotpoint/loader/_URLRequest/DotURLRequest.java
 src/haxe/at/dotpoint/loader/URLRequestMethod.java
 src/haxe/at/dotpoint/loader/processor/loader/IDataLoader.java
+src/haxe/at/dotpoint/math/Limit.java
 src/haxe/at/dotpoint/math/vector/IVector2.java
 src/haxe/root/Sys.java
 src/haxe/thnx/model/entities/PowerupEntity.java
@@ -130,6 +130,9 @@ src/haxe/format/JsonPrinter.java
 src/haxe/thnx/model/enums/PowerupType.java
 src/haxe/root/Date.java
 src/javahx/thnx/view/ViewController.java
+src/haxe/thnx/loader/TilesetParser.java
+src/haxe/thnx/loader/TilesetParser_sortRectangles_206__Fun.java
+src/haxe/thnx/loader/TilesetParser_sortRectangles_215__Fun.java
 src/haxe/io/Error.java
 src/haxe/io/Error.java
 src/javahx/thnx/ThnxMain.java
@@ -137,14 +140,12 @@ src/haxe/at/dotpoint/loader/DataRequest.java
 src/javahx/thnx/view/DebugCanvas.java
 src/haxe/io/Bytes.java
 src/haxe/at/dotpoint/spatial/event/SpatialEvent.java
-src/haxe/thnx/IMainFactory.java
 src/haxe/thnx/model/entities/TankEntity.java
 src/haxe/java/Lib.java
 src/haxe/IMap.java
 src/haxe/at/dotpoint/logger/logger/ILogger.java
 src/haxe/thnx/model/EntityFactory.java
 src/sys/at/dotpoint/loader/processor/loader/BitmapLoader.java
-src/haxe/thnx/loader/WorldRequest.java
 src/haxe/xml/Parser.java
 src/haxe/thnx/model/entities/BulletEntity.java
 src/haxe/thnx/model/enums/Alliance.java

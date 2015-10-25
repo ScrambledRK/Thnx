@@ -21,12 +21,12 @@ public class PowerupEntity extends haxe.thnx.model.entities.WorldEntity
 	}
 	
 	
-	public static void __hx_ctor_haxe_thnx_model_entities_PowerupEntity(haxe.thnx.model.entities.PowerupEntity __temp_me122, int ID, haxe.thnx.model.enums.PowerupType type)
+	public static void __hx_ctor_haxe_thnx_model_entities_PowerupEntity(haxe.thnx.model.entities.PowerupEntity __temp_me125, int ID, haxe.thnx.model.enums.PowerupType type)
 	{
 		//line 29 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\entities\\PowerupEntity.hx"
-		haxe.thnx.model.entities.WorldEntity.__hx_ctor_haxe_thnx_model_entities_WorldEntity(__temp_me122, ID, null);
+		haxe.thnx.model.entities.WorldEntity.__hx_ctor_haxe_thnx_model_entities_WorldEntity(__temp_me125, ID, null);
 		//line 30 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\entities\\PowerupEntity.hx"
-		__temp_me122.type = type;
+		__temp_me125.type = type;
 	}
 	
 	

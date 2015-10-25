@@ -21,10 +21,10 @@ public class UserAdd extends haxe.thnx.socket.response.SocketResponse
 	}
 	
 	
-	public static void __hx_ctor_haxe_thnx_socket_response_UserAdd(haxe.thnx.socket.response.UserAdd __temp_me129)
+	public static void __hx_ctor_haxe_thnx_socket_response_UserAdd(haxe.thnx.socket.response.UserAdd __temp_me132)
 	{
 		//line 13 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\socket\\response\\LobbyResponse.hx"
-		haxe.thnx.socket.response.SocketResponse.__hx_ctor_haxe_thnx_socket_response_SocketResponse(__temp_me129, "user.add");
+		haxe.thnx.socket.response.SocketResponse.__hx_ctor_haxe_thnx_socket_response_SocketResponse(__temp_me132, "user.add");
 	}
 	
 	

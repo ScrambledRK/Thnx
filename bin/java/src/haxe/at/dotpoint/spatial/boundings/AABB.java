@@ -21,10 +21,10 @@ public class AABB extends haxe.at.dotpoint.math.lazy.LazyCube
 	}
 	
 	
-	public static void __hx_ctor_haxe_at_dotpoint_spatial_boundings_AABB(haxe.at.dotpoint.spatial.boundings.AABB __temp_me99, haxe.at.dotpoint.math.vector.IVector3 pivot)
+	public static void __hx_ctor_haxe_at_dotpoint_spatial_boundings_AABB(haxe.at.dotpoint.spatial.boundings.AABB __temp_me101, haxe.at.dotpoint.math.vector.IVector3 pivot)
 	{
 		//line 23 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\spatial\\boundings\\AABB.hx"
-		haxe.at.dotpoint.math.lazy.LazyCube.__hx_ctor_haxe_at_dotpoint_math_lazy_LazyCube(__temp_me99, pivot);
+		haxe.at.dotpoint.math.lazy.LazyCube.__hx_ctor_haxe_at_dotpoint_math_lazy_LazyCube(__temp_me101, pivot);
 	}
 	
 	

@@ -17,16 +17,16 @@ public class Vector2 extends haxe.lang.HxObject implements haxe.at.dotpoint.math
 	}
 	
 	
-	public static void __hx_ctor_haxe_at_dotpoint_math_vector_Vector2(haxe.at.dotpoint.math.vector.Vector2 __temp_me95, java.lang.Object x, java.lang.Object y)
+	public static void __hx_ctor_haxe_at_dotpoint_math_vector_Vector2(haxe.at.dotpoint.math.vector.Vector2 __temp_me97, java.lang.Object x, java.lang.Object y)
 	{
 		//line 29 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\math\\vector\\Vector2.hx"
-		double __temp_y94 = ( (haxe.lang.Runtime.eq(y, null)) ? (((double) (0) )) : (((double) (haxe.lang.Runtime.toDouble(y)) )) );
+		double __temp_y96 = ( (haxe.lang.Runtime.eq(y, null)) ? (((double) (0) )) : (((double) (haxe.lang.Runtime.toDouble(y)) )) );
 		//line 29 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\math\\vector\\Vector2.hx"
-		double __temp_x93 = ( (haxe.lang.Runtime.eq(x, null)) ? (((double) (0) )) : (((double) (haxe.lang.Runtime.toDouble(x)) )) );
+		double __temp_x95 = ( (haxe.lang.Runtime.eq(x, null)) ? (((double) (0) )) : (((double) (haxe.lang.Runtime.toDouble(x)) )) );
 		//line 30 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\math\\vector\\Vector2.hx"
-		__temp_me95.set_x(__temp_x93);
+		__temp_me97.set_x(__temp_x95);
 		//line 31 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\math\\vector\\Vector2.hx"
-		__temp_me95.set_y(__temp_y94);
+		__temp_me97.set_y(__temp_y96);
 	}
 	
 	

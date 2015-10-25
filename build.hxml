@@ -7,6 +7,8 @@
 -cp lib/dotCore/src/main
 -java-lib lib/Java-WebSocket-1.2.1.jar
 
+--macro include('haxe.at.dotpoint.math')
+
 -D display
 -D haxe3
 

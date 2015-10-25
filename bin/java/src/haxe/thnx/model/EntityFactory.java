@@ -17,7 +17,7 @@ public class EntityFactory extends haxe.lang.HxObject
 	}
 	
 	
-	public static void __hx_ctor_haxe_thnx_model_EntityFactory(haxe.thnx.model.EntityFactory __temp_me113)
+	public static void __hx_ctor_haxe_thnx_model_EntityFactory(haxe.thnx.model.EntityFactory __temp_me116)
 	{
 	}
 	

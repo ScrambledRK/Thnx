@@ -21,24 +21,24 @@ public class SpatialEntity extends haxe.at.dotpoint.core.entity.Entity implement
 	}
 	
 	
-	public static void __hx_ctor_haxe_at_dotpoint_spatial_SpatialEntity(haxe.at.dotpoint.spatial.SpatialEntity __temp_me98, java.lang.Object numComponents, haxe.at.dotpoint.math.vector.IVector3 pivot)
+	public static void __hx_ctor_haxe_at_dotpoint_spatial_SpatialEntity(haxe.at.dotpoint.spatial.SpatialEntity __temp_me100, java.lang.Object numComponents, haxe.at.dotpoint.math.vector.IVector3 pivot)
 	{
 		//line 57 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\spatial\\SpatialEntity.hx"
-		java.lang.Object __temp_numComponents97 = ( (haxe.lang.Runtime.eq(numComponents, null)) ? (((java.lang.Object) (3) )) : (numComponents) );
+		java.lang.Object __temp_numComponents99 = ( (haxe.lang.Runtime.eq(numComponents, null)) ? (((java.lang.Object) (3) )) : (numComponents) );
 		//line 58 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\spatial\\SpatialEntity.hx"
-		haxe.at.dotpoint.core.entity.Entity.__hx_ctor_haxe_at_dotpoint_core_entity_Entity(__temp_me98, __temp_numComponents97);
+		haxe.at.dotpoint.core.entity.Entity.__hx_ctor_haxe_at_dotpoint_core_entity_Entity(__temp_me100, __temp_numComponents99);
 		//line 60 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\spatial\\SpatialEntity.hx"
-		__temp_me98.transform = new haxe.at.dotpoint.spatial.transform.Transform<haxe.at.dotpoint.spatial.SpatialEntity>();
+		__temp_me100.transform = new haxe.at.dotpoint.spatial.transform.Transform<haxe.at.dotpoint.spatial.SpatialEntity>();
 		//line 61 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\spatial\\SpatialEntity.hx"
-		__temp_me98.boundings = new haxe.at.dotpoint.spatial.boundings.Boundings<haxe.at.dotpoint.spatial.SpatialEntity>(null, pivot);
+		__temp_me100.boundings = new haxe.at.dotpoint.spatial.boundings.Boundings<haxe.at.dotpoint.spatial.SpatialEntity>(null, pivot);
 		//line 62 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\spatial\\SpatialEntity.hx"
-		__temp_me98.spatialNode = new haxe.at.dotpoint.core.datastructure.graph.TreeNode<haxe.at.dotpoint.spatial.SpatialEntity>(((java.lang.Object) (null) ));
+		__temp_me100.spatialNode = new haxe.at.dotpoint.core.datastructure.graph.TreeNode<haxe.at.dotpoint.spatial.SpatialEntity>(((java.lang.Object) (null) ));
 		//line 64 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\spatial\\SpatialEntity.hx"
-		__temp_me98.addComponent(((haxe.at.dotpoint.core.entity.IComponent) (__temp_me98.spatialNode) ));
+		__temp_me100.addComponent(((haxe.at.dotpoint.core.entity.IComponent) (__temp_me100.spatialNode) ));
 		//line 65 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\spatial\\SpatialEntity.hx"
-		__temp_me98.addComponent(((haxe.at.dotpoint.core.entity.IComponent) (__temp_me98.transform) ));
+		__temp_me100.addComponent(((haxe.at.dotpoint.core.entity.IComponent) (__temp_me100.transform) ));
 		//line 66 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\spatial\\SpatialEntity.hx"
-		__temp_me98.addComponent(((haxe.at.dotpoint.core.entity.IComponent) (__temp_me98.boundings) ));
+		__temp_me100.addComponent(((haxe.at.dotpoint.core.entity.IComponent) (__temp_me100.boundings) ));
 	}
 	
 	
@@ -120,7 +120,7 @@ public class SpatialEntity extends haxe.at.dotpoint.core.entity.Entity implement
 	@Override public boolean removeComponent(haxe.at.dotpoint.core.entity.IComponent component, java.lang.Object destroy)
 	{
 		//line 127 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\spatial\\SpatialEntity.hx"
-		java.lang.Object __temp_destroy96 = ( (haxe.lang.Runtime.eq(destroy, null)) ? (((java.lang.Object) (true) )) : (destroy) );
+		java.lang.Object __temp_destroy98 = ( (haxe.lang.Runtime.eq(destroy, null)) ? (((java.lang.Object) (true) )) : (destroy) );
 		//line 128 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\spatial\\SpatialEntity.hx"
 		if (( component == this.transform )) 
 		{
@@ -143,7 +143,7 @@ public class SpatialEntity extends haxe.at.dotpoint.core.entity.Entity implement
 		}
 		
 		//line 137 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\spatial\\SpatialEntity.hx"
-		return super.removeComponent(component, __temp_destroy96);
+		return super.removeComponent(component, __temp_destroy98);
 	}
 	
 	

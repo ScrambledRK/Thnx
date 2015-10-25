@@ -21,10 +21,10 @@ public class UserRemove extends haxe.thnx.socket.response.SocketResponse
 	}
 	
 	
-	public static void __hx_ctor_haxe_thnx_socket_response_UserRemove(haxe.thnx.socket.response.UserRemove __temp_me130)
+	public static void __hx_ctor_haxe_thnx_socket_response_UserRemove(haxe.thnx.socket.response.UserRemove __temp_me133)
 	{
 		//line 26 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\socket\\response\\LobbyResponse.hx"
-		haxe.thnx.socket.response.SocketResponse.__hx_ctor_haxe_thnx_socket_response_SocketResponse(__temp_me130, "user.remove");
+		haxe.thnx.socket.response.SocketResponse.__hx_ctor_haxe_thnx_socket_response_SocketResponse(__temp_me133, "user.remove");
 	}
 	
 	

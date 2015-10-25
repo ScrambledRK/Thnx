@@ -17,18 +17,18 @@ public class Matrix44 extends haxe.lang.HxObject implements haxe.at.dotpoint.mat
 	}
 	
 	
-	public static void __hx_ctor_haxe_at_dotpoint_math_vector_Matrix44(haxe.at.dotpoint.math.vector.Matrix44 __temp_me87, haxe.at.dotpoint.math.vector.IMatrix44 matrix)
+	public static void __hx_ctor_haxe_at_dotpoint_math_vector_Matrix44(haxe.at.dotpoint.math.vector.Matrix44 __temp_me89, haxe.at.dotpoint.math.vector.IMatrix44 matrix)
 	{
 		//line 28 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\math\\vector\\Matrix44.hx"
 		if (( matrix != null )) 
 		{
 			//line 28 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\math\\vector\\Matrix44.hx"
-			__temp_me87.set44(matrix);
+			__temp_me89.set44(matrix);
 		}
 		else
 		{
 			//line 29 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\math\\vector\\Matrix44.hx"
-			__temp_me87.toIdentity();
+			__temp_me89.toIdentity();
 		}
 		
 	}

@@ -21,20 +21,20 @@ public class TankEntity extends haxe.thnx.model.entities.WorldEntity
 	}
 	
 	
-	public static void __hx_ctor_haxe_thnx_model_entities_TankEntity(haxe.thnx.model.entities.TankEntity __temp_me123, int ID, java.lang.String userID)
+	public static void __hx_ctor_haxe_thnx_model_entities_TankEntity(haxe.thnx.model.entities.TankEntity __temp_me126, int ID, java.lang.String userID)
 	{
 		//line 40 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\entities\\TankEntity.hx"
-		haxe.thnx.model.entities.WorldEntity.__hx_ctor_haxe_thnx_model_entities_WorldEntity(__temp_me123, ID, 8);
+		haxe.thnx.model.entities.WorldEntity.__hx_ctor_haxe_thnx_model_entities_WorldEntity(__temp_me126, ID, 8);
 		//line 42 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\entities\\TankEntity.hx"
-		__temp_me123.userID = userID;
+		__temp_me126.userID = userID;
 		//line 44 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\entities\\TankEntity.hx"
-		__temp_me123.status = new haxe.thnx.model.components.TankStatus(((java.lang.Object) (null) ));
+		__temp_me126.status = new haxe.thnx.model.components.TankStatus(((java.lang.Object) (null) ));
 		//line 45 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\entities\\TankEntity.hx"
-		__temp_me123.cannon = new haxe.thnx.model.components.TankCannon();
+		__temp_me126.cannon = new haxe.thnx.model.components.TankCannon();
 		//line 47 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\entities\\TankEntity.hx"
-		__temp_me123.addComponent(((haxe.at.dotpoint.core.entity.IComponent) (__temp_me123.status) ));
+		__temp_me126.addComponent(((haxe.at.dotpoint.core.entity.IComponent) (__temp_me126.status) ));
 		//line 48 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\entities\\TankEntity.hx"
-		__temp_me123.addComponent(((haxe.at.dotpoint.core.entity.IComponent) (__temp_me123.cannon) ));
+		__temp_me126.addComponent(((haxe.at.dotpoint.core.entity.IComponent) (__temp_me126.cannon) ));
 	}
 	
 	

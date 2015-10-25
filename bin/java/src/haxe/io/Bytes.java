@@ -17,12 +17,12 @@ public class Bytes extends haxe.lang.HxObject
 	}
 	
 	
-	public static void __hx_ctor_haxe_io_Bytes(haxe.io.Bytes __temp_me107, int length, byte[] b)
+	public static void __hx_ctor_haxe_io_Bytes(haxe.io.Bytes __temp_me109, int length, byte[] b)
 	{
 		//line 34 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\io\\Bytes.hx"
-		__temp_me107.length = length;
+		__temp_me109.length = length;
 		//line 35 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\io\\Bytes.hx"
-		__temp_me107.b = b;
+		__temp_me109.b = b;
 	}
 	
 	

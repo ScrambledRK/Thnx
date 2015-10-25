@@ -13,31 +13,21 @@ import javahx.thnx.view.ViewController;
 class MainFactory implements IMainFactory
 {
 
-	// ************************************************************************ //
-	// Constructor
-	// ************************************************************************ //
+	//
+	public function new() {}
 
-	public function new()
-	{
-
-	}
-
-	// ************************************************************************ //
-	// Methods
-	// ************************************************************************ //
+	// --------------------------------------------------------- //
+	// --------------------------------------------------------- //
 
 	//
 	public function createViewController():IViewController
 	{
-		return new ViewController();
+		return
 	}
 
 	//
 	public function createClientSocket( host:String, port:Int ):IClientSocket
 	{
-		var socket:IClientSocket = new ClientSocket( port );
-			socket.setResponseList( ResponseList.instance.getResponseList() );
-
-		return socket;
+		return ;
 	}
 }

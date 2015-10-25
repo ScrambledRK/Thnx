@@ -17,7 +17,7 @@ public class ColorUtil extends haxe.lang.HxObject
 	}
 	
 	
-	public static void __hx_ctor_haxe_at_dotpoint_math_color_ColorUtil(haxe.at.dotpoint.math.color.ColorUtil __temp_me67)
+	public static void __hx_ctor_haxe_at_dotpoint_math_color_ColorUtil(haxe.at.dotpoint.math.color.ColorUtil __temp_me69)
 	{
 	}
 	
@@ -193,9 +193,9 @@ public class ColorUtil extends haxe.lang.HxObject
 	public static java.lang.String toString(int value, java.lang.Object alpha)
 	{
 		//line 105 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\math\\color\\ColorUtil.hx"
-		boolean __temp_alpha66 = ( (haxe.lang.Runtime.eq(alpha, null)) ? (true) : (haxe.lang.Runtime.toBool(alpha)) );
+		boolean __temp_alpha68 = ( (haxe.lang.Runtime.eq(alpha, null)) ? (true) : (haxe.lang.Runtime.toBool(alpha)) );
 		//line 105 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\math\\color\\ColorUtil.hx"
-		return haxe.root.StringTools.hex(value, ( (__temp_alpha66) ? (8) : (6) ));
+		return haxe.root.StringTools.hex(value, ( (__temp_alpha68) ? (8) : (6) ));
 	}
 	
 	

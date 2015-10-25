@@ -17,24 +17,24 @@ public class Quaternion extends haxe.lang.HxObject implements haxe.at.dotpoint.m
 	}
 	
 	
-	public static void __hx_ctor_haxe_at_dotpoint_math_vector_Quaternion(haxe.at.dotpoint.math.vector.Quaternion __temp_me92, java.lang.Object x, java.lang.Object y, java.lang.Object z, java.lang.Object w)
+	public static void __hx_ctor_haxe_at_dotpoint_math_vector_Quaternion(haxe.at.dotpoint.math.vector.Quaternion __temp_me94, java.lang.Object x, java.lang.Object y, java.lang.Object z, java.lang.Object w)
 	{
 		//line 38 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\math\\vector\\Quaternion.hx"
-		double __temp_w91 = ( (haxe.lang.Runtime.eq(w, null)) ? (((double) (1) )) : (((double) (haxe.lang.Runtime.toDouble(w)) )) );
+		double __temp_w93 = ( (haxe.lang.Runtime.eq(w, null)) ? (((double) (1) )) : (((double) (haxe.lang.Runtime.toDouble(w)) )) );
 		//line 38 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\math\\vector\\Quaternion.hx"
-		double __temp_z90 = ( (haxe.lang.Runtime.eq(z, null)) ? (((double) (0) )) : (((double) (haxe.lang.Runtime.toDouble(z)) )) );
+		double __temp_z92 = ( (haxe.lang.Runtime.eq(z, null)) ? (((double) (0) )) : (((double) (haxe.lang.Runtime.toDouble(z)) )) );
 		//line 38 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\math\\vector\\Quaternion.hx"
-		double __temp_y89 = ( (haxe.lang.Runtime.eq(y, null)) ? (((double) (0) )) : (((double) (haxe.lang.Runtime.toDouble(y)) )) );
+		double __temp_y91 = ( (haxe.lang.Runtime.eq(y, null)) ? (((double) (0) )) : (((double) (haxe.lang.Runtime.toDouble(y)) )) );
 		//line 38 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\math\\vector\\Quaternion.hx"
-		double __temp_x88 = ( (haxe.lang.Runtime.eq(x, null)) ? (((double) (0) )) : (((double) (haxe.lang.Runtime.toDouble(x)) )) );
+		double __temp_x90 = ( (haxe.lang.Runtime.eq(x, null)) ? (((double) (0) )) : (((double) (haxe.lang.Runtime.toDouble(x)) )) );
 		//line 39 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\math\\vector\\Quaternion.hx"
-		__temp_me92.x = __temp_x88;
+		__temp_me94.x = __temp_x90;
 		//line 40 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\math\\vector\\Quaternion.hx"
-		__temp_me92.y = __temp_y89;
+		__temp_me94.y = __temp_y91;
 		//line 41 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\math\\vector\\Quaternion.hx"
-		__temp_me92.z = __temp_z90;
+		__temp_me94.z = __temp_z92;
 		//line 42 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\math\\vector\\Quaternion.hx"
-		__temp_me92.w = __temp_w91;
+		__temp_me94.w = __temp_w93;
 	}
 	
 	

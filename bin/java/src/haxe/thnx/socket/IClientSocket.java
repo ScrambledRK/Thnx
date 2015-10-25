@@ -5,8 +5,6 @@ import haxe.root.*;
 @SuppressWarnings(value={"rawtypes", "unchecked"})
 public interface IClientSocket extends haxe.lang.IHxObject
 {
-	void setResponseList(haxe.root.Array<haxe.thnx.socket.response.SocketResponse> list);
-	
 	void requestMove(double x, double y);
 	
 	void requestShoot(boolean isShooting);

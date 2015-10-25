@@ -1,22 +1,29 @@
 package javahx.thnx;
 
+import haxe.at.dotpoint.core.dispatcher.event.Event;
+import haxe.at.dotpoint.core.dispatcher.event.EventDispatcher;
 import haxe.at.dotpoint.core.dispatcher.event.generic.StatusEvent;
+import haxe.at.dotpoint.core.dispatcher.event.IEventDispatcher;
 import haxe.at.dotpoint.loader.URLRequest;
 import haxe.at.dotpoint.math.vector.Vector2;
-import haxe.thnx.IMainFactory;
-import haxe.thnx.loader.WorldRequest;
+import haxe.Json;
+import haxe.thnx.event.SocketEvent;
+import haxe.thnx.loader.TilesetRequest;
 import haxe.thnx.model.Lobby;
 import haxe.thnx.model.World;
 import haxe.thnx.socket.IClientSocket;
+import haxe.thnx.socket.ResponseList;
 import haxe.thnx.view.IViewController;
-import haxe.thnx.view.NullViewController;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import javahx.thnx.socket.ClientSocket;
+import javahx.thnx.view.ViewController;
+import haxe.at.dotpoint.math.Trigonometry;
 
 /**
  *
  */
-class ThnxMain
+class ThnxMain extends EventDispatcher
 {
 
 	/**
@@ -24,34 +31,29 @@ class ThnxMain
 	 */
 	public static var instance:ThnxMain;
 
+	// ------------------ //
+
 	/**
 	 *
 	 */
-	public static var factory:IMainFactory;
+	public var socket:IClientSocket;
+
+	/**
+	 *
+	 */
+	public var view:IViewController;
 
 	// ------------------ //
 
 	/**
 	 *
 	 */
-	public var socket(default, null):IClientSocket;
+	public var world:World;
 
 	/**
 	 *
 	 */
-	public var view(default, null):IViewController;
-
-	// ------------------ //
-
-	/**
-	 *
-	 */
-	public var world(default, null):World;
-
-	/**
-	 *
-	 */
-	public var lobby(default, null):Lobby;
+	public var lobby:Lobby;
 
 	// ************************************************************************ //
 	// Constructor
@@ -59,46 +61,76 @@ class ThnxMain
 
 	static public function main()
 	{
-		ThnxMain.factory  = new MainFactory();
 		ThnxMain.instance = new ThnxMain();
-		ThnxMain.instance.initialize( "res/level_definition.json" );
+
+		ThnxMain.instance.initView();
+		ThnxMain.instance.initModel();
+		ThnxMain.instance.startServer();
+
+		ThnxMain.instance.startConsoleCommands();
 	}
 
-	public function new()
+	public function new( ?proxy:IEventDispatcher )
 	{
-		//;
+		super( proxy );
 	}
 
 	// ************************************************************************ //
-	// Methodes
+	// Update
 	// ************************************************************************ //
 
 	/**
 	 *
 	 */
-	private function initialize( urlLevel:String, useView:Bool = true, autostart:Bool = true ):Void
+	private function onMessage( value:Event ):Void
 	{
-		if( useView )
+		this.respondeToMessage( cast( value, SocketEvent ).data );
+
+		if( this.view != null )
+			this.view.update();
+	}
+
+	/**
+	 *
+	 * @param	message
+	 */
+	public function respondeToMessage( message:String ):Void
+	{
+		var data:Dynamic = Json.parse( message );
+
+		for( response in ResponseList.instance.getResponseList() )
 		{
-			this.view = ThnxMain.factory.createViewController();
-			this.view.initialize( new Vector2( 480, 600 ) );
+			if( response.ID == data.n )
+			{
+				response.execute( data.d );
+				break;
+			}
 		}
-		else
+	}
+
+	// ************************************************************************ //
+	// Init
+	// ************************************************************************ //
+
+	/**
+	 *
+	 */
+	public function initModel( ?levelURL:String ):Void
+	{
+		if( this.lobby == null )
+			this.lobby = new Lobby();
+
+		if( this.world == null )
+			this.world = new World();
+
+		if( this.world.tileset == null )
 		{
-			this.view = new NullViewController();
+			if( levelURL == null )
+				levelURL = "res/level_definition.json";
+
+			var request:TilesetRequest = new TilesetRequest( new URLRequest( levelURL ) );
+				request.load( this.onLevelComplete );
 		}
-
-		// ---------------------- //
-
-		this.lobby = new Lobby();
-
-		var request:WorldRequest = new WorldRequest( new URLRequest( urlLevel ) );
-			request.load( this.onLevelComplete );
-
-		// ---------------------- //
-
-		if( autostart )
-			this.startServer();
 	}
 
 	/**
@@ -107,27 +139,44 @@ class ThnxMain
 	 */
 	private function onLevelComplete( event:StatusEvent ):Void
 	{
-		this.world = cast( event.target, WorldRequest ).result;
-		this.view.update();
+		this.world.tileset = cast( event.target, TilesetRequest ).result;
+
+		if( this.view != null )
+			this.view.update();
 	}
 
 	/**
 	 *
 	 */
-	private function startServer():Void
+	public function initView():Void
+	{
+		if( this.view == null )
+		{
+			this.view = new ViewController();
+			this.view.initialize( new Vector2( 480, 600 ) );
+		}
+	}
+
+	/**
+	 *
+	 */
+	public function startServer():Void
 	{
 		trace("starting server ...");
 
-		this.socket = ThnxMain.factory.createClientSocket( "localhost", 9998 );
-		this.socket.start();
+		if( this.socket == null )
+			this.socket = new ClientSocket( ThnxMain.instance, 9998 );
 
-		this.startListenSystemInput();
+		if(!this.hasListener( SocketEvent.MESSAGE_RECIEVED ) )
+			this.addListener( SocketEvent.MESSAGE_RECIEVED, this.onMessage );
+
+		this.socket.start();
 	}
 
 	/**
 	 *
 	 */
-	private function startListenSystemInput():Void
+	public function startConsoleCommands():Void
 	{
 		var sysin:BufferedReader = new BufferedReader( new InputStreamReader( java.lang.System._in ) );
 

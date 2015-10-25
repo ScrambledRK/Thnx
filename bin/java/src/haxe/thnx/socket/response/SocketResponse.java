@@ -17,10 +17,10 @@ public class SocketResponse extends haxe.lang.HxObject
 	}
 	
 	
-	public static void __hx_ctor_haxe_thnx_socket_response_SocketResponse(haxe.thnx.socket.response.SocketResponse __temp_me128, java.lang.String ID)
+	public static void __hx_ctor_haxe_thnx_socket_response_SocketResponse(haxe.thnx.socket.response.SocketResponse __temp_me131, java.lang.String ID)
 	{
 		//line 21 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\socket\\response\\SocketResponse.hx"
-		__temp_me128.ID = ID;
+		__temp_me131.ID = ID;
 	}
 	
 	

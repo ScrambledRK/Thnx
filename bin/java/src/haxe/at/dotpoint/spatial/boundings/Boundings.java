@@ -21,10 +21,10 @@ public class Boundings<TEntity> extends haxe.at.dotpoint.core.entity.Component<T
 	}
 	
 	
-	public static <TEntity_c> void __hx_ctor_haxe_at_dotpoint_spatial_boundings_Boundings(haxe.at.dotpoint.spatial.boundings.Boundings<TEntity_c> __temp_me100, haxe.at.dotpoint.spatial.boundings.BoundingChangePolicy policy, haxe.at.dotpoint.math.vector.IVector3 pivot)
+	public static <TEntity_c> void __hx_ctor_haxe_at_dotpoint_spatial_boundings_Boundings(haxe.at.dotpoint.spatial.boundings.Boundings<TEntity_c> __temp_me102, haxe.at.dotpoint.spatial.boundings.BoundingChangePolicy policy, haxe.at.dotpoint.math.vector.IVector3 pivot)
 	{
 		//line 72 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\spatial\\boundings\\Boundings.hx"
-		haxe.at.dotpoint.core.entity.Component.__hx_ctor_haxe_at_dotpoint_core_entity_Component(__temp_me100);
+		haxe.at.dotpoint.core.entity.Component.__hx_ctor_haxe_at_dotpoint_core_entity_Component(__temp_me102);
 		//line 74 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\spatial\\boundings\\Boundings.hx"
 		if (( policy == null )) 
 		{
@@ -33,19 +33,19 @@ public class Boundings<TEntity> extends haxe.at.dotpoint.core.entity.Component<T
 		}
 		
 		//line 77 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\spatial\\boundings\\Boundings.hx"
-		__temp_me100.changePolicy = policy;
+		__temp_me102.changePolicy = policy;
 		//line 78 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\spatial\\boundings\\Boundings.hx"
-		__temp_me100.measureChildren = true;
+		__temp_me102.measureChildren = true;
 		//line 80 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\spatial\\boundings\\Boundings.hx"
-		__temp_me100.modelSpace = new haxe.at.dotpoint.spatial.boundings.AABB(((haxe.at.dotpoint.math.vector.IVector3) (pivot) ));
+		__temp_me102.modelSpace = new haxe.at.dotpoint.spatial.boundings.AABB(((haxe.at.dotpoint.math.vector.IVector3) (pivot) ));
 		//line 81 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\spatial\\boundings\\Boundings.hx"
-		__temp_me100.localSpace = new haxe.at.dotpoint.spatial.boundings.AABB(((haxe.at.dotpoint.math.vector.IVector3) (pivot) ));
+		__temp_me102.localSpace = new haxe.at.dotpoint.spatial.boundings.AABB(((haxe.at.dotpoint.math.vector.IVector3) (pivot) ));
 		//line 82 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\spatial\\boundings\\Boundings.hx"
-		__temp_me100.worldSpace = new haxe.at.dotpoint.spatial.boundings.AABB(((haxe.at.dotpoint.math.vector.IVector3) (pivot) ));
+		__temp_me102.worldSpace = new haxe.at.dotpoint.spatial.boundings.AABB(((haxe.at.dotpoint.math.vector.IVector3) (pivot) ));
 		//line 84 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\spatial\\boundings\\Boundings.hx"
-		__temp_me100.statusLocalTransform = haxe.at.dotpoint.core.lazy.LazyStatus.VALID;
+		__temp_me102.statusLocalTransform = haxe.at.dotpoint.core.lazy.LazyStatus.VALID;
 		//line 85 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\spatial\\boundings\\Boundings.hx"
-		__temp_me100.statusWorldTransform = haxe.at.dotpoint.core.lazy.LazyStatus.VALID;
+		__temp_me102.statusWorldTransform = haxe.at.dotpoint.core.lazy.LazyStatus.VALID;
 	}
 	
 	

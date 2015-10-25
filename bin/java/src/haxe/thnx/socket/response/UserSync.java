@@ -21,10 +21,10 @@ public class UserSync extends haxe.thnx.socket.response.SocketResponse
 	}
 	
 	
-	public static void __hx_ctor_haxe_thnx_socket_response_UserSync(haxe.thnx.socket.response.UserSync __temp_me131)
+	public static void __hx_ctor_haxe_thnx_socket_response_UserSync(haxe.thnx.socket.response.UserSync __temp_me134)
 	{
 		//line 39 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\socket\\response\\LobbyResponse.hx"
-		haxe.thnx.socket.response.SocketResponse.__hx_ctor_haxe_thnx_socket_response_SocketResponse(__temp_me131, "user.sync");
+		haxe.thnx.socket.response.SocketResponse.__hx_ctor_haxe_thnx_socket_response_SocketResponse(__temp_me134, "user.sync");
 	}
 	
 	

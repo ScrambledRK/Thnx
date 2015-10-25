@@ -17,23 +17,23 @@ public class Cube extends haxe.lang.HxObject implements haxe.at.dotpoint.math.ge
 	}
 	
 	
-	public static void __hx_ctor_haxe_at_dotpoint_math_geom_Cube(haxe.at.dotpoint.math.geom.Cube __temp_me70, haxe.at.dotpoint.math.vector.IVector3 pivot)
+	public static void __hx_ctor_haxe_at_dotpoint_math_geom_Cube(haxe.at.dotpoint.math.geom.Cube __temp_me72, haxe.at.dotpoint.math.vector.IVector3 pivot)
 	{
 		//line 71 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\math\\geom\\Cube.hx"
-		__temp_me70.set_pivot(( (( pivot != null )) ? (pivot) : (((haxe.at.dotpoint.math.vector.IVector3) (haxe.at.dotpoint.math.AxisRelative.TOP_LEFT_FRONT) )) ));
+		__temp_me72.set_pivot(( (( pivot != null )) ? (pivot) : (((haxe.at.dotpoint.math.vector.IVector3) (haxe.at.dotpoint.math.AxisRelative.TOP_LEFT_FRONT) )) ));
 		//line 73 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\math\\geom\\Cube.hx"
-		__temp_me70.min = new haxe.at.dotpoint.math.vector.Vector3(null, null, null, null);
+		__temp_me72.min = new haxe.at.dotpoint.math.vector.Vector3(null, null, null, null);
 		//line 74 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\math\\geom\\Cube.hx"
-		__temp_me70.max = new haxe.at.dotpoint.math.vector.Vector3(null, null, null, null);
+		__temp_me72.max = new haxe.at.dotpoint.math.vector.Vector3(null, null, null, null);
 		//line 76 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\math\\geom\\Cube.hx"
-		__temp_me70.setEmpty();
+		__temp_me72.setEmpty();
 	}
 	
 	
 	public static boolean isCubeInside(haxe.at.dotpoint.math.geom.ICube cube, haxe.at.dotpoint.math.geom.ICube other, java.lang.Object equal)
 	{
 		//line 345 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\math\\geom\\Cube.hx"
-		java.lang.Object __temp_equal68 = ( (haxe.lang.Runtime.eq(equal, null)) ? (((java.lang.Object) (false) )) : (equal) );
+		java.lang.Object __temp_equal70 = ( (haxe.lang.Runtime.eq(equal, null)) ? (((java.lang.Object) (false) )) : (equal) );
 		//line 346 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\math\\geom\\Cube.hx"
 		if (( cube.isEmpty() || other.isEmpty() )) 
 		{
@@ -42,14 +42,14 @@ public class Cube extends haxe.lang.HxObject implements haxe.at.dotpoint.math.ge
 		}
 		
 		//line 349 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\math\\geom\\Cube.hx"
-		return ( haxe.at.dotpoint.math.geom.Cube.isVector3Inside(cube, other.get_min(), __temp_equal68) && haxe.at.dotpoint.math.geom.Cube.isVector3Inside(cube, other.get_max(), __temp_equal68) );
+		return ( haxe.at.dotpoint.math.geom.Cube.isVector3Inside(cube, other.get_min(), __temp_equal70) && haxe.at.dotpoint.math.geom.Cube.isVector3Inside(cube, other.get_max(), __temp_equal70) );
 	}
 	
 	
 	public static boolean isVector3Inside(haxe.at.dotpoint.math.geom.ICube cube, haxe.at.dotpoint.math.vector.IVector3 point, java.lang.Object equal)
 	{
 		//line 365 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\math\\geom\\Cube.hx"
-		java.lang.Object __temp_equal69 = ( (haxe.lang.Runtime.eq(equal, null)) ? (((java.lang.Object) (false) )) : (equal) );
+		java.lang.Object __temp_equal71 = ( (haxe.lang.Runtime.eq(equal, null)) ? (((java.lang.Object) (false) )) : (equal) );
 		//line 366 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\math\\geom\\Cube.hx"
 		if (cube.isEmpty()) 
 		{
@@ -58,7 +58,7 @@ public class Cube extends haxe.lang.HxObject implements haxe.at.dotpoint.math.ge
 		}
 		
 		//line 369 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\math\\geom\\Cube.hx"
-		if (haxe.lang.Runtime.toBool((__temp_equal69))) 
+		if (haxe.lang.Runtime.toBool((__temp_equal71))) 
 		{
 			//line 371 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\math\\geom\\Cube.hx"
 			if (( point.get_x() <= cube.get_min().get_x() )) 

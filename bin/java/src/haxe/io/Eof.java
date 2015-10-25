@@ -17,7 +17,7 @@ public class Eof extends haxe.lang.HxObject
 	}
 	
 	
-	public static void __hx_ctor_haxe_io_Eof(haxe.io.Eof __temp_me109)
+	public static void __hx_ctor_haxe_io_Eof(haxe.io.Eof __temp_me111)
 	{
 	}
 	

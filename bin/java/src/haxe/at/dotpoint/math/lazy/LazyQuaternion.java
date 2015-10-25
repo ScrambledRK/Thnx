@@ -17,20 +17,20 @@ public class LazyQuaternion extends haxe.lang.HxObject implements haxe.at.dotpoi
 	}
 	
 	
-	public static void __hx_ctor_haxe_at_dotpoint_math_lazy_LazyQuaternion(haxe.at.dotpoint.math.lazy.LazyQuaternion __temp_me80, java.lang.Object x, java.lang.Object y, java.lang.Object z, java.lang.Object w)
+	public static void __hx_ctor_haxe_at_dotpoint_math_lazy_LazyQuaternion(haxe.at.dotpoint.math.lazy.LazyQuaternion __temp_me82, java.lang.Object x, java.lang.Object y, java.lang.Object z, java.lang.Object w)
 	{
 		//line 59 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\math\\lazy\\LazyQuaternion.hx"
-		double __temp_w79 = ( (haxe.lang.Runtime.eq(w, null)) ? (((double) (1) )) : (((double) (haxe.lang.Runtime.toDouble(w)) )) );
+		double __temp_w81 = ( (haxe.lang.Runtime.eq(w, null)) ? (((double) (1) )) : (((double) (haxe.lang.Runtime.toDouble(w)) )) );
 		//line 59 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\math\\lazy\\LazyQuaternion.hx"
-		double __temp_z78 = ( (haxe.lang.Runtime.eq(z, null)) ? (((double) (0) )) : (((double) (haxe.lang.Runtime.toDouble(z)) )) );
+		double __temp_z80 = ( (haxe.lang.Runtime.eq(z, null)) ? (((double) (0) )) : (((double) (haxe.lang.Runtime.toDouble(z)) )) );
 		//line 59 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\math\\lazy\\LazyQuaternion.hx"
-		double __temp_y77 = ( (haxe.lang.Runtime.eq(y, null)) ? (((double) (0) )) : (((double) (haxe.lang.Runtime.toDouble(y)) )) );
+		double __temp_y79 = ( (haxe.lang.Runtime.eq(y, null)) ? (((double) (0) )) : (((double) (haxe.lang.Runtime.toDouble(y)) )) );
 		//line 59 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\math\\lazy\\LazyQuaternion.hx"
-		double __temp_x76 = ( (haxe.lang.Runtime.eq(x, null)) ? (((double) (0) )) : (((double) (haxe.lang.Runtime.toDouble(x)) )) );
+		double __temp_x78 = ( (haxe.lang.Runtime.eq(x, null)) ? (((double) (0) )) : (((double) (haxe.lang.Runtime.toDouble(x)) )) );
 		//line 60 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\math\\lazy\\LazyQuaternion.hx"
-		__temp_me80.value = new haxe.at.dotpoint.math.vector.Quaternion(__temp_x76, __temp_y77, __temp_z78, __temp_w79);
+		__temp_me82.value = new haxe.at.dotpoint.math.vector.Quaternion(__temp_x78, __temp_y79, __temp_z80, __temp_w81);
 		//line 61 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\math\\lazy\\LazyQuaternion.hx"
-		__temp_me80.lazy = new haxe.at.dotpoint.core.lazy.LazyComponent(null, null);
+		__temp_me82.lazy = new haxe.at.dotpoint.core.lazy.LazyComponent(null, null);
 	}
 	
 	

@@ -29,12 +29,12 @@ public class SpatialEvent extends haxe.at.dotpoint.core.entity.event.EntityEvent
 	}
 	
 	
-	public static void __hx_ctor_haxe_at_dotpoint_spatial_event_SpatialEvent(haxe.at.dotpoint.spatial.event.SpatialEvent __temp_me101, java.lang.String type, haxe.at.dotpoint.math.geom.Space space)
+	public static void __hx_ctor_haxe_at_dotpoint_spatial_event_SpatialEvent(haxe.at.dotpoint.spatial.event.SpatialEvent __temp_me103, java.lang.String type, haxe.at.dotpoint.math.geom.Space space)
 	{
 		//line 58 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\spatial\\event\\SpatialEvent.hx"
-		haxe.at.dotpoint.core.entity.event.EntityEvent.__hx_ctor_haxe_at_dotpoint_core_entity_event_EntityEvent(__temp_me101, type);
+		haxe.at.dotpoint.core.entity.event.EntityEvent.__hx_ctor_haxe_at_dotpoint_core_entity_event_EntityEvent(__temp_me103, type);
 		//line 59 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\spatial\\event\\SpatialEvent.hx"
-		__temp_me101.space = space;
+		__temp_me103.space = space;
 	}
 	
 	

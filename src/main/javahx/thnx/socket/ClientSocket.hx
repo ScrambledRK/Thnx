@@ -1,22 +1,15 @@
 package javahx.thnx.socket;
 
+import haxe.at.dotpoint.core.dispatcher.event.IEventDispatcher;
 import haxe.Json;
+import haxe.thnx.event.SocketEvent;
 import haxe.thnx.socket.IClientSocket;
-import haxe.thnx.socket.response.SocketResponse;
 import java.lang.Exception;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.net.InetSocketAddress;
-import java.net.UnknownHostException;
-import java.util.Collection;
-import javahx.thnx.ThnxMain;
-
-import org.java_websocket.WebSocket;
-import org.java_websocket.WebSocketImpl;
-import org.java_websocket.framing.Framedata;
 import org.java_websocket.handshake.ClientHandshake;
 import org.java_websocket.server.WebSocketServer;
+import org.java_websocket.WebSocket;
+
 
 /**
  * ...
@@ -28,7 +21,12 @@ class ClientSocket extends WebSocketServer implements IClientSocket
 	/**
 	 *
 	 */
-	public var responseList:Array<SocketResponse>;
+	private var dispatcher:IEventDispatcher;
+
+	/**
+	 *
+	 */
+	private var event:SocketEvent;
 
 	// ************************************************************************ //
 	// Constructor
@@ -37,20 +35,19 @@ class ClientSocket extends WebSocketServer implements IClientSocket
 	/**
 	 *
 	 */
-	public function new( ?port:Int = 9998 )
+	public function new( dispatcher:IEventDispatcher, ?port:Int = 9998 )
 	{
 		super( new InetSocketAddress( port ) );
+
+		// ------------- //
+
+		this.dispatcher = dispatcher;
+		this.event = new SocketEvent( SocketEvent.MESSAGE_RECIEVED );
 	}
 
 	// ************************************************************************ //
 	// IClientSocket
 	// ************************************************************************ //
-
-	//
-	public function setResponseList( list:Array<SocketResponse> ):Void
-	{
-		this.responseList = list;
-	}
 
 	//
 	public function requestMove( x:Float, y:Float ):Void
@@ -122,21 +119,8 @@ class ClientSocket extends WebSocketServer implements IClientSocket
 	//
 	override public function onMessage( cnx:WebSocket, message:String ):Void
 	{
-		if( message == null || this.responseList == null )
-			return;
-
-		var json:Dynamic = Json.parse( message );
-
-		for( response in this.responseList )
-		{
-			if( response.ID == json.n )
-			{
-				response.execute( json.d );
-				break;
-			}
-		}
-
-		ThnxMain.instance.view.update();
+		this.event.data = message;
+		this.dispatcher.dispatch( this.event );
 	}
 
 	/**

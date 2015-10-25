@@ -21,12 +21,12 @@ public class WorldEntity extends haxe.at.dotpoint.spatial.SpatialEntity
 	}
 	
 	
-	public static void __hx_ctor_haxe_thnx_model_entities_WorldEntity(haxe.thnx.model.entities.WorldEntity __temp_me120, int ID, java.lang.Object numComponents)
+	public static void __hx_ctor_haxe_thnx_model_entities_WorldEntity(haxe.thnx.model.entities.WorldEntity __temp_me123, int ID, java.lang.Object numComponents)
 	{
 		//line 26 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\entities\\WorldEntity.hx"
-		haxe.at.dotpoint.spatial.SpatialEntity.__hx_ctor_haxe_at_dotpoint_spatial_SpatialEntity(__temp_me120, numComponents, haxe.at.dotpoint.math.AxisRelative.CENTER);
+		haxe.at.dotpoint.spatial.SpatialEntity.__hx_ctor_haxe_at_dotpoint_spatial_SpatialEntity(__temp_me123, numComponents, haxe.at.dotpoint.math.AxisRelative.CENTER);
 		//line 27 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\entities\\WorldEntity.hx"
-		__temp_me120.ID = ID;
+		__temp_me123.ID = ID;
 	}
 	
 	

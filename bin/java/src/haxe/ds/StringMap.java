@@ -17,10 +17,10 @@ public class StringMap<T> extends haxe.lang.HxObject implements haxe.IMap<java.l
 	}
 	
 	
-	public static <T_c> void __hx_ctor_haxe_ds_StringMap(haxe.ds.StringMap<T_c> __temp_me104)
+	public static <T_c> void __hx_ctor_haxe_ds_StringMap(haxe.ds.StringMap<T_c> __temp_me106)
 	{
 		//line 61 "C:\\Apps\\Haxe\\haxe\\std\\java\\_std\\haxe\\ds\\StringMap.hx"
-		__temp_me104.cachedIndex = -1;
+		__temp_me106.cachedIndex = -1;
 	}
 	
 	

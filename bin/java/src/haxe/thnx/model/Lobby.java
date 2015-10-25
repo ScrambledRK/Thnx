@@ -17,10 +17,10 @@ public class Lobby extends haxe.lang.HxObject
 	}
 	
 	
-	public static void __hx_ctor_haxe_thnx_model_Lobby(haxe.thnx.model.Lobby __temp_me114)
+	public static void __hx_ctor_haxe_thnx_model_Lobby(haxe.thnx.model.Lobby __temp_me117)
 	{
 		//line 30 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\Lobby.hx"
-		__temp_me114.reset();
+		__temp_me117.reset();
 	}
 	
 	

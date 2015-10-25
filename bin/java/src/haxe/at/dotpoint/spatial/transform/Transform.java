@@ -21,24 +21,24 @@ public class Transform<TEntity> extends haxe.at.dotpoint.core.entity.Component<T
 	}
 	
 	
-	public static <TEntity_c> void __hx_ctor_haxe_at_dotpoint_spatial_transform_Transform(haxe.at.dotpoint.spatial.transform.Transform<TEntity_c> __temp_me102)
+	public static <TEntity_c> void __hx_ctor_haxe_at_dotpoint_spatial_transform_Transform(haxe.at.dotpoint.spatial.transform.Transform<TEntity_c> __temp_me104)
 	{
 		//line 83 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\spatial\\transform\\Transform.hx"
-		haxe.at.dotpoint.core.entity.Component.__hx_ctor_haxe_at_dotpoint_core_entity_Component(__temp_me102);
+		haxe.at.dotpoint.core.entity.Component.__hx_ctor_haxe_at_dotpoint_core_entity_Component(__temp_me104);
 		//line 85 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\spatial\\transform\\Transform.hx"
-		__temp_me102.m_position = new haxe.at.dotpoint.math.lazy.LazyVector3(0, 0, 0, null);
+		__temp_me104.m_position = new haxe.at.dotpoint.math.lazy.LazyVector3(0, 0, 0, null);
 		//line 86 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\spatial\\transform\\Transform.hx"
-		__temp_me102.m_rotation = new haxe.at.dotpoint.math.lazy.LazyQuaternion(0, 0, 0, null);
+		__temp_me104.m_rotation = new haxe.at.dotpoint.math.lazy.LazyQuaternion(0, 0, 0, null);
 		//line 87 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\spatial\\transform\\Transform.hx"
-		__temp_me102.m_scale = new haxe.at.dotpoint.math.lazy.LazyVector3(1, 1, 1, null);
+		__temp_me104.m_scale = new haxe.at.dotpoint.math.lazy.LazyVector3(1, 1, 1, null);
 		//line 89 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\spatial\\transform\\Transform.hx"
-		__temp_me102.localMatrix = new haxe.at.dotpoint.spatial.transform.TransformationMatrix(((haxe.at.dotpoint.math.vector.IMatrix44) (null) ));
+		__temp_me104.localMatrix = new haxe.at.dotpoint.spatial.transform.TransformationMatrix(((haxe.at.dotpoint.math.vector.IMatrix44) (null) ));
 		//line 90 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\spatial\\transform\\Transform.hx"
-		__temp_me102.worldMatrix = new haxe.at.dotpoint.spatial.transform.TransformationMatrix(((haxe.at.dotpoint.math.vector.IMatrix44) (null) ));
+		__temp_me104.worldMatrix = new haxe.at.dotpoint.spatial.transform.TransformationMatrix(((haxe.at.dotpoint.math.vector.IMatrix44) (null) ));
 		//line 92 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\spatial\\transform\\Transform.hx"
-		__temp_me102.statusLocalMatrix = haxe.at.dotpoint.core.lazy.LazyStatus.VALID;
+		__temp_me104.statusLocalMatrix = haxe.at.dotpoint.core.lazy.LazyStatus.VALID;
 		//line 93 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\spatial\\transform\\Transform.hx"
-		__temp_me102.statusWorldMatrix = haxe.at.dotpoint.core.lazy.LazyStatus.VALID;
+		__temp_me104.statusWorldMatrix = haxe.at.dotpoint.core.lazy.LazyStatus.VALID;
 	}
 	
 	

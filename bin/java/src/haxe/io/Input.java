@@ -17,7 +17,7 @@ public class Input extends haxe.lang.HxObject
 	}
 	
 	
-	public static void __hx_ctor_haxe_io_Input(haxe.io.Input __temp_me108)
+	public static void __hx_ctor_haxe_io_Input(haxe.io.Input __temp_me110)
 	{
 	}
 	

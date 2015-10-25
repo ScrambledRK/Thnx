@@ -31,7 +31,7 @@ public class MathUtil extends haxe.lang.HxObject
 	}
 	
 	
-	public static void __hx_ctor_haxe_at_dotpoint_math_MathUtil(haxe.at.dotpoint.math.MathUtil __temp_me65)
+	public static void __hx_ctor_haxe_at_dotpoint_math_MathUtil(haxe.at.dotpoint.math.MathUtil __temp_me66)
 	{
 	}
 	

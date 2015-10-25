@@ -51,10 +51,6 @@ E haxe.at.dotpoint.math.AxisDirection
 C haxe.at.dotpoint.math.AxisRelative
 C haxe.at.dotpoint.math.AxisOrientation
 M java.sun.util.LocaleServiceProviderPool
-M haxe.thnx.loader.WorldParser
-C haxe.thnx.loader.WorldParser
-C haxe.thnx.loader.WorldParser_sortRectangles_209__Fun
-C haxe.thnx.loader.WorldParser_sortRectangles_218__Fun
 M haxe.root.Std
 C haxe.root.Std
 M javax.swing.plaf.LabelUI
@@ -236,6 +232,9 @@ E haxe.at.dotpoint.math.geom.Space
 M java.io.RandomAccessFile
 M haxe.root.Map
 M java.awt.image.Raster
+M haxe.at.dotpoint.math.Trigonometry
+C haxe.at.dotpoint.math.Trigonometry
+E haxe.at.dotpoint.math.DistanceMethod
 M javax.accessibility.AccessibleRole
 M java.security.CodeSigner
 M haxe.root.Reflect
@@ -269,6 +268,8 @@ C haxe.at.dotpoint.math.lazy.LazyCube
 M java.javax.swing.JButton
 M java.Boot
 M java.lang.Runnable
+M haxe.thnx.event.SocketEvent
+C haxe.thnx.event.SocketEvent
 M java.awt.RenderingHints
 M haxe.at.dotpoint.math.vector.Vector3
 C haxe.at.dotpoint.math.vector.Vector3
@@ -409,6 +410,8 @@ M java.util.concurrent.BlockingQueue
 M java.awt.Dialog
 M java.awt.List
 M java.lang.Short
+M haxe.thnx.loader.TilesetRequest
+C haxe.thnx.loader.TilesetRequest
 M java.types.Int16
 M org.java_websocket.handshake.Handshakedata
 M haxe.thnx.model.tileset.Tile
@@ -507,8 +510,6 @@ M java.net.SocketOption
 M java.javax.swing.JComponent
 M haxe.root.Xml
 C haxe.root.Xml
-M javahx.thnx.MainFactory
-C javahx.thnx.MainFactory
 M haxe.at.dotpoint.core.entity.Entity
 C haxe.at.dotpoint.core.entity.Entity
 M java.lang.Error
@@ -625,8 +626,6 @@ M javax.accessibility.AccessibleExtendedComponent
 M haxe.Int32
 M java.awt.FontMetrics
 M java.io.ObjectStreamField
-M haxe.thnx.view.NullViewController
-C haxe.thnx.view.NullViewController
 M java.io.File
 M java.nio.file.OpenOption
 M java.beans.VetoableChangeListener
@@ -638,6 +637,8 @@ C haxe.at.dotpoint.loader.URLRequestMethod
 M haxe.at.dotpoint.loader.processor.loader.IDataLoader
 C haxe.at.dotpoint.loader.processor.loader.IDataLoader
 M java.awt.event.HierarchyListener
+M haxe.at.dotpoint.math.Limit
+C haxe.at.dotpoint.math.Limit
 M java.awt.Stroke
 M java.lang.Long
 M java.awt.peer.PanelPeer
@@ -679,6 +680,10 @@ C haxe.root.Date
 M javax.accessibility.AccessibleValue
 M javahx.thnx.view.ViewController
 C javahx.thnx.view.ViewController
+M haxe.thnx.loader.TilesetParser
+C haxe.thnx.loader.TilesetParser
+C haxe.thnx.loader.TilesetParser_sortRectangles_206__Fun
+C haxe.thnx.loader.TilesetParser_sortRectangles_215__Fun
 M java.security.InvalidKeyException
 M java.net.SocketImpl
 M java.awt.Checkbox
@@ -739,8 +744,6 @@ M java.awt.event.WindowFocusListener
 M java.awt.dnd.peer.DragSourceContextPeer
 M java.net.SocketAddress
 M java.sun.util.locale.BaseLocale
-M haxe.thnx.IMainFactory
-C haxe.thnx.IMainFactory
 M java.awt.font.LineMetrics
 M java.awt.CheckboxMenuItem
 M java.nio.channels.Pipe
@@ -782,8 +785,6 @@ M java.net.SocketOptions
 M java.lang.StackTraceElement
 M java.awt.AWTEvent
 M java.awt.HeadlessException
-M haxe.thnx.loader.WorldRequest
-C haxe.thnx.loader.WorldRequest
 M java.awt.Choice
 M java.lang.reflect.TypeVariable
 M java.beans.PropertyChangeListener

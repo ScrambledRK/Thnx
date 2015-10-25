@@ -19,6 +19,9 @@ class ResponseList
 	//
 	public static var instance:ResponseList = new ResponseList();
 
+	//
+	private var list:Array<SocketResponse>;
+
 	// ************************************************************************ //
 	// Constructor
 	// ************************************************************************ //
@@ -37,6 +40,18 @@ class ResponseList
 	 * @return
 	 */
 	public function getResponseList():Array<SocketResponse>
+	{
+		if( this.list == null )
+			this.list = this.createList();
+
+		return this.list;
+	}
+
+	/**
+	 *
+	 * @return
+	 */
+	private function createList():Array<SocketResponse>
 	{
 		var list:Array<SocketResponse> = new Array<SocketResponse>();
 

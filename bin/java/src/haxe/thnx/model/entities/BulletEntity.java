@@ -21,14 +21,14 @@ public class BulletEntity extends haxe.thnx.model.entities.WorldEntity
 	}
 	
 	
-	public static void __hx_ctor_haxe_thnx_model_entities_BulletEntity(haxe.thnx.model.entities.BulletEntity __temp_me121, int ID)
+	public static void __hx_ctor_haxe_thnx_model_entities_BulletEntity(haxe.thnx.model.entities.BulletEntity __temp_me124, int ID)
 	{
 		//line 32 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\entities\\BulletEntity.hx"
-		haxe.thnx.model.entities.WorldEntity.__hx_ctor_haxe_thnx_model_entities_WorldEntity(__temp_me121, ID, null);
+		haxe.thnx.model.entities.WorldEntity.__hx_ctor_haxe_thnx_model_entities_WorldEntity(__temp_me124, ID, null);
 		//line 34 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\entities\\BulletEntity.hx"
-		__temp_me121.target = new haxe.at.dotpoint.math.vector.Vector2(null, null);
+		__temp_me124.target = new haxe.at.dotpoint.math.vector.Vector2(null, null);
 		//line 35 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\entities\\BulletEntity.hx"
-		__temp_me121.speed = ((double) (0) );
+		__temp_me124.speed = ((double) (0) );
 	}
 	
 	

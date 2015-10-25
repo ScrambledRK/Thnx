@@ -9,9 +9,6 @@ interface IClientSocket
 {
 
 	//
-	public function setResponseList( list:Array<SocketResponse> ):Void;
-
-	//
 	public function requestMove( x:Float, y:Float ):Void;
 
 	//

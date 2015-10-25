@@ -17,18 +17,18 @@ public class JsonPrinter extends haxe.lang.HxObject
 	}
 	
 	
-	public static void __hx_ctor_haxe_format_JsonPrinter(haxe.format.JsonPrinter __temp_me106, haxe.lang.Function replacer, java.lang.String space)
+	public static void __hx_ctor_haxe_format_JsonPrinter(haxe.format.JsonPrinter __temp_me108, haxe.lang.Function replacer, java.lang.String space)
 	{
 		//line 55 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\format\\JsonPrinter.hx"
-		__temp_me106.replacer = replacer;
+		__temp_me108.replacer = replacer;
 		//line 56 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\format\\JsonPrinter.hx"
-		__temp_me106.indent = space;
+		__temp_me108.indent = space;
 		//line 57 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\format\\JsonPrinter.hx"
-		__temp_me106.pretty = ( space != null );
+		__temp_me108.pretty = ( space != null );
 		//line 58 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\format\\JsonPrinter.hx"
-		__temp_me106.nind = 0;
+		__temp_me108.nind = 0;
 		//line 65 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\format\\JsonPrinter.hx"
-		__temp_me106.buf = new haxe.root.StringBuf();
+		__temp_me108.buf = new haxe.root.StringBuf();
 	}
 	
 	

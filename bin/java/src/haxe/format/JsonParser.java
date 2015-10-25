@@ -17,12 +17,12 @@ public class JsonParser extends haxe.lang.HxObject
 	}
 	
 	
-	public static void __hx_ctor_haxe_format_JsonParser(haxe.format.JsonParser __temp_me105, java.lang.String str)
+	public static void __hx_ctor_haxe_format_JsonParser(haxe.format.JsonParser __temp_me107, java.lang.String str)
 	{
 		//line 50 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\format\\JsonParser.hx"
-		__temp_me105.str = str;
+		__temp_me107.str = str;
 		//line 51 "C:\\Apps\\Haxe\\haxe\\std\\haxe\\format\\JsonParser.hx"
-		__temp_me105.pos = 0;
+		__temp_me107.pos = 0;
 	}
 	
 	

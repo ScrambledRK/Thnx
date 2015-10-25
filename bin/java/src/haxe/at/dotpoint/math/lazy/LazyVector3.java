@@ -17,20 +17,20 @@ public class LazyVector3 extends haxe.lang.HxObject implements haxe.at.dotpoint.
 	}
 	
 	
-	public static void __hx_ctor_haxe_at_dotpoint_math_lazy_LazyVector3(haxe.at.dotpoint.math.lazy.LazyVector3 __temp_me85, java.lang.Object x, java.lang.Object y, java.lang.Object z, java.lang.Object w)
+	public static void __hx_ctor_haxe_at_dotpoint_math_lazy_LazyVector3(haxe.at.dotpoint.math.lazy.LazyVector3 __temp_me87, java.lang.Object x, java.lang.Object y, java.lang.Object z, java.lang.Object w)
 	{
 		//line 59 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\math\\lazy\\LazyVector3.hx"
-		double __temp_w84 = ( (haxe.lang.Runtime.eq(w, null)) ? (((double) (1) )) : (((double) (haxe.lang.Runtime.toDouble(w)) )) );
+		double __temp_w86 = ( (haxe.lang.Runtime.eq(w, null)) ? (((double) (1) )) : (((double) (haxe.lang.Runtime.toDouble(w)) )) );
 		//line 59 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\math\\lazy\\LazyVector3.hx"
-		double __temp_z83 = ( (haxe.lang.Runtime.eq(z, null)) ? (((double) (0) )) : (((double) (haxe.lang.Runtime.toDouble(z)) )) );
+		double __temp_z85 = ( (haxe.lang.Runtime.eq(z, null)) ? (((double) (0) )) : (((double) (haxe.lang.Runtime.toDouble(z)) )) );
 		//line 59 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\math\\lazy\\LazyVector3.hx"
-		double __temp_y82 = ( (haxe.lang.Runtime.eq(y, null)) ? (((double) (0) )) : (((double) (haxe.lang.Runtime.toDouble(y)) )) );
+		double __temp_y84 = ( (haxe.lang.Runtime.eq(y, null)) ? (((double) (0) )) : (((double) (haxe.lang.Runtime.toDouble(y)) )) );
 		//line 59 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\math\\lazy\\LazyVector3.hx"
-		double __temp_x81 = ( (haxe.lang.Runtime.eq(x, null)) ? (((double) (0) )) : (((double) (haxe.lang.Runtime.toDouble(x)) )) );
+		double __temp_x83 = ( (haxe.lang.Runtime.eq(x, null)) ? (((double) (0) )) : (((double) (haxe.lang.Runtime.toDouble(x)) )) );
 		//line 60 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\math\\lazy\\LazyVector3.hx"
-		__temp_me85.value = new haxe.at.dotpoint.math.vector.Vector3(__temp_x81, __temp_y82, __temp_z83, __temp_w84);
+		__temp_me87.value = new haxe.at.dotpoint.math.vector.Vector3(__temp_x83, __temp_y84, __temp_z85, __temp_w86);
 		//line 61 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\math\\lazy\\LazyVector3.hx"
-		__temp_me85.lazy = new haxe.at.dotpoint.core.lazy.LazyComponent(null, null);
+		__temp_me87.lazy = new haxe.at.dotpoint.core.lazy.LazyComponent(null, null);
 	}
 	
 	

@@ -21,10 +21,10 @@ public class PowerupEffect extends haxe.at.dotpoint.core.entity.Component<haxe.t
 	}
 	
 	
-	public static void __hx_ctor_haxe_thnx_model_components_PowerupEffect(haxe.thnx.model.components.PowerupEffect __temp_me116, haxe.thnx.model.enums.PowerupType type, java.lang.Object stamp)
+	public static void __hx_ctor_haxe_thnx_model_components_PowerupEffect(haxe.thnx.model.components.PowerupEffect __temp_me119, haxe.thnx.model.enums.PowerupType type, java.lang.Object stamp)
 	{
 		//line 33 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\components\\PowerupEffect.hx"
-		haxe.at.dotpoint.core.entity.Component.__hx_ctor_haxe_at_dotpoint_core_entity_Component(__temp_me116);
+		haxe.at.dotpoint.core.entity.Component.__hx_ctor_haxe_at_dotpoint_core_entity_Component(__temp_me119);
 		//line 35 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\components\\PowerupEffect.hx"
 		if (haxe.lang.Runtime.eq(stamp, null)) 
 		{
@@ -33,9 +33,9 @@ public class PowerupEffect extends haxe.at.dotpoint.core.entity.Component<haxe.t
 		}
 		
 		//line 38 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\components\\PowerupEffect.hx"
-		__temp_me116.stamp = ((double) (haxe.lang.Runtime.toDouble(stamp)) );
+		__temp_me119.stamp = ((double) (haxe.lang.Runtime.toDouble(stamp)) );
 		//line 39 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\components\\PowerupEffect.hx"
-		__temp_me116.type = type;
+		__temp_me119.type = type;
 	}
 	
 	

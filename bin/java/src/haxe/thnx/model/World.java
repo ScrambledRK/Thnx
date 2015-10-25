@@ -17,10 +17,10 @@ public class World extends haxe.lang.HxObject
 	}
 	
 	
-	public static void __hx_ctor_haxe_thnx_model_World(haxe.thnx.model.World __temp_me115)
+	public static void __hx_ctor_haxe_thnx_model_World(haxe.thnx.model.World __temp_me118)
 	{
 		//line 48 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\World.hx"
-		__temp_me115.reset();
+		__temp_me118.reset();
 	}
 	
 	

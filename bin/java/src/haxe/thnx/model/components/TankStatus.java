@@ -21,16 +21,16 @@ public class TankStatus extends haxe.at.dotpoint.core.entity.Component<haxe.thnx
 	}
 	
 	
-	public static void __hx_ctor_haxe_thnx_model_components_TankStatus(haxe.thnx.model.components.TankStatus __temp_me119, java.lang.Object health)
+	public static void __hx_ctor_haxe_thnx_model_components_TankStatus(haxe.thnx.model.components.TankStatus __temp_me122, java.lang.Object health)
 	{
 		//line 39 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\components\\TankStatus.hx"
-		java.lang.Object __temp_health118 = ( (haxe.lang.Runtime.eq(health, null)) ? (((java.lang.Object) (10) )) : (health) );
+		java.lang.Object __temp_health121 = ( (haxe.lang.Runtime.eq(health, null)) ? (((java.lang.Object) (10) )) : (health) );
 		//line 40 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\components\\TankStatus.hx"
-		haxe.at.dotpoint.core.entity.Component.__hx_ctor_haxe_at_dotpoint_core_entity_Component(__temp_me119);
+		haxe.at.dotpoint.core.entity.Component.__hx_ctor_haxe_at_dotpoint_core_entity_Component(__temp_me122);
 		//line 42 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\components\\TankStatus.hx"
-		__temp_me119.health = ((double) (haxe.lang.Runtime.toDouble(__temp_health118)) );
+		__temp_me122.health = ((double) (haxe.lang.Runtime.toDouble(__temp_health121)) );
 		//line 43 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\components\\TankStatus.hx"
-		__temp_me119.shield = ((double) (0) );
+		__temp_me122.shield = ((double) (0) );
 	}
 	
 	

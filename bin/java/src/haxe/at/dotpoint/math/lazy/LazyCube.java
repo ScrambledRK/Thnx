@@ -17,12 +17,12 @@ public class LazyCube extends haxe.lang.HxObject implements haxe.at.dotpoint.mat
 	}
 	
 	
-	public static void __hx_ctor_haxe_at_dotpoint_math_lazy_LazyCube(haxe.at.dotpoint.math.lazy.LazyCube __temp_me75, haxe.at.dotpoint.math.vector.IVector3 pivot)
+	public static void __hx_ctor_haxe_at_dotpoint_math_lazy_LazyCube(haxe.at.dotpoint.math.lazy.LazyCube __temp_me77, haxe.at.dotpoint.math.vector.IVector3 pivot)
 	{
 		//line 85 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\math\\lazy\\LazyCube.hx"
-		__temp_me75.value = new haxe.at.dotpoint.math.geom.Cube(((haxe.at.dotpoint.math.vector.IVector3) (pivot) ));
+		__temp_me77.value = new haxe.at.dotpoint.math.geom.Cube(((haxe.at.dotpoint.math.vector.IVector3) (pivot) ));
 		//line 86 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\haxe\\at\\dotpoint\\math\\lazy\\LazyCube.hx"
-		__temp_me75.lazy = new haxe.at.dotpoint.core.lazy.LazyComponent(null, null);
+		__temp_me77.lazy = new haxe.at.dotpoint.core.lazy.LazyComponent(null, null);
 	}
 	
 	
