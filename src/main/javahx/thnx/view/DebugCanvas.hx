@@ -39,6 +39,11 @@ class DebugCanvas extends JPanel
 	 */
 	private var scaleFactor:IVector2;
 
+	/**
+	 *
+	 */
+	public var offset:IVector2;
+
 	// ************************************************************************ //
 	// Constructor
 	// ************************************************************************ //
@@ -57,12 +62,16 @@ class DebugCanvas extends JPanel
 	 * @param	dimension
 	 * @param	scaling
 	 */
-	public function initialize( dimension:IVector2, ?scaling:IVector2 ):Void
+	public function initialize( dimension:IVector2, ?scaling:IVector2, ?offset:IVector2 ):Void
 	{
 		if( scaling == null )
 			scaling = new Vector2( 10, 10 );
 
+		if( offset == null )
+			offset = new Vector2( scaling.x, scaling.y );
+
 		this.scaleFactor = scaling;
+		this.offset = offset;
 
 		var w:Int = Std.int( dimension.x );
 		var h:Int = Std.int( dimension.y );
@@ -115,8 +124,8 @@ class DebugCanvas extends JPanel
 		this.canvas.setStroke( new BasicStroke( thickness * 0.7, BasicStroke.CAP_BUTT, BasicStroke.JOIN_MITER ) );
 		this.canvas.setColor( new Color( cv.x, cv.y, cv.z, 1 ) );
 
-		var x:Int = Std.int( rect.min.x  * this.scaleFactor.x );
-		var y:Int = Std.int( rect.min.y  * this.scaleFactor.y );
+		var x:Int = Std.int( rect.min.x  * this.scaleFactor.x + this.offset.x );
+		var y:Int = Std.int( rect.min.y  * this.scaleFactor.y + this.offset.y );
 		var w:Int = Std.int( rect.width  * this.scaleFactor.x );
 		var h:Int = Std.int( rect.height * this.scaleFactor.y );
 
@@ -142,8 +151,8 @@ class DebugCanvas extends JPanel
 		var cv:Vector3 = ColorUtil.toVector( color );
 			cv.w = 1;
 
-		var x:Int = Std.int( position.x * this.scaleFactor.x - 10 );
-		var y:Int = Std.int( position.y * this.scaleFactor.y + 5 );
+		var x:Int = Std.int( position.x * this.scaleFactor.x - 10 + this.offset.x );
+		var y:Int = Std.int( position.y * this.scaleFactor.y + 5  + this.offset.y );
 
 		this.canvas.setColor( new Color( cv.x, cv.y, cv.z, cv.w ) );
 		this.canvas.drawString( value, x, y );
@@ -171,10 +180,10 @@ class DebugCanvas extends JPanel
 
 		// ----------------- //
 
-		var ax:Float = Std.int( a.x * this.scaleFactor.x );
-		var ay:Float = Std.int( a.y * this.scaleFactor.y );
-		var bx:Float = Std.int( b.x * this.scaleFactor.x );
-		var by:Float = Std.int( b.y * this.scaleFactor.y );
+		var ax:Float = Std.int( a.x * this.scaleFactor.x + this.offset.x );
+		var ay:Float = Std.int( a.y * this.scaleFactor.y + this.offset.y );
+		var bx:Float = Std.int( b.x * this.scaleFactor.x + this.offset.x );
+		var by:Float = Std.int( b.y * this.scaleFactor.y + this.offset.y );
 
 		// ----------------- //
 

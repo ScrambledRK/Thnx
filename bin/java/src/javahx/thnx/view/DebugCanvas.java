@@ -14,7 +14,7 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 	
 	public DebugCanvas()
 	{
-		//line 48 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		//line 53 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		super();
 	}
 	
@@ -39,264 +39,275 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 	
 	public haxe.at.dotpoint.math.vector.IVector2 scaleFactor;
 	
-	public void initialize(haxe.at.dotpoint.math.vector.IVector2 dimension, haxe.at.dotpoint.math.vector.IVector2 scaling)
+	public haxe.at.dotpoint.math.vector.IVector2 offset;
+	
+	public void initialize(haxe.at.dotpoint.math.vector.IVector2 dimension, haxe.at.dotpoint.math.vector.IVector2 scaling, haxe.at.dotpoint.math.vector.IVector2 offset)
 	{
-		//line 62 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		//line 67 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		if (( scaling == null )) 
 		{
-			//line 63 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+			//line 68 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 			scaling = new haxe.at.dotpoint.math.vector.Vector2(10, 10);
 		}
 		
-		//line 65 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-		this.scaleFactor = scaling;
-		//line 67 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-		int w = 0;
-		//line 67 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		//line 70 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		if (( offset == null )) 
 		{
-			//line 67 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-			double x = dimension.get_x();
-			//line 67 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-			w = ((int) (x) );
-		}
-		
-		//line 68 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-		int h = 0;
-		//line 68 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-		{
-			//line 68 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-			double x1 = dimension.get_y();
-			//line 68 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-			h = ((int) (x1) );
+			//line 71 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+			offset = new haxe.at.dotpoint.math.vector.Vector2(scaling.get_x(), scaling.get_y());
 		}
 		
 		//line 73 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-		java.awt.image.BufferedImage canvas_img = new java.awt.image.BufferedImage(w, h, java.awt.image.BufferedImage.TYPE_INT_ARGB);
+		this.scaleFactor = scaling;
 		//line 74 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-		javax.swing.JLabel canvas_jla = new javax.swing.JLabel(((javax.swing.Icon) (new javax.swing.ImageIcon(((java.awt.Image) (canvas_img) ))) ));
-		//line 75 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-		canvas_jla.setBounds(((int) (0) ), ((int) (0) ), ((int) (w) ), ((int) (h) ));
+		this.offset = offset;
+		//line 76 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		int w = 0;
+		//line 76 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		{
+			//line 76 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+			double x = dimension.get_x();
+			//line 76 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+			w = ((int) (x) );
+		}
+		
 		//line 77 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-		this.canvas = ((java.awt.Graphics2D) (canvas_img.getGraphics()) );
+		int h = 0;
+		//line 77 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		{
+			//line 77 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+			double x1 = dimension.get_y();
+			//line 77 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+			h = ((int) (x1) );
+		}
+		
 		//line 82 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-		this.setOpaque(haxe.lang.Runtime.toBool(false));
+		java.awt.image.BufferedImage canvas_img = new java.awt.image.BufferedImage(w, h, java.awt.image.BufferedImage.TYPE_INT_ARGB);
 		//line 83 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		javax.swing.JLabel canvas_jla = new javax.swing.JLabel(((javax.swing.Icon) (new javax.swing.ImageIcon(((java.awt.Image) (canvas_img) ))) ));
+		//line 84 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		canvas_jla.setBounds(((int) (0) ), ((int) (0) ), ((int) (w) ), ((int) (h) ));
+		//line 86 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		this.canvas = ((java.awt.Graphics2D) (canvas_img.getGraphics()) );
+		//line 91 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		this.setOpaque(haxe.lang.Runtime.toBool(false));
+		//line 92 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		this.add(((java.awt.Component) (canvas_jla) ));
 	}
 	
 	
 	public void clear()
 	{
-		//line 95 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		//line 104 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		this.canvas.setBackground(((java.awt.Color) (new java.awt.Color(((int) (255) ), ((int) (255) ), ((int) (255) ), ((int) (0) ))) ));
-		//line 96 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		//line 105 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		this.canvas.clearRect(((int) (0) ), ((int) (0) ), ((int) (this.getWidth()) ), ((int) (this.getHeight()) ));
-		//line 98 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		//line 107 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		this.repaint();
 	}
 	
 	
 	public void drawRectangle(haxe.at.dotpoint.math.geom.IRectangle rect, java.lang.Object color, java.lang.Object thickness, java.lang.Object alpha)
 	{
-		//line 109 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		//line 118 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		java.lang.Object __temp_alpha151 = ( (haxe.lang.Runtime.eq(alpha, null)) ? (((java.lang.Object) (0.8) )) : (alpha) );
-		//line 109 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		//line 118 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		java.lang.Object __temp_thickness150 = ( (haxe.lang.Runtime.eq(thickness, null)) ? (((java.lang.Object) (1) )) : (thickness) );
-		//line 109 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		//line 118 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		java.lang.Object __temp_color149 = ( (haxe.lang.Runtime.eq(color, null)) ? (((java.lang.Object) (0) )) : (color) );
-		//line 110 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		//line 119 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		this.canvas.setRenderingHint(((java.awt.RenderingHints.Key) (java.awt.RenderingHints.KEY_ANTIALIASING) ), ((java.lang.Object) (java.awt.RenderingHints.VALUE_ANTIALIAS_ON) ));
-		//line 112 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		//line 121 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		haxe.at.dotpoint.math.vector.Vector3 cv = haxe.at.dotpoint.math.color.ColorUtil.toVector(((int) (haxe.lang.Runtime.toInt(__temp_color149)) ), null, null);
-		//line 113 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		//line 122 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		{
-			//line 113 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+			//line 122 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 			double value = ((double) (haxe.lang.Runtime.toDouble(__temp_alpha151)) );
-			//line 113 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+			//line 122 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 			cv.w = value;
 		}
 		
-		//line 115 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		//line 124 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		this.canvas.setStroke(((java.awt.Stroke) (new java.awt.BasicStroke(((float) (( ((double) (haxe.lang.Runtime.toDouble(__temp_thickness150)) ) * ((double) (0.7) ) )) ), java.awt.BasicStroke.CAP_BUTT, java.awt.BasicStroke.JOIN_MITER)) ));
-		//line 116 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		//line 125 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		this.canvas.setColor(((java.awt.Color) (new java.awt.Color(((float) (cv.x) ), ((float) (cv.y) ), ((float) (cv.z) ), ((float) (1) ))) ));
-		//line 118 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		//line 127 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		int x = 0;
-		//line 118 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		//line 127 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		{
-			//line 118 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-			double x1 = ( rect.get_min().get_x() * this.scaleFactor.get_x() );
-			//line 118 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+			//line 127 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+			double x1 = ( ( rect.get_min().get_x() * this.scaleFactor.get_x() ) + this.offset.get_x() );
+			//line 127 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 			x = ((int) (x1) );
 		}
 		
-		//line 119 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		//line 128 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		int y = 0;
-		//line 119 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		//line 128 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		{
-			//line 119 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-			double x2 = ( rect.get_min().get_y() * this.scaleFactor.get_y() );
-			//line 119 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+			//line 128 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+			double x2 = ( ( rect.get_min().get_y() * this.scaleFactor.get_y() ) + this.offset.get_y() );
+			//line 128 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 			y = ((int) (x2) );
 		}
 		
-		//line 120 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		//line 129 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		int w = 0;
-		//line 120 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		//line 129 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		{
-			//line 120 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+			//line 129 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 			double x3 = ( rect.get_width() * this.scaleFactor.get_x() );
-			//line 120 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+			//line 129 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 			w = ((int) (x3) );
 		}
 		
-		//line 121 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		//line 130 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		int h = 0;
-		//line 121 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		//line 130 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		{
-			//line 121 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+			//line 130 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 			double x4 = ( rect.get_height() * this.scaleFactor.get_y() );
-			//line 121 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+			//line 130 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 			h = ((int) (x4) );
 		}
 		
-		//line 123 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		//line 132 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		this.canvas.drawRect(((int) (x) ), ((int) (y) ), ((int) (w) ), ((int) (h) ));
-		//line 125 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		//line 134 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		this.canvas.setColor(((java.awt.Color) (new java.awt.Color(((float) (cv.x) ), ((float) (cv.y) ), ((float) (cv.z) ), ((float) (cv.w) ))) ));
-		//line 126 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		//line 135 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		this.canvas.fillRect(((int) (x) ), ((int) (y) ), ((int) (w) ), ((int) (h) ));
 	}
 	
 	
 	public void drawLabel(java.lang.String value, haxe.at.dotpoint.math.vector.IVector2 position, java.lang.Object size, java.lang.Object color)
 	{
-		//line 139 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		//line 148 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		java.lang.Object __temp_size152 = ( (haxe.lang.Runtime.eq(size, null)) ? (((java.lang.Object) (25) )) : (size) );
-		//line 140 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		//line 149 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		this.canvas.setRenderingHint(((java.awt.RenderingHints.Key) (java.awt.RenderingHints.KEY_ANTIALIASING) ), ((java.lang.Object) (java.awt.RenderingHints.VALUE_ANTIALIAS_ON) ));
-		//line 142 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		//line 151 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		haxe.at.dotpoint.math.vector.Vector3 cv = haxe.at.dotpoint.math.color.ColorUtil.toVector(((int) (haxe.lang.Runtime.toInt(color)) ), null, null);
-		//line 143 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		//line 152 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		cv.w = ((double) (1) );
-		//line 145 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		//line 154 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		int x = 0;
-		//line 145 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		//line 154 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		{
-			//line 145 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-			double x1 = ( ( position.get_x() * this.scaleFactor.get_x() ) - 10 );
-			//line 145 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+			//line 154 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+			double x1 = ( ( ( position.get_x() * this.scaleFactor.get_x() ) - 10 ) + this.offset.get_x() );
+			//line 154 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 			x = ((int) (x1) );
 		}
 		
-		//line 146 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		//line 155 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		int y = 0;
-		//line 146 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		//line 155 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		{
-			//line 146 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-			double x2 = ( ( position.get_y() * this.scaleFactor.get_y() ) + 5 );
-			//line 146 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+			//line 155 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+			double x2 = ( ( ( position.get_y() * this.scaleFactor.get_y() ) + 5 ) + this.offset.get_y() );
+			//line 155 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 			y = ((int) (x2) );
 		}
 		
-		//line 148 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		//line 157 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		this.canvas.setColor(((java.awt.Color) (new java.awt.Color(((float) (cv.x) ), ((float) (cv.y) ), ((float) (cv.z) ), ((float) (cv.w) ))) ));
-		//line 149 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		//line 158 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		this.canvas.drawString(haxe.lang.Runtime.toString(value), ((int) (x) ), ((int) (y) ));
 	}
 	
 	
 	public void drawLine(haxe.at.dotpoint.math.vector.IVector2 a, haxe.at.dotpoint.math.vector.IVector2 b, java.lang.Object color, java.lang.Object thickness, java.lang.Object alpha)
 	{
-		//line 164 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		//line 173 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		this.canvas.setRenderingHint(((java.awt.RenderingHints.Key) (java.awt.RenderingHints.KEY_ANTIALIASING) ), ((java.lang.Object) (java.awt.RenderingHints.VALUE_ANTIALIAS_ON) ));
-		//line 166 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		//line 175 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		haxe.at.dotpoint.math.vector.Vector3 cv = haxe.at.dotpoint.math.color.ColorUtil.toVector(((int) (haxe.lang.Runtime.toInt(color)) ), null, null);
-		//line 167 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		//line 176 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		{
-			//line 167 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+			//line 176 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 			double value = ((double) (haxe.lang.Runtime.toDouble(alpha)) );
-			//line 167 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+			//line 176 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 			cv.w = value;
 		}
 		
-		//line 169 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		//line 178 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		this.canvas.setStroke(((java.awt.Stroke) (new java.awt.BasicStroke(((float) (( ((double) (haxe.lang.Runtime.toDouble(thickness)) ) * ((double) (0.7) ) )) ), java.awt.BasicStroke.CAP_BUTT, java.awt.BasicStroke.JOIN_MITER)) ));
-		//line 170 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		//line 179 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		this.canvas.setColor(((java.awt.Color) (new java.awt.Color(((float) (cv.x) ), ((float) (cv.y) ), ((float) (cv.z) ), ((float) (cv.w) ))) ));
-		//line 174 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		//line 183 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		double ax = 0.0;
-		//line 174 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		//line 183 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		{
-			//line 174 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-			double x = ( a.get_x() * this.scaleFactor.get_x() );
-			//line 174 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+			//line 183 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+			double x = ( ( a.get_x() * this.scaleFactor.get_x() ) + this.offset.get_x() );
+			//line 183 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 			ax = ((double) (((int) (x) )) );
 		}
 		
-		//line 175 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		//line 184 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		double ay = 0.0;
-		//line 175 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		//line 184 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		{
-			//line 175 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-			double x1 = ( a.get_y() * this.scaleFactor.get_y() );
-			//line 175 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+			//line 184 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+			double x1 = ( ( a.get_y() * this.scaleFactor.get_y() ) + this.offset.get_y() );
+			//line 184 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 			ay = ((double) (((int) (x1) )) );
 		}
 		
-		//line 176 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		//line 185 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		double bx = 0.0;
-		//line 176 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		//line 185 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		{
-			//line 176 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-			double x2 = ( b.get_x() * this.scaleFactor.get_x() );
-			//line 176 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+			//line 185 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+			double x2 = ( ( b.get_x() * this.scaleFactor.get_x() ) + this.offset.get_x() );
+			//line 185 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 			bx = ((double) (((int) (x2) )) );
 		}
 		
-		//line 177 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		//line 186 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		double by = 0.0;
-		//line 177 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		//line 186 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		{
-			//line 177 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-			double x3 = ( b.get_y() * this.scaleFactor.get_y() );
-			//line 177 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+			//line 186 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+			double x3 = ( ( b.get_y() * this.scaleFactor.get_y() ) + this.offset.get_y() );
+			//line 186 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 			by = ((double) (((int) (x3) )) );
 		}
 		
-		//line 181 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		//line 190 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		double dx = ( bx - ax );
-		//line 182 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-		double dy = ( by - ay );
-		//line 183 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-		double dd = java.lang.Math.sqrt(( ( dx * dx ) + ( dy * dy ) ));
-		//line 185 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-		double xm = ( dd - ( ((int) (haxe.lang.Runtime.toInt(thickness)) ) * ((int) (2) ) ) );
-		//line 186 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-		double xn = ( dd - ( ((int) (haxe.lang.Runtime.toInt(thickness)) ) * ((int) (2) ) ) );
-		//line 188 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-		double ym = ((double) (( ((int) (haxe.lang.Runtime.toInt(thickness)) ) * ((int) (2) ) )) );
-		//line 189 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-		double yn = ((double) (( ( - (((int) (haxe.lang.Runtime.toInt(thickness)) )) ) * 2 )) );
 		//line 191 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-		double sin = ( dy / dd );
+		double dy = ( by - ay );
 		//line 192 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-		double cos = ( dx / dd );
-		//line 196 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-		double x0 = ( ( ( xm * cos ) - ( ym * sin ) ) + ax );
+		double dd = java.lang.Math.sqrt(( ( dx * dx ) + ( dy * dy ) ));
+		//line 194 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		double xm = ( dd - ( ((int) (haxe.lang.Runtime.toInt(thickness)) ) * ((int) (2) ) ) );
+		//line 195 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		double xn = ( dd - ( ((int) (haxe.lang.Runtime.toInt(thickness)) ) * ((int) (2) ) ) );
 		//line 197 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-		double y0 = ( ( ( xm * sin ) + ( ym * cos ) ) + ay );
-		//line 199 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-		double x11 = ( ( ( xn * cos ) - ( yn * sin ) ) + ax );
+		double ym = ((double) (( ((int) (haxe.lang.Runtime.toInt(thickness)) ) * ((int) (2) ) )) );
+		//line 198 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		double yn = ((double) (( ( - (((int) (haxe.lang.Runtime.toInt(thickness)) )) ) * 2 )) );
 		//line 200 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-		double y1 = ( ( ( xn * sin ) + ( yn * cos ) ) + ay );
-		//line 202 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-		int[] xpoints = ((int[]) (new int[]{((int) (bx) ), ((int) (x0) ), ((int) (x11) )}) );
-		//line 203 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-		int[] ypoints = ((int[]) (new int[]{((int) (by) ), ((int) (y0) ), ((int) (y1) )}) );
-		//line 207 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-		this.canvas.drawLine(((int) (ax) ), ((int) (ay) ), ((int) (bx) ), ((int) (by) ));
+		double sin = ( dy / dd );
+		//line 201 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		double cos = ( dx / dd );
+		//line 205 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		double x0 = ( ( ( xm * cos ) - ( ym * sin ) ) + ax );
+		//line 206 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		double y0 = ( ( ( xm * sin ) + ( ym * cos ) ) + ay );
 		//line 208 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		double x11 = ( ( ( xn * cos ) - ( yn * sin ) ) + ax );
+		//line 209 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		double y1 = ( ( ( xn * sin ) + ( yn * cos ) ) + ay );
+		//line 211 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		int[] xpoints = ((int[]) (new int[]{((int) (bx) ), ((int) (x0) ), ((int) (x11) )}) );
+		//line 212 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		int[] ypoints = ((int[]) (new int[]{((int) (by) ), ((int) (y0) ), ((int) (y1) )}) );
+		//line 216 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		this.canvas.drawLine(((int) (ax) ), ((int) (ay) ), ((int) (bx) ), ((int) (by) ));
+		//line 217 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		this.canvas.fillPolygon(((int[]) (xpoints) ), ((int[]) (ypoints) ), ((int) (3) ));
 	}
 	
@@ -498,6 +509,24 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
+				case -1019779949:
+				{
+					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+					if (field.equals("offset")) 
+					{
+						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+						__temp_executeDef1 = false;
+						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+						this.offset = ((haxe.at.dotpoint.math.vector.IVector2) (value) );
+						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+						return value;
+					}
+					
+					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+					break;
+				}
+				
+				
 			}
 			
 			//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -638,15 +667,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 871091088:
+				case -1019779949:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("initialize")) 
+					if (field.equals("offset")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "initialize")) );
+						return this.offset;
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -670,15 +699,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 94746189:
+				case 871091088:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("clear")) 
+					if (field.equals("initialize")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "clear")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "initialize")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -702,15 +731,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 1264405643:
+				case 94746189:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("drawRectangle")) 
+					if (field.equals("clear")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "drawRectangle")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "clear")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -734,15 +763,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 128650256:
+				case 1264405643:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("drawLabel")) 
+					if (field.equals("drawRectangle")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "drawLabel")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "drawRectangle")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -766,15 +795,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -827125928:
+				case 128650256:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("drawLine")) 
+					if (field.equals("drawLabel")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "drawLine")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "drawLabel")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -798,15 +827,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 1334722659:
+				case -827125928:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("getAccessibleContext")) 
+					if (field.equals("drawLine")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getAccessibleContext")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "drawLine")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -830,15 +859,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 820971262:
+				case 1334722659:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("paramString")) 
+					if (field.equals("getAccessibleContext")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "paramString")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getAccessibleContext")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -862,15 +891,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -133970743:
+				case 820971262:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("getUIClassID")) 
+					if (field.equals("paramString")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getUIClassID")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "paramString")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -894,15 +923,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 109327990:
+				case -133970743:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("setUI")) 
+					if (field.equals("getUIClassID")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setUI")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getUIClassID")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -926,15 +955,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 98245738:
+				case 109327990:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("getUI")) 
+					if (field.equals("setUI")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getUI")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setUI")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -958,15 +987,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 1322595613:
+				case 98245738:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("updateUI")) 
+					if (field.equals("getUI")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "updateUI")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getUI")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -990,15 +1019,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 1910920416:
+				case 1322595613:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("getRootPane")) 
+					if (field.equals("updateUI")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getRootPane")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "updateUI")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -1022,15 +1051,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 116955034:
+				case 1910920416:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("isDoubleBuffered")) 
+					if (field.equals("getRootPane")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "isDoubleBuffered")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getRootPane")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -1054,15 +1083,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 383468754:
+				case 116955034:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("setDoubleBuffered")) 
+					if (field.equals("isDoubleBuffered")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setDoubleBuffered")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "isDoubleBuffered")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -1086,15 +1115,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 1356268992:
+				case 383468754:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("paintImmediately")) 
+					if (field.equals("setDoubleBuffered")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "paintImmediately")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setDoubleBuffered")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -1118,15 +1147,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -209888556:
+				case 1356268992:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("isPaintingOrigin")) 
+					if (field.equals("paintImmediately")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "isPaintingOrigin")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "paintImmediately")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -1150,15 +1179,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -1444703808:
+				case -209888556:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("isOptimizedDrawingEnabled")) 
+					if (field.equals("isPaintingOrigin")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "isOptimizedDrawingEnabled")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "isPaintingOrigin")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -1182,15 +1211,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 319849826:
+				case -1444703808:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("isValidateRoot")) 
+					if (field.equals("isOptimizedDrawingEnabled")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "isValidateRoot")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "isOptimizedDrawingEnabled")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -1214,15 +1243,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -218282935:
+				case 319849826:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("revalidate")) 
+					if (field.equals("isValidateRoot")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "revalidate")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "isValidateRoot")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -1246,15 +1275,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 1094177291:
+				case -218282935:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("repaint")) 
+					if (field.equals("revalidate")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "repaint")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "revalidate")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -1278,15 +1307,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -1001125651:
+				case 1094177291:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("removeNotify")) 
+					if (field.equals("repaint")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "removeNotify")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "repaint")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -1310,15 +1339,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -146849974:
+				case -1001125651:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("addNotify")) 
+					if (field.equals("removeNotify")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "addNotify")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "removeNotify")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -1342,15 +1371,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -1228323959:
+				case -146849974:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("getListeners")) 
+					if (field.equals("addNotify")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getListeners")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "addNotify")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -1374,15 +1403,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -727692042:
+				case -1228323959:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("getAncestorListeners")) 
+					if (field.equals("getListeners")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getAncestorListeners")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getListeners")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -1406,15 +1435,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -1567628213:
+				case -727692042:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("removeAncestorListener")) 
+					if (field.equals("getAncestorListeners")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "removeAncestorListener")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getAncestorListeners")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -1438,15 +1467,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -1065055640:
+				case -1567628213:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("addAncestorListener")) 
+					if (field.equals("removeAncestorListener")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "addAncestorListener")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "removeAncestorListener")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -1470,15 +1499,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -701878888:
+				case -1065055640:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("getTopLevelAncestor")) 
+					if (field.equals("addAncestorListener")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getTopLevelAncestor")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "addAncestorListener")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -1502,15 +1531,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -637180459:
+				case -701878888:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("getVetoableChangeListeners")) 
+					if (field.equals("getTopLevelAncestor")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getVetoableChangeListeners")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getTopLevelAncestor")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -1534,15 +1563,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -1422550772:
+				case -637180459:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("removeVetoableChangeListener")) 
+					if (field.equals("getVetoableChangeListeners")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "removeVetoableChangeListener")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getVetoableChangeListeners")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -1566,15 +1595,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -894798487:
+				case -1422550772:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("addVetoableChangeListener")) 
+					if (field.equals("removeVetoableChangeListener")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "addVetoableChangeListener")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "removeVetoableChangeListener")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -1598,15 +1627,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -800831894:
+				case -894798487:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("fireVetoableChange")) 
+					if (field.equals("addVetoableChangeListener")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "fireVetoableChange")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "addVetoableChangeListener")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -1630,15 +1659,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -2036853317:
+				case -800831894:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("firePropertyChange")) 
+					if (field.equals("fireVetoableChange")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "firePropertyChange")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "fireVetoableChange")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -1662,15 +1691,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -509772736:
+				case -2036853317:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("getVisibleRect")) 
+					if (field.equals("firePropertyChange")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getVisibleRect")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "firePropertyChange")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -1694,15 +1723,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 456055999:
+				case -509772736:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("computeVisibleRect")) 
+					if (field.equals("getVisibleRect")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "computeVisibleRect")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getVisibleRect")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -1726,15 +1755,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 470702883:
+				case 456055999:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("setOpaque")) 
+					if (field.equals("computeVisibleRect")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setOpaque")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "computeVisibleRect")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -1758,15 +1787,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -336661013:
+				case 470702883:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("isOpaque")) 
+					if (field.equals("setOpaque")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "isOpaque")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setOpaque")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -1790,15 +1819,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 474985501:
+				case -336661013:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("getHeight")) 
+					if (field.equals("isOpaque")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getHeight")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "isOpaque")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -1822,15 +1851,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 1968952336:
+				case 474985501:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("getWidth")) 
+					if (field.equals("getHeight")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getWidth")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getHeight")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -1854,15 +1883,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 3169219:
+				case 1968952336:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("getY")) 
+					if (field.equals("getWidth")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getY")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getWidth")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -1886,15 +1915,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 3169218:
+				case 3169219:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("getX")) 
+					if (field.equals("getY")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getX")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getY")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -1918,15 +1947,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -316023509:
+				case 3169218:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("getLocation")) 
+					if (field.equals("getX")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getLocation")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getX")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -1950,15 +1979,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -75151241:
+				case -316023509:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("getSize")) 
+					if (field.equals("getLocation")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getSize")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getLocation")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -1982,15 +2011,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 312809899:
+				case -75151241:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("getBounds")) 
+					if (field.equals("getSize")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getBounds")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getSize")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -2014,15 +2043,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 1097148750:
+				case 312809899:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("reshape")) 
+					if (field.equals("getBounds")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "reshape")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getBounds")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -2046,15 +2075,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -1635067428:
+				case 1097148750:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("setFocusTraversalKeys")) 
+					if (field.equals("reshape")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setFocusTraversalKeys")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "reshape")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -2078,15 +2107,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -1425362001:
+				case -1635067428:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("putClientProperty")) 
+					if (field.equals("setFocusTraversalKeys")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "putClientProperty")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setFocusTraversalKeys")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -2110,15 +2139,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -1141635146:
+				case -1425362001:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("getClientProperty")) 
+					if (field.equals("putClientProperty")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getClientProperty")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "putClientProperty")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -2142,15 +2171,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 1671308008:
+				case -1141635146:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("disable")) 
+					if (field.equals("getClientProperty")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "disable")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getClientProperty")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -2174,15 +2203,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -1298848381:
+				case 1671308008:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("enable")) 
+					if (field.equals("disable")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "enable")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "disable")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -2206,15 +2235,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 2065058606:
+				case -1298848381:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("processMouseMotionEvent")) 
+					if (field.equals("enable")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "processMouseMotionEvent")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "enable")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -2238,15 +2267,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 786391236:
+				case 2065058606:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("processMouseEvent")) 
+					if (field.equals("processMouseMotionEvent")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "processMouseEvent")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "processMouseMotionEvent")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -2270,15 +2299,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 1683315369:
+				case 786391236:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("getTransferHandler")) 
+					if (field.equals("processMouseEvent")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getTransferHandler")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "processMouseEvent")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -2302,15 +2331,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -1691618275:
+				case 1683315369:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("setTransferHandler")) 
+					if (field.equals("getTransferHandler")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setTransferHandler")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getTransferHandler")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -2334,15 +2363,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -1769313919:
+				case -1691618275:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("getAutoscrolls")) 
+					if (field.equals("setTransferHandler")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getAutoscrolls")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setTransferHandler")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -2366,15 +2395,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 753917173:
+				case -1769313919:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("setAutoscrolls")) 
+					if (field.equals("getAutoscrolls")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setAutoscrolls")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getAutoscrolls")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -2398,15 +2427,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 954363430:
+				case 753917173:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("scrollRectToVisible")) 
+					if (field.equals("setAutoscrolls")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "scrollRectToVisible")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setAutoscrolls")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -2430,15 +2459,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 1106410311:
+				case 954363430:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("createToolTip")) 
+					if (field.equals("scrollRectToVisible")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "createToolTip")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "scrollRectToVisible")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -2462,15 +2491,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -1988967221:
+				case 1106410311:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("getPopupLocation")) 
+					if (field.equals("createToolTip")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getPopupLocation")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "createToolTip")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -2494,15 +2523,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -1795253630:
+				case -1988967221:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("getToolTipLocation")) 
+					if (field.equals("getPopupLocation")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getToolTipLocation")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getPopupLocation")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -2526,15 +2555,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 1862577786:
+				case -1795253630:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("getToolTipText")) 
+					if (field.equals("getToolTipLocation")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getToolTipText")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getToolTipLocation")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -2558,15 +2587,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 90841582:
+				case 1862577786:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("setToolTipText")) 
+					if (field.equals("getToolTipText")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setToolTipText")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getToolTipText")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -2590,15 +2619,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 69241589:
+				case 90841582:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("processKeyBinding")) 
+					if (field.equals("setToolTipText")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "processKeyBinding")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setToolTipText")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -2622,15 +2651,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 2139532042:
+				case 69241589:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("processKeyEvent")) 
+					if (field.equals("processKeyBinding")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "processKeyEvent")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "processKeyBinding")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -2654,15 +2683,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 1312303337:
+				case 2139532042:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("processComponentKeyEvent")) 
+					if (field.equals("processKeyEvent")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "processComponentKeyEvent")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "processKeyEvent")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -2686,15 +2715,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 1984576465:
+				case 1312303337:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("setFont")) 
+					if (field.equals("processComponentKeyEvent")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setFont")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "processComponentKeyEvent")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -2718,15 +2747,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -855811280:
+				case 1984576465:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("setBackground")) 
+					if (field.equals("setFont")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setBackground")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setFont")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -2750,15 +2779,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -1834127547:
+				case -855811280:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("setForeground")) 
+					if (field.equals("setBackground")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setForeground")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setBackground")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -2782,15 +2811,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 1364071551:
+				case -1834127547:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("setEnabled")) 
+					if (field.equals("setForeground")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setEnabled")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setForeground")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -2814,15 +2843,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -854558288:
+				case 1364071551:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("setVisible")) 
+					if (field.equals("setEnabled")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setVisible")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setEnabled")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -2846,15 +2875,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -1253361850:
+				case -854558288:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("requestDefaultFocus")) 
+					if (field.equals("setVisible")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "requestDefaultFocus")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setVisible")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -2878,15 +2907,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -2053764159:
+				case -1253361850:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("getBaselineResizeBehavior")) 
+					if (field.equals("requestDefaultFocus")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getBaselineResizeBehavior")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "requestDefaultFocus")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -2910,15 +2939,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 357114811:
+				case -2053764159:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("getBaseline")) 
+					if (field.equals("getBaselineResizeBehavior")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getBaseline")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getBaselineResizeBehavior")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -2942,15 +2971,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 188673168:
+				case 357114811:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("getActionMap")) 
+					if (field.equals("getBaseline")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getActionMap")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getBaseline")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -2974,15 +3003,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 1737665796:
+				case 188673168:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("setActionMap")) 
+					if (field.equals("getActionMap")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setActionMap")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getActionMap")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -3006,15 +3035,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -1746368856:
+				case 1737665796:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("getInputMap")) 
+					if (field.equals("setActionMap")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getInputMap")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setActionMap")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -3038,15 +3067,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -1834948684:
+				case -1746368856:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("setInputMap")) 
+					if (field.equals("getInputMap")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setInputMap")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getInputMap")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -3070,15 +3099,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -1777533497:
+				case -1834948684:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("resetKeyboardActions")) 
+					if (field.equals("setInputMap")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "resetKeyboardActions")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setInputMap")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -3102,15 +3131,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -1337788934:
+				case -1777533497:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("getActionForKeyStroke")) 
+					if (field.equals("resetKeyboardActions")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getActionForKeyStroke")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "resetKeyboardActions")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -3134,15 +3163,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -2016664141:
+				case -1337788934:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("getConditionForKeyStroke")) 
+					if (field.equals("getActionForKeyStroke")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getConditionForKeyStroke")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getActionForKeyStroke")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -3166,15 +3195,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -760205708:
+				case -2016664141:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("getRegisteredKeyStrokes")) 
+					if (field.equals("getConditionForKeyStroke")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getRegisteredKeyStrokes")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getConditionForKeyStroke")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -3198,15 +3227,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -1167238055:
+				case -760205708:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("unregisterKeyboardAction")) 
+					if (field.equals("getRegisteredKeyStrokes")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "unregisterKeyboardAction")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getRegisteredKeyStrokes")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -3230,15 +3259,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -1402521984:
+				case -1167238055:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("registerKeyboardAction")) 
+					if (field.equals("unregisterKeyboardAction")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "registerKeyboardAction")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "unregisterKeyboardAction")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -3262,15 +3291,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 852008758:
+				case -1402521984:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("getDebugGraphicsOptions")) 
+					if (field.equals("registerKeyboardAction")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getDebugGraphicsOptions")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "registerKeyboardAction")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -3294,15 +3323,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -1390686654:
+				case 852008758:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("setDebugGraphicsOptions")) 
+					if (field.equals("getDebugGraphicsOptions")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setDebugGraphicsOptions")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getDebugGraphicsOptions")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -3326,15 +3355,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -2116360191:
+				case -1390686654:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("getGraphics")) 
+					if (field.equals("setDebugGraphicsOptions")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getGraphics")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setDebugGraphicsOptions")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -3358,15 +3387,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 1695427850:
+				case -2116360191:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("getInputVerifier")) 
+					if (field.equals("getGraphics")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getInputVerifier")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getGraphics")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -3390,15 +3419,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -136014978:
+				case 1695427850:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("setInputVerifier")) 
+					if (field.equals("getInputVerifier")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setInputVerifier")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getInputVerifier")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -3422,15 +3451,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -554065705:
+				case -136014978:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("setAlignmentX")) 
+					if (field.equals("setInputVerifier")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setAlignmentX")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setInputVerifier")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -3454,15 +3483,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -1328196917:
+				case -554065705:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("getAlignmentX")) 
+					if (field.equals("setAlignmentX")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getAlignmentX")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setAlignmentX")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -3486,15 +3515,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -554065704:
+				case -1328196917:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("setAlignmentY")) 
+					if (field.equals("getAlignmentX")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setAlignmentY")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getAlignmentX")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -3518,15 +3547,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -1328196916:
+				case -554065704:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("getAlignmentY")) 
+					if (field.equals("setAlignmentY")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getAlignmentY")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setAlignmentY")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -3550,15 +3579,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 512222700:
+				case -1328196916:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("getInsets")) 
+					if (field.equals("getAlignmentY")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getInsets")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getAlignmentY")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -3582,15 +3611,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 312710946:
+				case 512222700:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("getBorder")) 
+					if (field.equals("getInsets")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getBorder")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getInsets")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -3614,15 +3643,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 98093870:
+				case 312710946:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("setBorder")) 
+					if (field.equals("getBorder")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setBorder")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getBorder")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -3646,15 +3675,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -567445985:
+				case 98093870:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("contains")) 
+					if (field.equals("setBorder")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "contains")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setBorder")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -3678,15 +3707,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 367948793:
+				case -567445985:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("getMinimumSize")) 
+					if (field.equals("contains")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getMinimumSize")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "contains")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -3710,15 +3739,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -1403787411:
+				case 367948793:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("setMinimumSize")) 
+					if (field.equals("getMinimumSize")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setMinimumSize")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getMinimumSize")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -3742,15 +3771,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 1045381387:
+				case -1403787411:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("getMaximumSize")) 
+					if (field.equals("setMinimumSize")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getMaximumSize")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setMinimumSize")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -3774,15 +3803,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -726354817:
+				case 1045381387:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("setMaximumSize")) 
+					if (field.equals("getMaximumSize")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setMaximumSize")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getMaximumSize")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -3806,15 +3835,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -1726352276:
+				case -726354817:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("getPreferredSize")) 
+					if (field.equals("setMaximumSize")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getPreferredSize")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setMaximumSize")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -3838,15 +3867,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 737172192:
+				case -1726352276:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("setPreferredSize")) 
+					if (field.equals("getPreferredSize")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setPreferredSize")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getPreferredSize")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -3870,15 +3899,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 2087644222:
+				case 737172192:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("getFontMetrics")) 
+					if (field.equals("setPreferredSize")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getFontMetrics")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setPreferredSize")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -3902,15 +3931,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -1816942124:
+				case 2087644222:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("getVerifyInputWhenFocusTarget")) 
+					if (field.equals("getFontMetrics")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getVerifyInputWhenFocusTarget")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getFontMetrics")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -3934,15 +3963,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -2089656352:
+				case -1816942124:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("setVerifyInputWhenFocusTarget")) 
+					if (field.equals("getVerifyInputWhenFocusTarget")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setVerifyInputWhenFocusTarget")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getVerifyInputWhenFocusTarget")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -3966,15 +3995,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -1605080596:
+				case -2089656352:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("grabFocus")) 
+					if (field.equals("setVerifyInputWhenFocusTarget")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "grabFocus")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setVerifyInputWhenFocusTarget")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -3998,15 +4027,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -132373474:
+				case -1605080596:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("requestFocusInWindow")) 
+					if (field.equals("grabFocus")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "requestFocusInWindow")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "grabFocus")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -4030,15 +4059,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 1280029577:
+				case -132373474:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("requestFocus")) 
+					if (field.equals("requestFocusInWindow")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "requestFocus")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "requestFocusInWindow")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -4062,15 +4091,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -375268882:
+				case 1280029577:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("isRequestFocusEnabled")) 
+					if (field.equals("requestFocus")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "isRequestFocusEnabled")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "requestFocus")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -4094,15 +4123,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 217231286:
+				case -375268882:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("setRequestFocusEnabled")) 
+					if (field.equals("isRequestFocusEnabled")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setRequestFocusEnabled")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "isRequestFocusEnabled")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -4126,15 +4155,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 413687348:
+				case 217231286:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("getNextFocusableComponent")) 
+					if (field.equals("setRequestFocusEnabled")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getNextFocusableComponent")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setRequestFocusEnabled")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -4158,15 +4187,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 1256979008:
+				case 413687348:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("setNextFocusableComponent")) 
+					if (field.equals("getNextFocusableComponent")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setNextFocusableComponent")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getNextFocusableComponent")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -4190,15 +4219,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 890536972:
+				case 1256979008:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("isManagingFocus")) 
+					if (field.equals("setNextFocusableComponent")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "isManagingFocus")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setNextFocusableComponent")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -4222,15 +4251,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -770686062:
+				case 890536972:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("isPaintingForPrint")) 
+					if (field.equals("isManagingFocus")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "isPaintingForPrint")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "isManagingFocus")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -4254,15 +4283,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 142938588:
+				case -770686062:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("isPaintingTile")) 
+					if (field.equals("isPaintingForPrint")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "isPaintingTile")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "isPaintingForPrint")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -4286,15 +4315,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -824599239:
+				case 142938588:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("printBorder")) 
+					if (field.equals("isPaintingTile")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "printBorder")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "isPaintingTile")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -4318,15 +4347,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 1704032204:
+				case -824599239:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("printChildren")) 
+					if (field.equals("printBorder")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "printChildren")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "printBorder")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -4350,15 +4379,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -20235056:
+				case 1704032204:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("printComponent")) 
+					if (field.equals("printChildren")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "printComponent")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "printChildren")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -4382,15 +4411,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 106934957:
+				case -20235056:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("print")) 
+					if (field.equals("printComponent")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "print")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "printComponent")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -4414,15 +4443,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -1166363724:
+				case 106934957:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("printAll")) 
+					if (field.equals("print")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "printAll")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "print")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -4446,15 +4475,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 106428510:
+				case -1166363724:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("paint")) 
+					if (field.equals("printAll")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "paint")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "printAll")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -4478,15 +4507,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -838846263:
+				case 106428510:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("update")) 
+					if (field.equals("paint")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "update")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "paint")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -4510,15 +4539,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -1778836950:
+				case -838846263:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("paintBorder")) 
+					if (field.equals("update")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "paintBorder")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "update")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -4542,15 +4571,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -490374019:
+				case -1778836950:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("paintChildren")) 
+					if (field.equals("paintBorder")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "paintChildren")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "paintBorder")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -4574,15 +4603,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 672648767:
+				case -490374019:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("paintComponent")) 
+					if (field.equals("paintChildren")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "paintComponent")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "paintChildren")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -4606,15 +4635,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 241460722:
+				case 672648767:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("getComponentGraphics")) 
+					if (field.equals("paintComponent")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getComponentGraphics")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "paintComponent")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -4638,15 +4667,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -547981916:
+				case 241460722:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("getComponentPopupMenu")) 
+					if (field.equals("getComponentGraphics")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getComponentPopupMenu")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getComponentGraphics")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -4670,15 +4699,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 1988229040:
+				case -547981916:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("setComponentPopupMenu")) 
+					if (field.equals("getComponentPopupMenu")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setComponentPopupMenu")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getComponentPopupMenu")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -4702,15 +4731,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -658829443:
+				case 1988229040:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("getInheritsPopupMenu")) 
+					if (field.equals("setComponentPopupMenu")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getInheritsPopupMenu")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setComponentPopupMenu")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -4734,15 +4763,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -1269752847:
+				case -658829443:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("setInheritsPopupMenu")) 
+					if (field.equals("getInheritsPopupMenu")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setInheritsPopupMenu")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getInheritsPopupMenu")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -4766,15 +4795,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 3732:
+				case -1269752847:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("ui")) 
+					if (field.equals("setInheritsPopupMenu")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return this.ui;
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setInheritsPopupMenu")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -4798,15 +4827,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -1505267854:
+				case 3732:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("listenerList")) 
+					if (field.equals("ui")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return this.listenerList;
+						return this.ui;
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -4830,15 +4859,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -61228775:
+				case -1505267854:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("accessibleContext")) 
+					if (field.equals("listenerList")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return this.accessibleContext;
+						return this.listenerList;
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -4862,15 +4891,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -1117363270:
+				case -61228775:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("addPropertyChangeListener")) 
+					if (field.equals("accessibleContext")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "addPropertyChangeListener")) );
+						return this.accessibleContext;
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -4894,15 +4923,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -679533279:
+				case -1117363270:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("applyComponentOrientation")) 
+					if (field.equals("addPropertyChangeListener")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "applyComponentOrientation")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "addPropertyChangeListener")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -4926,15 +4955,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -606755785:
+				case -679533279:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("transferFocusDownCycle")) 
+					if (field.equals("applyComponentOrientation")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "transferFocusDownCycle")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "applyComponentOrientation")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -4958,15 +4987,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -1708753933:
+				case -606755785:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("isFocusTraversalPolicyProvider")) 
+					if (field.equals("transferFocusDownCycle")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "isFocusTraversalPolicyProvider")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "transferFocusDownCycle")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -4990,15 +5019,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 626370347:
+				case -1708753933:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("setFocusTraversalPolicyProvider")) 
+					if (field.equals("isFocusTraversalPolicyProvider")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setFocusTraversalPolicyProvider")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "isFocusTraversalPolicyProvider")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -5022,15 +5051,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -311299910:
+				case 626370347:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("isFocusCycleRoot")) 
+					if (field.equals("setFocusTraversalPolicyProvider")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "isFocusCycleRoot")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setFocusTraversalPolicyProvider")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -5054,15 +5083,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -44786190:
+				case -311299910:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("setFocusCycleRoot")) 
+					if (field.equals("isFocusCycleRoot")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setFocusCycleRoot")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "isFocusCycleRoot")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -5086,15 +5115,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 602541344:
+				case -44786190:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("isFocusTraversalPolicySet")) 
+					if (field.equals("setFocusCycleRoot")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "isFocusTraversalPolicySet")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setFocusCycleRoot")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -5118,15 +5147,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -1242052594:
+				case 602541344:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("getFocusTraversalPolicy")) 
+					if (field.equals("isFocusTraversalPolicySet")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getFocusTraversalPolicy")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "isFocusTraversalPolicySet")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -5150,15 +5179,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 810219290:
+				case -1242052594:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("setFocusTraversalPolicy")) 
+					if (field.equals("getFocusTraversalPolicy")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setFocusTraversalPolicy")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getFocusTraversalPolicy")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -5182,15 +5211,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -355296716:
+				case 810219290:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("areFocusTraversalKeysSet")) 
+					if (field.equals("setFocusTraversalPolicy")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "areFocusTraversalKeysSet")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setFocusTraversalPolicy")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -5214,15 +5243,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 123688912:
+				case -355296716:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("getFocusTraversalKeys")) 
+					if (field.equals("areFocusTraversalKeysSet")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getFocusTraversalKeys")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "areFocusTraversalKeysSet")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -5246,15 +5275,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 3322014:
+				case 123688912:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("list")) 
+					if (field.equals("getFocusTraversalKeys")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "list")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getFocusTraversalKeys")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -5278,15 +5307,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case -1671141420:
+				case 3322014:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("isAncestorOf")) 
+					if (field.equals("list")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "isAncestorOf")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "list")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -5310,15 +5339,15 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 				}
 				
 				
-				case 398126743:
+				case -1671141420:
 				{
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-					if (field.equals("findComponentAt")) 
+					if (field.equals("isAncestorOf")) 
 					{
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "findComponentAt")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "isAncestorOf")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -5335,6 +5364,22 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getMousePosition")) );
+					}
+					
+					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+					break;
+				}
+				
+				
+				case 398126743:
+				{
+					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+					if (field.equals("findComponentAt")) 
+					{
+						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+						__temp_executeDef1 = false;
+						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "findComponentAt")) );
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -5700,7 +5745,7 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 						__temp_executeDef1 = false;
 						//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-						this.initialize(((haxe.at.dotpoint.math.vector.IVector2) (dynargs.__get(0)) ), ((haxe.at.dotpoint.math.vector.IVector2) (dynargs.__get(1)) ));
+						this.initialize(((haxe.at.dotpoint.math.vector.IVector2) (dynargs.__get(0)) ), ((haxe.at.dotpoint.math.vector.IVector2) (dynargs.__get(1)) ), ((haxe.at.dotpoint.math.vector.IVector2) (dynargs.__get(2)) ));
 					}
 					
 					//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -5796,6 +5841,8 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 		baseArr.push("listenerList");
 		//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		baseArr.push("ui");
+		//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
+		baseArr.push("offset");
 		//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		baseArr.push("scaleFactor");
 		//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"

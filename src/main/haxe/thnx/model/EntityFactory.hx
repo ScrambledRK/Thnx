@@ -82,7 +82,7 @@ class EntityFactory
 		var entity:TankEntity = new TankEntity( data.id, data.owner );
 			entity.boundings.changePolicy = BoundingChangePolicy.CHANGE_MODELBOUNDS;
 			entity.boundings.modelSpace.width  = 0.8;
-			entity.boundings.modelSpace.height = 1.2;
+			entity.boundings.modelSpace.height = 0.8;
 			entity.boundings.modelSpace.length = 0.5;
 
 		// x,y

@@ -153,7 +153,7 @@ class ThnxMain extends EventDispatcher
 		if( this.view == null )
 		{
 			this.view = new ViewController();
-			this.view.initialize( new Vector2( 480, 600 ) );
+			this.view.initialize( new Vector2( 520, 545 ) );
 		}
 	}
 

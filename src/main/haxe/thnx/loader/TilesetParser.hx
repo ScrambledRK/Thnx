@@ -101,7 +101,7 @@ class TilesetParser extends ADataProcessor implements IDataProcessor<String,Tile
 
 				for( block in ylist )
 				{
-					if( MathUtil.isEqual( block.min.x, x ) )
+					if( MathUtil.isEqual( block.min.x, walls[0][x].min.x ) )
 					{
 						rectangle = block;
 						break;

@@ -172,7 +172,9 @@ public class TilesetParser extends haxe.at.dotpoint.loader.processor.ADataProces
 									//line 104 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
 									double a = block.get_min().get_x();
 									//line 104 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
-									__temp_stmt1 = ( (( a > x )) ? (( ( a - x ) < 1e-08 )) : (( ( x - a ) < 1e-08 )) );
+									double b = walls.__get(0).__get(x).get_min().get_x();
+									//line 104 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
+									__temp_stmt1 = ( (( a > b )) ? (( ( a - b ) < 1e-08 )) : (( ( b - a ) < 1e-08 )) );
 								}
 								
 								//line 104 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"

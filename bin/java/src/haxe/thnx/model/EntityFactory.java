@@ -154,7 +154,7 @@ public class EntityFactory extends haxe.lang.HxObject
 		//line 84 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\EntityFactory.hx"
 		entity.boundings.modelSpace.set_width(0.8);
 		//line 85 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\EntityFactory.hx"
-		entity.boundings.modelSpace.set_height(1.2);
+		entity.boundings.modelSpace.set_height(0.8);
 		//line 86 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\EntityFactory.hx"
 		entity.boundings.modelSpace.set_length(0.5);
 		//line 89 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\EntityFactory.hx"

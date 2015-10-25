@@ -176,7 +176,7 @@ public class ThnxMain extends haxe.at.dotpoint.core.dispatcher.event.EventDispat
 			//line 155 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\ThnxMain.hx"
 			this.view = new javahx.thnx.view.ViewController();
 			//line 156 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\ThnxMain.hx"
-			this.view.initialize(new haxe.at.dotpoint.math.vector.Vector2(480, 600), null);
+			this.view.initialize(new haxe.at.dotpoint.math.vector.Vector2(520, 545), null);
 		}
 		
 	}

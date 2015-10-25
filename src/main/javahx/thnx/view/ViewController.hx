@@ -3,6 +3,7 @@ package javahx.thnx.view;
 import haxe.at.dotpoint.math.geom.ICube;
 import haxe.at.dotpoint.math.geom.Rectangle;
 import haxe.at.dotpoint.math.vector.IVector2;
+import haxe.at.dotpoint.math.vector.Vector2;
 import haxe.thnx.model.enums.PowerupType;
 import haxe.thnx.model.enums.TeamColor;
 import haxe.thnx.model.tileset.Tile;
@@ -66,6 +67,9 @@ class ViewController implements IViewController
 	 */
 	public function initialize( dimension:IVector2, ?scaling:IVector2 ):Void
 	{
+		if( scaling == null )
+			scaling = new Vector2( 10, 10 );
+
 		this.setupJFrame( dimension );
 		this.setupCanvas( dimension, scaling );
 
@@ -77,7 +81,7 @@ class ViewController implements IViewController
 	 */
 	private function setupJFrame( dimension:IVector2 ):Void
 	{
-		var w:Int = Std.int( dimension.x ) + 20;
+		var w:Int = Std.int( dimension.x );
 		var h:Int = Std.int( dimension.y );
 
 		// ------------- //
@@ -103,14 +107,14 @@ class ViewController implements IViewController
 		// ------------- //
 
 		this.canvas_background = new DebugCanvas();
-		this.canvas_background.initialize( dimension, scaling );
+		this.canvas_background.initialize( dimension, scaling, new Vector2() );
 		this.canvas_background.setBounds( 0, 0, w, h );
-		this.canvas_background.setLocation( 0, 0 );
+		this.canvas_background.setLocation( 5, 0 );
 
 		this.canvas_foreground = new DebugCanvas();
 		this.canvas_foreground.initialize( dimension, scaling );
 		this.canvas_foreground.setBounds( 0, 0, w, h );
-		this.canvas_foreground.setLocation( 0, 0 );
+		this.canvas_foreground.setLocation( 5, 0 );
 
 		// ------------- //
 
@@ -163,7 +167,7 @@ class ViewController implements IViewController
 		{
 			for( x in 0...world.tileset.dimension  )
 			{
-				var tile:Tile = world.tileset.getTile( x, y );
+				var tile:Tile = world.tileset.getTileByIndex( x, y );
 
 				var rect:Rectangle = new Rectangle();
 					rect.min.x  = x;
@@ -247,6 +251,8 @@ class ViewController implements IViewController
 
 		// --------------------------- //
 		// bullets:
+
+		return;
 
 		for( bullet in world.bullets )
 		{
