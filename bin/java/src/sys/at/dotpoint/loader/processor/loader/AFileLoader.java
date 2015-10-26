@@ -21,20 +21,20 @@ public class AFileLoader extends haxe.at.dotpoint.loader.processor.ADataProcesso
 	}
 	
 	
-	public static void __hx_ctor_sys_at_dotpoint_loader_processor_loader_AFileLoader(sys.at.dotpoint.loader.processor.loader.AFileLoader __temp_me157, java.lang.Object readInterval, java.lang.Object readLength)
+	public static void __hx_ctor_sys_at_dotpoint_loader_processor_loader_AFileLoader(sys.at.dotpoint.loader.processor.loader.AFileLoader __temp_me156, java.lang.Object readInterval, java.lang.Object readLength)
 	{
 		//line 55 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\sys\\at\\dotpoint\\loader\\processor\\loader\\AFileLoader.hx"
-		int __temp_readLength156 = ( (haxe.lang.Runtime.eq(readLength, null)) ? (256) : (((int) (haxe.lang.Runtime.toInt(readLength)) )) );
+		int __temp_readLength155 = ( (haxe.lang.Runtime.eq(readLength, null)) ? (256) : (((int) (haxe.lang.Runtime.toInt(readLength)) )) );
 		//line 55 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\sys\\at\\dotpoint\\loader\\processor\\loader\\AFileLoader.hx"
-		int __temp_readInterval155 = ( (haxe.lang.Runtime.eq(readInterval, null)) ? (20) : (((int) (haxe.lang.Runtime.toInt(readInterval)) )) );
+		int __temp_readInterval154 = ( (haxe.lang.Runtime.eq(readInterval, null)) ? (20) : (((int) (haxe.lang.Runtime.toInt(readInterval)) )) );
 		//line 56 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\sys\\at\\dotpoint\\loader\\processor\\loader\\AFileLoader.hx"
-		haxe.at.dotpoint.loader.processor.ADataProcessor.__hx_ctor_haxe_at_dotpoint_loader_processor_ADataProcessor(__temp_me157, null);
+		haxe.at.dotpoint.loader.processor.ADataProcessor.__hx_ctor_haxe_at_dotpoint_loader_processor_ADataProcessor(__temp_me156, null);
 		//line 58 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\sys\\at\\dotpoint\\loader\\processor\\loader\\AFileLoader.hx"
-		__temp_me157.readInterval = __temp_readInterval155;
+		__temp_me156.readInterval = __temp_readInterval154;
 		//line 59 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\sys\\at\\dotpoint\\loader\\processor\\loader\\AFileLoader.hx"
-		__temp_me157.readLength = __temp_readLength156;
+		__temp_me156.readLength = __temp_readLength155;
 		//line 60 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\sys\\at\\dotpoint\\loader\\processor\\loader\\AFileLoader.hx"
-		__temp_me157.readPosition = 0;
+		__temp_me156.readPosition = 0;
 	}
 	
 	

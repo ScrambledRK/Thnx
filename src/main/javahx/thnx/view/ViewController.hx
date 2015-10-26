@@ -167,7 +167,7 @@ class ViewController implements IViewController
 		{
 			for( x in 0...world.tileset.dimension  )
 			{
-				var tile:Tile = world.tileset.getTileByIndex( x, y );
+				var tile:Tile = world.tileset.getTile( x, y );
 
 				var rect:Rectangle = new Rectangle();
 					rect.min.x  = x;

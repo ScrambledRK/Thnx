@@ -44,30 +44,37 @@ public class Tileset extends haxe.lang.HxObject
 	
 	public int dimension;
 	
+	public haxe.thnx.model.tileset.Tile getTileByCoordinates(double x, double y)
+	{
+		//line 39 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\tileset\\Tileset.hx"
+		return this.getTile(( ((int) (java.lang.Math.floor(x)) ) + 1 ), ( ((int) (java.lang.Math.floor(y)) ) + 1 ));
+	}
+	
+	
 	public haxe.thnx.model.tileset.Tile getTile(int x, int y)
 	{
-		//line 42 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\tileset\\Tileset.hx"
+		//line 50 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\tileset\\Tileset.hx"
 		if (( ( x < 0 ) || ( x > this.dimension ) )) 
 		{
-			//line 42 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\tileset\\Tileset.hx"
+			//line 50 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\tileset\\Tileset.hx"
 			throw haxe.lang.HaxeException.wrap(( "x-tile coordinate out of bounds: " + x ));
 		}
 		
-		//line 43 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\tileset\\Tileset.hx"
+		//line 51 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\tileset\\Tileset.hx"
 		if (( ( y < 0 ) || ( y > this.dimension ) )) 
 		{
-			//line 43 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\tileset\\Tileset.hx"
+			//line 51 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\tileset\\Tileset.hx"
 			throw haxe.lang.HaxeException.wrap(( "y-tile coordinate out of bounds: " + y ));
 		}
 		
-		//line 45 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\tileset\\Tileset.hx"
+		//line 53 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\tileset\\Tileset.hx"
 		return this.tiles.__get(( ( y * this.dimension ) + x ));
 	}
 	
 	
 	public final int getTileIndex(int x, int y)
 	{
-		//line 55 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\tileset\\Tileset.hx"
+		//line 63 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\tileset\\Tileset.hx"
 		return ( ( y * this.dimension ) + x );
 	}
 	
@@ -255,6 +262,22 @@ public class Tileset extends haxe.lang.HxObject
 				}
 				
 				
+				case 1573795936:
+				{
+					//line 7 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\tileset\\Tileset.hx"
+					if (field.equals("getTileByCoordinates")) 
+					{
+						//line 7 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\tileset\\Tileset.hx"
+						__temp_executeDef1 = false;
+						//line 7 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\tileset\\Tileset.hx"
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "getTileByCoordinates")) );
+					}
+					
+					//line 7 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\tileset\\Tileset.hx"
+					break;
+				}
+				
+				
 			}
 			
 			//line 7 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\tileset\\Tileset.hx"
@@ -336,6 +359,22 @@ public class Tileset extends haxe.lang.HxObject
 						__temp_executeDef1 = false;
 						//line 7 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\tileset\\Tileset.hx"
 						return this.getTileIndex(((int) (haxe.lang.Runtime.toInt(dynargs.__get(0))) ), ((int) (haxe.lang.Runtime.toInt(dynargs.__get(1))) ));
+					}
+					
+					//line 7 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\tileset\\Tileset.hx"
+					break;
+				}
+				
+				
+				case 1573795936:
+				{
+					//line 7 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\tileset\\Tileset.hx"
+					if (field.equals("getTileByCoordinates")) 
+					{
+						//line 7 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\tileset\\Tileset.hx"
+						__temp_executeDef1 = false;
+						//line 7 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\tileset\\Tileset.hx"
+						return this.getTileByCoordinates(((double) (haxe.lang.Runtime.toDouble(dynargs.__get(0))) ), ((double) (haxe.lang.Runtime.toDouble(dynargs.__get(1))) ));
 					}
 					
 					//line 7 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\model\\tileset\\Tileset.hx"

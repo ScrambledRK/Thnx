@@ -19,12 +19,12 @@ public class FileInput extends haxe.io.Input
 	}
 	
 	
-	public static void __hx_ctor_sys_io_FileInput(sys.io.FileInput __temp_me162, java.io.RandomAccessFile f)
+	public static void __hx_ctor_sys_io_FileInput(sys.io.FileInput __temp_me161, java.io.RandomAccessFile f)
 	{
 		//line 35 "C:\\Apps\\Haxe\\haxe\\std\\java\\_std\\sys\\io\\FileInput.hx"
-		__temp_me162.f = f;
+		__temp_me161.f = f;
 		//line 36 "C:\\Apps\\Haxe\\haxe\\std\\java\\_std\\sys\\io\\FileInput.hx"
-		__temp_me162._eof = false;
+		__temp_me161._eof = false;
 	}
 	
 	

@@ -131,8 +131,8 @@ src/haxe/thnx/model/enums/PowerupType.java
 src/haxe/root/Date.java
 src/javahx/thnx/view/ViewController.java
 src/haxe/thnx/loader/TilesetParser.java
-src/haxe/thnx/loader/TilesetParser_sortRectangles_206__Fun.java
-src/haxe/thnx/loader/TilesetParser_sortRectangles_215__Fun.java
+src/haxe/thnx/loader/TilesetParser_sortRectangles_208__Fun.java
+src/haxe/thnx/loader/TilesetParser_sortRectangles_217__Fun.java
 src/haxe/io/Error.java
 src/haxe/io/Error.java
 src/javahx/thnx/ThnxMain.java

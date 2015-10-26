@@ -12,12 +12,10 @@ public class ClientSocket extends org.java_websocket.server.WebSocketServer impl
 	}
 	
 	
-	public ClientSocket(haxe.at.dotpoint.core.dispatcher.event.IEventDispatcher dispatcher, java.lang.Object port)
+	public ClientSocket(haxe.at.dotpoint.core.dispatcher.event.IEventDispatcher dispatcher, java.net.InetSocketAddress address)
 	{
 		//line 40 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\socket\\ClientSocket.hx"
-		super(new java.net.InetSocketAddress(((int) (haxe.lang.Runtime.toInt(( (haxe.lang.Runtime.eq(port, null)) ? (((java.lang.Object) (9998) )) : (port) ))) )));
-		//line 39 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\socket\\ClientSocket.hx"
-		java.lang.Object __temp_port148 = ( (haxe.lang.Runtime.eq(port, null)) ? (((java.lang.Object) (9998) )) : (port) );
+		super(address);
 		//line 44 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\socket\\ClientSocket.hx"
 		this.dispatcher = dispatcher;
 		//line 45 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\socket\\ClientSocket.hx"
@@ -35,7 +33,7 @@ public class ClientSocket extends org.java_websocket.server.WebSocketServer impl
 	public static java.lang.Object __hx_create(haxe.root.Array arr)
 	{
 		//line 18 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\socket\\ClientSocket.hx"
-		return new javahx.thnx.socket.ClientSocket(((haxe.at.dotpoint.core.dispatcher.event.IEventDispatcher) (arr.__get(0)) ), arr.__get(1));
+		return new javahx.thnx.socket.ClientSocket(((haxe.at.dotpoint.core.dispatcher.event.IEventDispatcher) (arr.__get(0)) ), ((java.net.InetSocketAddress) (arr.__get(1)) ));
 	}
 	
 	

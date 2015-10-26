@@ -116,6 +116,8 @@ class TilesetParser extends ADataProcessor implements IDataProcessor<String,Tile
 				{
 					tiles.push( new Tile( TileType.EMPTY ) );
 				}
+
+				tiles[ tiles.length - 1 ].center = new Vector2( x - 0.5, y - 0.5 );	// first tile is -0.5, -0.5
 			}
 		}
 

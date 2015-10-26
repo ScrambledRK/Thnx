@@ -21,10 +21,10 @@ public class BitmapLoader extends sys.at.dotpoint.loader.processor.loader.AFileL
 	}
 	
 	
-	public static void __hx_ctor_sys_at_dotpoint_loader_processor_loader_BitmapLoader(sys.at.dotpoint.loader.processor.loader.BitmapLoader __temp_me158)
+	public static void __hx_ctor_sys_at_dotpoint_loader_processor_loader_BitmapLoader(sys.at.dotpoint.loader.processor.loader.BitmapLoader __temp_me157)
 	{
 		//line 24 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\lib\\dotCore\\src\\main\\sys\\at\\dotpoint\\loader\\processor\\loader\\BitmapLoader.hx"
-		sys.at.dotpoint.loader.processor.loader.AFileLoader.__hx_ctor_sys_at_dotpoint_loader_processor_loader_AFileLoader(__temp_me158, null, null);
+		sys.at.dotpoint.loader.processor.loader.AFileLoader.__hx_ctor_sys_at_dotpoint_loader_processor_loader_AFileLoader(__temp_me157, null, null);
 	}
 	
 	

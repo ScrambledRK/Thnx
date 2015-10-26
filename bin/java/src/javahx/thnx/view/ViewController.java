@@ -17,10 +17,10 @@ public class ViewController extends haxe.lang.HxObject implements haxe.thnx.view
 	}
 	
 	
-	public static void __hx_ctor_javahx_thnx_view_ViewController(javahx.thnx.view.ViewController __temp_me153)
+	public static void __hx_ctor_javahx_thnx_view_ViewController(javahx.thnx.view.ViewController __temp_me152)
 	{
 		//line 56 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\ViewController.hx"
-		__temp_me153.isBackgroundRefresh = true;
+		__temp_me152.isBackgroundRefresh = true;
 	}
 	
 	

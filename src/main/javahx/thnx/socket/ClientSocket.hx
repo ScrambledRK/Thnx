@@ -35,9 +35,9 @@ class ClientSocket extends WebSocketServer implements IClientSocket
 	/**
 	 *
 	 */
-	public function new( dispatcher:IEventDispatcher, ?port:Int = 9998 )
+	public function new( dispatcher:IEventDispatcher, address:InetSocketAddress )
 	{
-		super( new InetSocketAddress( port ) );
+		super( address );
 
 		// ------------- //
 

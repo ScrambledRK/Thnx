@@ -682,8 +682,8 @@ M javahx.thnx.view.ViewController
 C javahx.thnx.view.ViewController
 M haxe.thnx.loader.TilesetParser
 C haxe.thnx.loader.TilesetParser
-C haxe.thnx.loader.TilesetParser_sortRectangles_206__Fun
-C haxe.thnx.loader.TilesetParser_sortRectangles_215__Fun
+C haxe.thnx.loader.TilesetParser_sortRectangles_208__Fun
+C haxe.thnx.loader.TilesetParser_sortRectangles_217__Fun
 M java.security.InvalidKeyException
 M java.net.SocketImpl
 M java.awt.Checkbox

@@ -202,6 +202,8 @@ public class TilesetParser extends haxe.at.dotpoint.loader.processor.ADataProces
 							tiles.push(new haxe.thnx.model.tileset.Tile(((haxe.thnx.model.enums.TileType) (haxe.thnx.model.enums.TileType.EMPTY) )));
 						}
 						
+						//line 120 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
+						tiles.__get(( tiles.length - 1 )).center = new haxe.at.dotpoint.math.vector.Vector2(( x - 0.5 ), ( y - 0.5 ));
 					}
 					
 				}
@@ -210,116 +212,116 @@ public class TilesetParser extends haxe.at.dotpoint.loader.processor.ADataProces
 			
 		}
 		
-		//line 122 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
+		//line 124 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
 		return new haxe.thnx.model.tileset.Tileset(tiles, walls.length);
 	}
 	
 	
 	public haxe.root.Array<haxe.root.Array<haxe.at.dotpoint.math.geom.Rectangle>> parseWallBoundings(java.lang.Object json)
 	{
-		//line 130 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
+		//line 132 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
 		haxe.root.Array level = ((haxe.root.Array) (haxe.lang.Runtime.getField(json, "walls", true)) );
-		//line 135 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
-		haxe.root.Array<haxe.root.Array<haxe.at.dotpoint.math.geom.Rectangle>> rectangles = new haxe.root.Array<haxe.root.Array<haxe.at.dotpoint.math.geom.Rectangle>>();
 		//line 137 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
+		haxe.root.Array<haxe.root.Array<haxe.at.dotpoint.math.geom.Rectangle>> rectangles = new haxe.root.Array<haxe.root.Array<haxe.at.dotpoint.math.geom.Rectangle>>();
+		//line 139 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
 		{
-			//line 137 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
+			//line 139 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
 			int _g = 0;
-			//line 137 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
+			//line 139 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
 			while (( _g < level.length ))
 			{
-				//line 137 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
-				java.lang.Object block = level.__get(_g);
-				//line 137 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
-				 ++ _g;
 				//line 139 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
-				haxe.root.Array<java.lang.Object> data = ((haxe.root.Array<java.lang.Object>) (block) );
+				java.lang.Object block = level.__get(_g);
+				//line 139 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
+				 ++ _g;
 				//line 141 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
+				haxe.root.Array<java.lang.Object> data = ((haxe.root.Array<java.lang.Object>) (block) );
+				//line 143 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
 				int w = ((int) (((double) (haxe.lang.Runtime.toDouble(data.__get(2))) )) );
-				//line 142 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
-				int h = ((int) (((double) (haxe.lang.Runtime.toDouble(data.__get(3))) )) );
 				//line 144 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
-				haxe.at.dotpoint.math.geom.Rectangle block1 = new haxe.at.dotpoint.math.geom.Rectangle(((haxe.at.dotpoint.math.vector.IVector2) (null) ));
-				//line 145 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
-				block1.get_min().set_x(( ((double) (haxe.lang.Runtime.toDouble(data.__get(0))) ) - ( w * 0.5 ) ));
+				int h = ((int) (((double) (haxe.lang.Runtime.toDouble(data.__get(3))) )) );
 				//line 146 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
-				block1.get_min().set_y(( ((double) (haxe.lang.Runtime.toDouble(data.__get(1))) ) - ( h * 0.5 ) ));
+				haxe.at.dotpoint.math.geom.Rectangle block1 = new haxe.at.dotpoint.math.geom.Rectangle(((haxe.at.dotpoint.math.vector.IVector2) (null) ));
 				//line 147 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
-				block1.get_max().set_x(( ((double) (haxe.lang.Runtime.toDouble(data.__get(0))) ) + ( w * 0.5 ) ));
+				block1.get_min().set_x(( ((double) (haxe.lang.Runtime.toDouble(data.__get(0))) ) - ( w * 0.5 ) ));
 				//line 148 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
-				block1.get_max().set_y(( ((double) (haxe.lang.Runtime.toDouble(data.__get(1))) ) + ( h * 0.5 ) ));
+				block1.get_min().set_y(( ((double) (haxe.lang.Runtime.toDouble(data.__get(1))) ) - ( h * 0.5 ) ));
+				//line 149 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
+				block1.get_max().set_x(( ((double) (haxe.lang.Runtime.toDouble(data.__get(0))) ) + ( w * 0.5 ) ));
 				//line 150 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
-				haxe.at.dotpoint.math.vector.Vector2 anchor = ((haxe.at.dotpoint.math.vector.Vector2) (block1.getPoint(haxe.at.dotpoint.math.AxisRelative.TOP_LEFT, null)) );
+				block1.get_max().set_y(( ((double) (haxe.lang.Runtime.toDouble(data.__get(1))) ) + ( h * 0.5 ) ));
 				//line 152 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
+				haxe.at.dotpoint.math.vector.Vector2 anchor = ((haxe.at.dotpoint.math.vector.Vector2) (block1.getPoint(haxe.at.dotpoint.math.AxisRelative.TOP_LEFT, null)) );
+				//line 154 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
 				{
-					//line 152 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
+					//line 154 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
 					int _g1 = 0;
-					//line 152 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
+					//line 154 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
 					while (( _g1 < w ))
 					{
-						//line 152 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
-						int x = _g1++;
 						//line 154 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
+						int x = _g1++;
+						//line 156 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
 						{
-							//line 154 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
+							//line 156 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
 							int _g2 = 0;
-							//line 154 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
+							//line 156 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
 							while (( _g2 < h ))
 							{
-								//line 154 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
-								int y = _g2++;
 								//line 156 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
-								haxe.at.dotpoint.math.geom.Rectangle rect = new haxe.at.dotpoint.math.geom.Rectangle(((haxe.at.dotpoint.math.vector.IVector2) (haxe.at.dotpoint.math.AxisRelative.CENTER) ));
-								//line 157 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
-								rect.get_min().set_x(( anchor.get_x() + x ));
+								int y = _g2++;
 								//line 158 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
-								rect.get_min().set_y(( anchor.get_y() + y ));
+								haxe.at.dotpoint.math.geom.Rectangle rect = new haxe.at.dotpoint.math.geom.Rectangle(((haxe.at.dotpoint.math.vector.IVector2) (haxe.at.dotpoint.math.AxisRelative.CENTER) ));
 								//line 159 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
-								rect.get_max().set_x(( rect.get_min().get_x() + 1 ));
+								rect.get_min().set_x(( anchor.get_x() + x ));
 								//line 160 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
+								rect.get_min().set_y(( anchor.get_y() + y ));
+								//line 161 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
+								rect.get_max().set_x(( rect.get_min().get_x() + 1 ));
+								//line 162 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
 								rect.get_max().set_y(( rect.get_min().get_y() + 1 ));
-								//line 164 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
-								haxe.root.Array<haxe.at.dotpoint.math.geom.Rectangle> target_list = null;
 								//line 166 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
+								haxe.root.Array<haxe.at.dotpoint.math.geom.Rectangle> target_list = null;
+								//line 168 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
 								{
-									//line 166 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
+									//line 168 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
 									int _g3 = 0;
-									//line 166 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
+									//line 168 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
 									while (( _g3 < rectangles.length ))
 									{
-										//line 166 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
-										haxe.root.Array<haxe.at.dotpoint.math.geom.Rectangle> ylist = rectangles.__get(_g3);
-										//line 166 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
-										 ++ _g3;
 										//line 168 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
+										haxe.root.Array<haxe.at.dotpoint.math.geom.Rectangle> ylist = rectangles.__get(_g3);
+										//line 168 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
+										 ++ _g3;
+										//line 170 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
 										if (( ylist.length < 0 )) 
 										{
-											//line 169 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
+											//line 171 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
 											continue;
 										}
 										
-										//line 173 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
+										//line 175 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
 										haxe.at.dotpoint.math.vector.Vector2 c_center = ((haxe.at.dotpoint.math.vector.Vector2) (ylist.__get(0).getPoint(new haxe.at.dotpoint.math.vector.Vector2(0, 0), null)) );
-										//line 174 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
+										//line 176 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
 										haxe.at.dotpoint.math.vector.Vector2 r_center = ((haxe.at.dotpoint.math.vector.Vector2) (rect.getPoint(new haxe.at.dotpoint.math.vector.Vector2(0, 0), null)) );
-										//line 176 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
+										//line 178 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
 										boolean __temp_stmt1 = false;
-										//line 176 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
+										//line 178 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
 										{
-											//line 176 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
+											//line 178 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
 											double a = c_center.get_y();
-											//line 176 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
+											//line 178 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
 											double b = r_center.get_y();
-											//line 176 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
+											//line 178 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
 											__temp_stmt1 = ( (( a > b )) ? (( ( a - b ) < 1e-08 )) : (( ( b - a ) < 1e-08 )) );
 										}
 										
-										//line 176 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
+										//line 178 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
 										if (__temp_stmt1) 
 										{
-											//line 178 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
+											//line 180 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
 											target_list = ylist;
-											//line 179 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
+											//line 181 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
 											break;
 										}
 										
@@ -327,14 +329,14 @@ public class TilesetParser extends haxe.at.dotpoint.loader.processor.ADataProces
 									
 								}
 								
-								//line 183 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
+								//line 185 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
 								if (( target_list == null )) 
 								{
-									//line 184 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
+									//line 186 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
 									rectangles.__set(rectangles.length, target_list = new haxe.root.Array<haxe.at.dotpoint.math.geom.Rectangle>());
 								}
 								
-								//line 186 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
+								//line 188 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
 								target_list.push(rect);
 							}
 							
@@ -348,35 +350,35 @@ public class TilesetParser extends haxe.at.dotpoint.loader.processor.ADataProces
 			
 		}
 		
-		//line 191 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
+		//line 193 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
 		this.sortRectangles(rectangles);
-		//line 195 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
+		//line 197 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
 		return rectangles;
 	}
 	
 	
 	public void sortRectangles(haxe.root.Array<haxe.root.Array<haxe.at.dotpoint.math.geom.Rectangle>> list)
 	{
-		//line 203 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
+		//line 205 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
 		haxe.at.dotpoint.math.vector.Vector2 center = new haxe.at.dotpoint.math.vector.Vector2(null, null);
-		//line 206 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
-		haxe.lang.Function sortYAxis = new haxe.thnx.loader.TilesetParser_sortRectangles_206__Fun(center);
-		//line 215 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
-		haxe.lang.Function sortXAxis = new haxe.thnx.loader.TilesetParser_sortRectangles_215__Fun(center);
-		//line 225 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
-		list.sort(sortYAxis);
+		//line 208 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
+		haxe.lang.Function sortYAxis = new haxe.thnx.loader.TilesetParser_sortRectangles_208__Fun(center);
+		//line 217 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
+		haxe.lang.Function sortXAxis = new haxe.thnx.loader.TilesetParser_sortRectangles_217__Fun(center);
 		//line 227 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
+		list.sort(sortYAxis);
+		//line 229 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
 		{
-			//line 227 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
+			//line 229 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
 			int _g = 0;
-			//line 227 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
+			//line 229 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
 			while (( _g < list.length ))
 			{
-				//line 227 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
+				//line 229 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
 				haxe.root.Array<haxe.at.dotpoint.math.geom.Rectangle> xaxis = list.__get(_g);
-				//line 227 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
+				//line 229 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
 				 ++ _g;
-				//line 228 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
+				//line 230 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\haxe\\thnx\\loader\\TilesetParser.hx"
 				xaxis.sort(sortXAxis);
 			}
 			

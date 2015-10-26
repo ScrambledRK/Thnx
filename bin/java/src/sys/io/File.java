@@ -17,7 +17,7 @@ public class File extends haxe.lang.HxObject
 	}
 	
 	
-	public static void __hx_ctor_sys_io_File(sys.io.File __temp_me161)
+	public static void __hx_ctor_sys_io_File(sys.io.File __temp_me160)
 	{
 	}
 	
@@ -25,7 +25,7 @@ public class File extends haxe.lang.HxObject
 	public static sys.io.FileInput read(java.lang.String path, java.lang.Object binary)
 	{
 		//line 59 "C:\\Apps\\Haxe\\haxe\\std\\java\\_std\\sys\\io\\File.hx"
-		boolean __temp_binary160 = ( (haxe.lang.Runtime.eq(binary, null)) ? (true) : (haxe.lang.Runtime.toBool(binary)) );
+		boolean __temp_binary159 = ( (haxe.lang.Runtime.eq(binary, null)) ? (true) : (haxe.lang.Runtime.toBool(binary)) );
 		//line 61 "C:\\Apps\\Haxe\\haxe\\std\\java\\_std\\sys\\io\\File.hx"
 		try 
 		{

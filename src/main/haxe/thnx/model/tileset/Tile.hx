@@ -1,5 +1,6 @@
 package haxe.thnx.model.tileset;
 import haxe.at.dotpoint.math.geom.Rectangle;
+import haxe.at.dotpoint.math.vector.IVector2;
 import haxe.thnx.model.enums.TileType;
 
 /**
@@ -13,6 +14,11 @@ class Tile
 	 *
 	 */
 	public var type(default, null):TileType;
+
+	/**
+	 *
+	 */
+	public var center:IVector2;
 
 	// ************************************************************************ //
 	// Constructor

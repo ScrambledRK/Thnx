@@ -19,6 +19,7 @@ import java.io.InputStreamReader;
 import javahx.thnx.socket.ClientSocket;
 import javahx.thnx.view.ViewController;
 import haxe.at.dotpoint.math.Trigonometry;
+import java.net.InetSocketAddress;
 
 /**
  *
@@ -160,12 +161,15 @@ class ThnxMain extends EventDispatcher
 	/**
 	 *
 	 */
-	public function startServer():Void
+	public function startServer( ?address:InetSocketAddress ):Void
 	{
 		trace("starting server ...");
 
+		if( address == null )
+			address = new InetSocketAddress( 9998 );
+
 		if( this.socket == null )
-			this.socket = new ClientSocket( ThnxMain.instance, 9998 );
+			this.socket = new ClientSocket( ThnxMain.instance, address );
 
 		if(!this.hasListener( SocketEvent.MESSAGE_RECIEVED ) )
 			this.addListener( SocketEvent.MESSAGE_RECIEVED, this.onMessage );

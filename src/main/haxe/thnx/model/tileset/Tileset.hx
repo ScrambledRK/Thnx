@@ -33,6 +33,14 @@ class Tileset
 
 	/**
 	 *
+	 */
+	public function getTileByCoordinates( x:Float, y:Float ):Tile
+	{
+		return this.getTile( Math.floor( x ) + 1, Math.floor( y ) + 1 );
+	}
+
+	/**
+	 *
 	 * @param	x in tile-coordinates
 	 * @param	y in tile-coordinates
 	 * @return	tile on that position

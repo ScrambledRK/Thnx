@@ -110,25 +110,25 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 	public void drawRectangle(haxe.at.dotpoint.math.geom.IRectangle rect, java.lang.Object color, java.lang.Object thickness, java.lang.Object alpha)
 	{
 		//line 118 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-		java.lang.Object __temp_alpha151 = ( (haxe.lang.Runtime.eq(alpha, null)) ? (((java.lang.Object) (0.8) )) : (alpha) );
+		java.lang.Object __temp_alpha150 = ( (haxe.lang.Runtime.eq(alpha, null)) ? (((java.lang.Object) (0.8) )) : (alpha) );
 		//line 118 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-		java.lang.Object __temp_thickness150 = ( (haxe.lang.Runtime.eq(thickness, null)) ? (((java.lang.Object) (1) )) : (thickness) );
+		java.lang.Object __temp_thickness149 = ( (haxe.lang.Runtime.eq(thickness, null)) ? (((java.lang.Object) (1) )) : (thickness) );
 		//line 118 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-		java.lang.Object __temp_color149 = ( (haxe.lang.Runtime.eq(color, null)) ? (((java.lang.Object) (0) )) : (color) );
+		java.lang.Object __temp_color148 = ( (haxe.lang.Runtime.eq(color, null)) ? (((java.lang.Object) (0) )) : (color) );
 		//line 119 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		this.canvas.setRenderingHint(((java.awt.RenderingHints.Key) (java.awt.RenderingHints.KEY_ANTIALIASING) ), ((java.lang.Object) (java.awt.RenderingHints.VALUE_ANTIALIAS_ON) ));
 		//line 121 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-		haxe.at.dotpoint.math.vector.Vector3 cv = haxe.at.dotpoint.math.color.ColorUtil.toVector(((int) (haxe.lang.Runtime.toInt(__temp_color149)) ), null, null);
+		haxe.at.dotpoint.math.vector.Vector3 cv = haxe.at.dotpoint.math.color.ColorUtil.toVector(((int) (haxe.lang.Runtime.toInt(__temp_color148)) ), null, null);
 		//line 122 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		{
 			//line 122 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-			double value = ((double) (haxe.lang.Runtime.toDouble(__temp_alpha151)) );
+			double value = ((double) (haxe.lang.Runtime.toDouble(__temp_alpha150)) );
 			//line 122 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 			cv.w = value;
 		}
 		
 		//line 124 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-		this.canvas.setStroke(((java.awt.Stroke) (new java.awt.BasicStroke(((float) (( ((double) (haxe.lang.Runtime.toDouble(__temp_thickness150)) ) * ((double) (0.7) ) )) ), java.awt.BasicStroke.CAP_BUTT, java.awt.BasicStroke.JOIN_MITER)) ));
+		this.canvas.setStroke(((java.awt.Stroke) (new java.awt.BasicStroke(((float) (( ((double) (haxe.lang.Runtime.toDouble(__temp_thickness149)) ) * ((double) (0.7) ) )) ), java.awt.BasicStroke.CAP_BUTT, java.awt.BasicStroke.JOIN_MITER)) ));
 		//line 125 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		this.canvas.setColor(((java.awt.Color) (new java.awt.Color(((float) (cv.x) ), ((float) (cv.y) ), ((float) (cv.z) ), ((float) (1) ))) ));
 		//line 127 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
@@ -183,7 +183,7 @@ public class DebugCanvas extends javax.swing.JPanel implements haxe.lang.IHxObje
 	public void drawLabel(java.lang.String value, haxe.at.dotpoint.math.vector.IVector2 position, java.lang.Object size, java.lang.Object color)
 	{
 		//line 148 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
-		java.lang.Object __temp_size152 = ( (haxe.lang.Runtime.eq(size, null)) ? (((java.lang.Object) (25) )) : (size) );
+		java.lang.Object __temp_size151 = ( (haxe.lang.Runtime.eq(size, null)) ? (((java.lang.Object) (25) )) : (size) );
 		//line 149 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
 		this.canvas.setRenderingHint(((java.awt.RenderingHints.Key) (java.awt.RenderingHints.KEY_ANTIALIASING) ), ((java.lang.Object) (java.awt.RenderingHints.VALUE_ANTIALIAS_ON) ));
 		//line 151 "D:\\Projects\\Arbeit\\Greentube\\Hackathon\\Thnx\\src\\main\\javahx\\thnx\\view\\DebugCanvas.hx"
